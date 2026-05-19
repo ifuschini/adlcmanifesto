@@ -7,12 +7,7 @@
 
 Le Manifeste de l'Agentic Delivery Lifecycle.
 
-## Langues
-
-- English: [README.md](README.md)
-- Italiano: [README.it.md](README.it.md)
-- Español: [README.es.md](README.es.md)
-- Français: [README.fr.md](README.fr.md)
+[English](README.md) | [Italian](README.it.md) | [Spanish](README.es.md) | [French](README.fr.md)
 
 ## Vue D'ensemble
 
