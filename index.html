@@ -1,0 +1,807 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ADLC Manifesto and Lifecycle | Agentic Development Framework</title>
+    <meta
+      name="description"
+      content="Explore the ADLC Manifesto and Lifecycle: a governed, tool-agnostic framework for building agentic systems from validated requirements to orchestration and continuous improvement."
+    />
+    <meta
+      name="robots"
+      content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"
+    />
+    <link
+      rel="canonical"
+      href="https://adlcmanifesto.org/"
+    />
+    <link
+      rel="alternate"
+      hreflang="en"
+      href="https://adlcmanifesto.org/"
+    />
+    <link
+      rel="alternate"
+      hreflang="es"
+      href="https://adlcmanifesto.org/es/"
+    />
+    <link
+      rel="alternate"
+      hreflang="fr"
+      href="https://adlcmanifesto.org/fr/"
+    />
+    <link
+      rel="alternate"
+      hreflang="it"
+      href="https://adlcmanifesto.org/it/"
+    />
+    <link
+      rel="alternate"
+      hreflang="x-default"
+      href="https://adlcmanifesto.org/"
+    />
+    <meta
+      property="og:type"
+      content="website"
+    />
+    <meta
+      property="og:title"
+      content="ADLC Manifesto and Lifecycle | Agentic Development Framework"
+    />
+    <meta
+      property="og:site_name"
+      content="ADLC Manifesto"
+    />
+    <meta
+      property="og:url"
+      content="https://adlcmanifesto.org/"
+    />
+    <meta
+      property="og:description"
+      content="A governed, tool-agnostic lifecycle for building agentic systems, from validated requirements to operations and orchestration."
+    />
+    <meta
+      property="og:image"
+      content="https://adlcmanifesto.org/og-image.png"
+    />
+    <meta
+      property="og:image:secure_url"
+      content="https://adlcmanifesto.org/og-image.png"
+    />
+    <meta
+      property="og:image:type"
+      content="image/png"
+    />
+    <meta
+      property="og:image:width"
+      content="1200"
+    />
+    <meta
+      property="og:image:height"
+      content="630"
+    />
+    <meta
+      property="og:image:alt"
+      content="ADLC Manifesto open graph card"
+    />
+    <meta
+      property="og:locale"
+      content="en_US"
+    />
+    <meta
+      property="og:locale:alternate"
+      content="es_ES"
+    />
+    <meta
+      property="og:locale:alternate"
+      content="fr_FR"
+    />
+    <meta
+      property="og:locale:alternate"
+      content="it_IT"
+    />
+    <meta
+      name="twitter:card"
+      content="summary_large_image"
+    />
+    <meta
+      name="twitter:title"
+      content="ADLC Manifesto and Lifecycle"
+    />
+    <meta
+      name="twitter:url"
+      content="https://adlcmanifesto.org/"
+    />
+    <meta
+      name="twitter:description"
+      content="A clear, governed, tool-agnostic framework for agentic system development."
+    />
+    <meta
+      name="twitter:image"
+      content="https://adlcmanifesto.org/og-image.png"
+    />
+    <meta
+      name="twitter:image:alt"
+      content="ADLC Manifesto open graph card"
+    />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "ADLC Manifesto and Lifecycle",
+        "description": "A governed, tool-agnostic framework for building agentic systems from validated requirements to orchestration and continuous improvement.",
+        "inLanguage": "en",
+        "about": [
+          "Agentic Development",
+          "ADLC Manifesto",
+          "ADLC Lifecycle",
+          "Requirements Quality Gate"
+        ]
+      }
+    </script>
+    <link
+      rel="preconnect"
+      href="https://fonts.googleapis.com"
+    />
+    <link
+      rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;700&family=Special+Elite&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/papercss@1.9.2/dist/paper.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/@xyflow/react@12/dist/style.css"
+    />
+    <link
+      rel="stylesheet"
+      href="./styles.css"
+    />
+  </head>
+  <body>
+    <div class="paper-band paper-band-top"></div>
+
+    <header class="site-header container">
+      <nav class="split-nav">
+        <div class="nav-brand">
+          <p class="site-kicker">Agentic Development</p>
+          <p class="brand-mark">ADLC</p>
+          <p class="site-version">V1.0</p>
+        </div>
+        <ul class="inline nav-links">
+          <li><a href="#manifesto">Manifesto</a></li>
+          <li><a href="#lifecycle">Lifecycle</a></li>
+          <li><a href="#operating-model">Operating Model</a></li>
+          <li><a href="#practice">In Practice</a></li>
+          <li><a href="#principles">Principles</a></li>
+          <li><a href="#guardrails">Guardrails</a></li>
+          <li><a href="#agents">Shared Agents</a></li>
+          <li><a href="#skills">Shared Skills</a></li>
+        </ul>
+      </nav>
+
+      <div
+        class="language-switcher paper"
+        aria-label="Language selector"
+      >
+        <a
+          href="/"
+          class="paper-btn language-link active"
+          lang="en"
+          hreflang="en"
+          aria-current="page"
+        >
+          EN
+        </a>
+        <a
+          href="/es/"
+          class="paper-btn language-link"
+          lang="es"
+          hreflang="es"
+        >
+          ES
+        </a>
+        <a
+          href="/fr/"
+          class="paper-btn language-link"
+          lang="fr"
+          hreflang="fr"
+        >
+          FR
+        </a>
+        <a
+          href="/it/"
+          class="paper-btn language-link"
+          lang="it"
+          hreflang="it"
+        >
+          IT
+        </a>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero container">
+        <div class="row flex-spaces child-borders">
+          <div class="sm-12 md-7 col">
+            <article class="paper hero-card">
+              <p class="section-tag">Manifesto</p>
+              <h1>Building agentic systems with method, governance, and clarity.</h1>
+              <p class="hero-text">
+                The ADLC manifesto defines common principles for designing
+                governed, tool-agnostic agentic systems driven by an explicit
+                lifecycle.
+              </p>
+              <div class="hero-actions">
+                <a
+                  href="#manifesto"
+                  class="paper-btn btn-secondary-outline"
+                >
+                  Read the manifesto
+                </a>
+                <a
+                  href="#lifecycle"
+                  class="paper-btn"
+                >
+                  Explore the lifecycle
+                </a>
+              </div>
+            </article>
+          </div>
+          <div class="sm-12 md-5 col">
+            <aside class="paper note-card">
+              <p class="section-tag">Key Message</p>
+              <blockquote>
+                Agent development must be governed, tool-agnostic and
+                lifecycle-driven.
+              </blockquote>
+              <p>
+                No implementation starts without a passed
+                <strong>requirements quality gate</strong>.
+              </p>
+              <p>
+                <strong>Human in the loop is mandatory</strong> wherever
+                requirements are approved, quality is reviewed, releases are
+                authorized, and live operations are governed.
+              </p>
+            </aside>
+          </div>
+        </div>
+      </section>
+
+      <section
+        id="manifesto"
+        class="container section-block"
+      >
+        <div class="section-heading">
+          <p class="section-tag">ADLC Manifesto</p>
+          <h2>A design pact for solid agentic systems</h2>
+        </div>
+
+        <div class="row flex-spaces">
+          <div class="sm-12 md-4 col">
+            <article class="paper info-card">
+              <h3>Purpose</h3>
+              <p>
+                Define common principles for building agents and agentic systems
+                in a consistent and scalable way.
+              </p>
+            </article>
+          </div>
+          <div class="sm-12 md-4 col">
+            <article class="paper info-card">
+              <h3>Guardrail</h3>
+              <p>
+                The lifecycle works only when requirements pass a clear and
+                shared quality gate.
+              </p>
+            </article>
+          </div>
+          <div class="sm-12 md-4 col">
+            <article class="paper info-card accent-card">
+              <h3>Focus</h3>
+              <p>
+                Reuse, orchestration, tool independence, and governed change.
+              </p>
+            </article>
+          </div>
+          <div class="sm-12 md-12 col">
+            <article class="paper info-card">
+              <h3>SDLC Extension</h3>
+              <p>
+                ADLC is designed as an extension of the SDLC. It preserves the
+                discipline of the software lifecycle while expanding it to cover
+                the specific needs of agentic systems, including governance,
+                orchestration, human-in-the-loop control, and continuous
+                operational improvement.
+              </p>
+            </article>
+          </div>
+          <div class="sm-12 md-12 col">
+            <article class="paper info-card">
+              <h3>Positioning</h3>
+              <p>
+                We affirm that agentic delivery must be governed end to end.
+                Security, runtime monitoring, and operational control are
+                necessary, but they are not sufficient on their own. ADLC
+                begins with requirements quality and extends through
+                orchestration, human checkpoints, traceability, and continuous
+                operational improvement.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section
+        id="principles"
+        class="container section-block"
+      >
+        <div class="section-heading">
+          <p class="section-tag">Principles</p>
+          <h2>Three simple rules to guide every decision</h2>
+        </div>
+
+        <div class="principles-grid">
+          <article class="paper principle-card">
+            <span class="principle-number">01</span>
+            <h3>Start from validated requirements</h3>
+            <p>
+              Every initiative starts from requirements that are verified,
+              understandable, and mature enough to reduce ambiguity and rework.
+            </p>
+          </article>
+
+          <article class="paper principle-card">
+            <span class="principle-number">02</span>
+            <h3>Ensure reuse and orchestration</h3>
+            <p>
+              Components, agents, and capabilities should be designed to be
+              reused, connected, and orchestrated over time.
+            </p>
+          </article>
+
+          <article class="paper principle-card">
+            <span class="principle-number">03</span>
+            <h3>Remain independent from tools</h3>
+            <p>
+              Tools help, but they should not dictate the architecture: process
+              and governance come before the tool.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="container section-block">
+        <article class="paper gate-banner">
+          <p class="section-tag">Stage 0</p>
+          <h2>Requirements Quality Gate</h2>
+          <p>
+            Before implementation, the customer must have a dedicated
+            requirements quality gate agent. It is fundamental for entering the
+            ADLC because it helps write requirements as clearly as possible, so
+            they become complete, coherent, traceable, and ready for execution.
+          </p>
+          <p>
+            Human presence is required here to confirm scope, intent, business
+            meaning, and approval before the lifecycle can start.
+          </p>
+        </article>
+      </section>
+
+      <section
+        id="lifecycle"
+        class="container section-block"
+      >
+        <div class="section-heading">
+          <p class="section-tag">ADLC Lifecycle</p>
+          <h2>From requirements to operations, in a continuous cycle</h2>
+        </div>
+
+        <div class="timeline">
+          <article id="step-0" class="paper stage-card">
+            <span class="stage-index">0</span>
+            <div>
+              <h3>Requirements Quality Gate</h3>
+              <p>
+                Entry into the ADLC starts only when a dedicated quality gate
+                agent has helped the customer shape requirements that are
+                validated, traceable, and clear enough to guide implementation,
+                testing, governance, and delivery without ambiguity.
+              </p>
+              <p class="human-loop-inline"><strong>Human in the loop:</strong> mandatory approval of requirements quality and intent.</p>
+            </div>
+          </article>
+          <article id="step-1" class="paper stage-card">
+            <span class="stage-index">1</span>
+            <div>
+              <h3>Implement</h3>
+              <p>
+                Turn approved requirements into concrete capabilities, services,
+                prompts, workflows, integrations, and reusable components.
+                This is the stage where intent becomes a real solution,
+                structured in a way that can be reviewed, tested, governed, and
+                evolved over time without losing architectural coherence.
+              </p>
+            </div>
+          </article>
+          <article id="step-2" class="paper stage-card">
+            <span class="stage-index">2</span>
+            <div>
+              <h3>Review</h3>
+              <p>
+                Review the solution for quality, consistency, security,
+                maintainability, and alignment with manifesto principles before
+                advancing toward validation.
+              </p>
+              <p class="human-loop-inline"><strong>Human in the loop:</strong> expert review, risk judgment, and decision to proceed.</p>
+            </div>
+          </article>
+          <article id="step-3" class="paper stage-card">
+            <span class="stage-index">3</span>
+            <div>
+              <h3>Test</h3>
+              <p>
+                Validate expected behavior, edge cases, failure modes,
+                reliability, and operational readiness through structured test
+                evidence and measurable acceptance criteria.
+              </p>
+            </div>
+          </article>
+          <article id="step-4" class="paper stage-card">
+            <span class="stage-index">4</span>
+            <div>
+              <h3>Deploy</h3>
+              <p>
+                Release in a controlled, observable, and repeatable way, with
+                rollback options, release notes, ownership, and deployment
+                evidence clearly defined.
+              </p>
+              <p class="human-loop-inline"><strong>Human in the loop:</strong> release authorization and accountability for go-live.</p>
+            </div>
+          </article>
+          <article id="step-5" class="paper stage-card">
+            <span class="stage-index">5</span>
+            <div>
+              <h3>Operate</h3>
+              <p>
+                Operate the solution using monitoring, alerts, runbooks,
+                support flows, and governance checkpoints that keep the system
+                reliable in real conditions.
+              </p>
+              <p class="human-loop-inline"><strong>Human in the loop:</strong> incident handling, escalation, and governance oversight in production.</p>
+            </div>
+          </article>
+          <article id="step-6" class="paper stage-card">
+            <span class="stage-index">6</span>
+            <div>
+              <h3>Improve</h3>
+              <p>
+                Improve continuously based on production feedback, incidents,
+                analytics, user insight, and delivery learnings that reveal what
+                should be refined next.
+              </p>
+            </div>
+          </article>
+          <article id="step-7" class="paper stage-card">
+            <span class="stage-index">7</span>
+            <div>
+              <h3>Orchestrate</h3>
+              <p>
+                Coordinate agents, flows, policies, and reusable capabilities in
+                a composable ecosystem that scales beyond isolated
+                implementations.
+              </p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section
+        id="operating-model"
+        class="container section-block"
+      >
+        <div class="section-heading">
+          <p class="section-tag">ADLC Operating Model</p>
+          <h2>What each phase must produce to be governable in practice</h2>
+        </div>
+
+        <div class="agents-grid">
+          <article class="paper summary-card">
+            <h3>Entry Conditions</h3>
+            <p>Validated requirements, explicit business intent, named ownership, and a passed quality gate before any build activity starts.</p>
+          </article>
+          <article class="paper summary-card">
+            <h3>Evidence Model</h3>
+            <p>Each phase must leave traceable outputs: decisions, test evidence, approvals, release notes, operational signals, and improvement actions.</p>
+          </article>
+        </div>
+
+        <div class="paper operating-table-wrap">
+          <table class="operating-table">
+            <thead>
+              <tr>
+                <th>Stage</th>
+                <th>Primary Output</th>
+                <th>Human Checkpoint</th>
+                <th>Evidence or Governance Need</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>0. Requirements Quality Gate</td>
+                <td>Clarified requirements, acceptance criteria, business intent, traceability links</td>
+                <td>Explicit approval that requirements are clear enough to enter the ADLC</td>
+                <td>Requirements must be complete, coherent, and ready for execution</td>
+              </tr>
+              <tr>
+                <td>1. Implement</td>
+                <td>Services, prompts, agents, workflows, integrations, reusable components</td>
+                <td>Not mandatory as a formal gate in this phase</td>
+                <td>Architecture remains reviewable, testable, and ready for controlled evolution</td>
+              </tr>
+              <tr>
+                <td>2. Review</td>
+                <td>Review evidence, risk assessment, design corrections, readiness decision</td>
+                <td>Accountable judgment on quality, security, and fitness to proceed</td>
+                <td>Quality and risk must be evaluated before moving forward</td>
+              </tr>
+              <tr>
+                <td>3. Test</td>
+                <td>Test evidence, acceptance validation, reliability checks, known issues</td>
+                <td>Optional depending on context, but escalation remains available</td>
+                <td>Behavior must be measured, not assumed, before deployment</td>
+              </tr>
+              <tr>
+                <td>4. Deploy</td>
+                <td>Release notes, deployment evidence, rollback plan, ownership, go-live record</td>
+                <td>Formal release authorization and responsibility for production entry</td>
+                <td>Deployment must be controlled, repeatable, and auditable</td>
+              </tr>
+              <tr>
+                <td>5. Operate</td>
+                <td>Monitoring signals, incidents, runbooks, operational decisions, governance logs</td>
+                <td>Production oversight, escalation handling, and accountable intervention</td>
+                <td>Live operations must remain observable and governable</td>
+              </tr>
+              <tr>
+                <td>6. Improve</td>
+                <td>Improvement backlog, lessons learned, policy updates, refinement priorities</td>
+                <td>Not a mandatory gate, but accountable prioritization is expected</td>
+                <td>Live evidence must feed the next iteration instead of remaining isolated</td>
+              </tr>
+              <tr>
+                <td>7. Orchestrate</td>
+                <td>Shared flows, coordination rules, reusable capabilities, policy alignment</td>
+                <td>Human oversight depends on scope and impact of orchestration changes</td>
+                <td>Orchestration must scale the system coherently across teams and iterations</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section
+        id="practice"
+        class="container section-block"
+      >
+        <div class="section-heading">
+          <p class="section-tag">ADLC in Practice</p>
+          <h2>How the lifecycle behaves as a governed infinite loop</h2>
+        </div>
+
+        <div class="practice-grid">
+          <article class="paper practice-card">
+            <p>
+              In practice, ADLC is not a one-way pipeline. Teams enter through a
+              requirements quality gate, move through delivery, and then loop
+              back through operations, improvement, and orchestration to refine
+              the next iteration.
+            </p>
+            <ul class="practice-list">
+              <li>Requirements enter only after a dedicated quality gate and human approval.</li>
+              <li>Implementation, review, and test transform intent into a governed solution.</li>
+              <li>Deploy and operate create live evidence, not just release output.</li>
+              <li>Improve and orchestrate feed the next cycle with learning, reuse, and coordination.</li>
+            </ul>
+          </article>
+
+          <article class="paper loop-card">
+            <div
+              class="practice-flow"
+              aria-label="ADLC infinite loop diagram"
+            ></div>
+            <div class="loop-legend" aria-label="Diagram legend">
+              <span class="loop-human-badge loop-human-badge-legend" aria-hidden="true">
+                <span class="loop-human-icon"></span>
+              </span>
+              <span>Human in the loop checkpoint</span>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section
+        id="guardrails"
+        class="container section-block"
+      >
+        <div class="section-heading">
+          <p class="section-tag">Governance Guardrails</p>
+          <h2>Controls that are mandatory to enter and govern the ADLC</h2>
+        </div>
+
+        <div class="agents-grid">
+          <article class="paper agent-card">
+            <span class="agent-label">Governance</span>
+            <h3>Human in the Loop</h3>
+            <p>Human oversight is a mandatory control layer in the ADLC, especially when approving requirements, validating quality, authorizing releases, and governing production behavior.</p>
+            <p>Agents accelerate and structure the work, but accountable human decisions remain explicit at the critical checkpoints.</p>
+          </article>
+
+          <article class="paper agent-card">
+            <span class="agent-label">Entry Control</span>
+            <h3>Requirements Quality Gate</h3>
+            <p>The ADLC cannot start without a quality gate that ensures requirements are clear, complete, traceable, and meaningful from a business perspective.</p>
+            <p>This gate is fundamental because it determines whether implementation should begin at all.</p>
+          </article>
+        </div>
+      </section>
+
+      <section
+        id="agents"
+        class="container section-block"
+      >
+        <div class="section-heading">
+          <p class="section-tag">Shared Agents</p>
+          <h2>Reusable capabilities that support the full ADLC</h2>
+        </div>
+
+        <div class="agents-grid">
+          <article class="paper agent-card">
+            <span class="agent-label">Knowledge Base</span>
+            <h3>Documentation Agent</h3>
+            <p>Creates and updates documentation directly in the official doc base, such as Confluence and similar platforms.</p>
+            <p>Owns ADRs, runbooks, onboarding pages, architecture notes, FAQs, and process documentation tied to real delivery events.</p>
+          </article>
+          <article class="paper agent-card">
+            <span class="agent-label">Delivery Flow</span>
+            <h3>PR Governance Agent</h3>
+            <p>Supports pull requests end-to-end by summarizing changes, checking policy, highlighting risk, and proposing reviewers.</p>
+            <p>Helps keep reviews consistent, traceable, and aligned with shared engineering guardrails.</p>
+          </article>
+
+          <article class="paper agent-card">
+            <span class="agent-label">Communication</span>
+            <h3>Release Notes Agent</h3>
+            <p>Generates release notes from merged work, grouping features, fixes, breaking changes, migrations, and operational notes.</p>
+            <p>Produces both technical and business-friendly summaries for internal and external communication.</p>
+          </article>
+
+          <article class="paper agent-card">
+            <span class="agent-label">Alignment</span>
+            <h3>Knowledge Sync Agent</h3>
+            <p>Detects gaps between code, tickets, releases, and documentation, then proposes or performs the missing updates.</p>
+            <p>Keeps the delivery reality and the knowledge base aligned over time.</p>
+          </article>
+
+          <article class="paper agent-card">
+            <span class="agent-label">Governance</span>
+            <h3>Compliance and Traceability Agent</h3>
+            <p>Links requirements, implementations, tests, documentation, and releases into an auditable chain of evidence.</p>
+            <p>Supports quality gates, reviews, and governance checkpoints across the lifecycle.</p>
+          </article>
+
+          <article class="paper agent-card">
+            <span class="agent-label">Operations</span>
+            <h3>Operational Readiness Agent</h3>
+            <p>Checks that each release is backed by runbooks, ownership, rollback guidance, alerts, and operational readiness evidence.</p>
+            <p>Helps teams move from deployment to stable operation with fewer blind spots.</p>
+          </article>
+        </div>
+      </section>
+
+      <section
+        id="skills"
+        class="container section-block"
+      >
+        <div class="section-heading">
+          <p class="section-tag">Shared Skills</p>
+          <h2>Company-specific know-how that agents can reuse consistently</h2>
+        </div>
+
+        <div class="agents-grid">
+          <article class="paper agent-card">
+            <span class="agent-label">Principle</span>
+            <h3>Adapted to the enterprise</h3>
+            <p>Shared skills should be selected from consolidated frameworks where useful, but adapted to the company's architecture, policies, vocabulary, risk model, and delivery culture.</p>
+            <p>They turn reusable know-how into governed execution patterns that agents and teams can apply consistently.</p>
+          </article>
+          <article class="paper agent-card">
+            <span class="agent-label">Documentation</span>
+            <h3>Documentation Skill</h3>
+            <p>Defines how documentation is written, structured, linked, and published in the official knowledge base.</p>
+            <p>Examples include ADR format, runbook structure, Confluence page templates, onboarding pages, and evidence links.</p>
+          </article>
+          <article class="paper agent-card">
+            <span class="agent-label">Delivery</span>
+            <h3>Release Notes Skill</h3>
+            <p>Defines how release notes are generated, grouped, reviewed, and translated for technical, business, and operational audiences.</p>
+            <p>It can include rules for breaking changes, migrations, known issues, rollback notes, and customer-facing summaries.</p>
+          </article>
+          <article class="paper agent-card">
+            <span class="agent-label">Architecture</span>
+            <h3>Architecture Skill</h3>
+            <p>Captures the enterprise's architectural principles, decision criteria, reference patterns, and review expectations.</p>
+            <p>It helps agents reason with local standards instead of generic architecture advice.</p>
+          </article>
+          <article class="paper agent-card">
+            <span class="agent-label">Infrastructure</span>
+            <h3>Infrastructure Skill</h3>
+            <p>Encodes platform conventions for environments, deployment, observability, rollback, naming, ownership, and operational readiness.</p>
+            <p>It should reflect the real infrastructure model used by the company, not an abstract cloud checklist.</p>
+          </article>
+          <article class="paper agent-card">
+            <span class="agent-label">Security</span>
+            <h3>CISO Security Skill</h3>
+            <p>Security skills should be defined or validated by the CISO organization and aligned with enterprise policies.</p>
+            <p>Examples include data handling, identity, secrets, access control, threat modeling, secure prompt/tool usage, and audit evidence.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="container section-block">
+        <div class="row flex-spaces">
+          <div class="sm-12 md-6 col">
+            <article class="paper summary-card">
+              <p class="section-tag">Lifecycle Principles</p>
+              <ul>
+                <li>Tool-agnostic lifecycle</li>
+                <li>Continuous improvement</li>
+                <li>Governed execution</li>
+              </ul>
+            </article>
+          </div>
+          <div class="sm-12 md-6 col">
+            <article class="paper summary-card warm-card">
+              <p class="section-tag">Outcome</p>
+              <p>
+                A framework that is simple to explain, readable even for people
+                outside the technical detail, yet structured enough to guide
+                delivery and governance.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer container">
+      <p>ADLC Manifesto + Lifecycle</p>
+      <p>April 2026</p>
+      <p>
+        <a
+          class="obfuscated-email"
+          data-user="info"
+          data-domain="adlcmanifesto"
+          data-tld="org"
+          href="#"
+          aria-label="Email contact"
+        >
+          Contact
+        </a>
+      </p>
+    </footer>
+
+    <div class="paper-band paper-band-bottom"></div>
+    <script type="module" src="./practice-flow.js"></script>
+    <script src="./email.js"></script>
+  </body>
+</html>

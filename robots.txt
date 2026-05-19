@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://adlcmanifesto.org/sitemap.xml

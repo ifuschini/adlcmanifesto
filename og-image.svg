@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">ADLC Manifesto</title>
+  <desc id="desc">Open Graph image for the ADLC Manifesto website.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#f8f1e2" />
+      <stop offset="100%" stop-color="#f5ecd7" />
+    </linearGradient>
+    <radialGradient id="glowA" cx="0.12" cy="0.15" r="0.52">
+      <stop offset="0%" stop-color="#efcf72" stop-opacity="0.32" />
+      <stop offset="100%" stop-color="#efcf72" stop-opacity="0" />
+    </radialGradient>
+    <radialGradient id="glowB" cx="0.9" cy="0.92" r="0.52">
+      <stop offset="0%" stop-color="#9caf88" stop-opacity="0.22" />
+      <stop offset="100%" stop-color="#9caf88" stop-opacity="0" />
+    </radialGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="10" stdDeviation="18" flood-color="#1f1a17" flood-opacity="0.12"/>
+    </filter>
+    <style>
+      .elite { font-family: Georgia, serif; }
+      .sans { font-family: Arial, Helvetica, sans-serif; }
+    </style>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#bg)" />
+  <rect width="1200" height="630" fill="url(#glowA)" />
+  <rect width="1200" height="630" fill="url(#glowB)" />
+
+  <rect x="54" y="42" width="1092" height="24" fill="#201a17"/>
+  <rect x="54" y="42" width="1092" height="12" fill="#d46a3f" opacity="0.9"/>
+
+  <g filter="url(#shadow)">
+    <rect x="96" y="112" width="1008" height="406" rx="28" fill="#fffdf6" stroke="#201a17" stroke-opacity="0.16"/>
+  </g>
+
+  <text x="144" y="186" font-size="22" fill="#d46a3f" class="elite" letter-spacing="1.5">Agentic Development</text>
+  <text x="144" y="272" font-size="74" fill="#1f1a17" class="elite">ADLC Manifesto</text>
+  <text x="144" y="340" font-size="32" fill="#64584d" class="sans">
+    Governed, tool-agnostic lifecycle for agentic systems
+  </text>
+
+  <g transform="translate(144 392)">
+    <rect x="0" y="0" width="204" height="58" rx="18" fill="#fff8ec" stroke="#201a17" stroke-width="2"/>
+    <text x="102" y="36" text-anchor="middle" font-size="24" fill="#1f1a17" class="elite">Quality Gate</text>
+
+    <rect x="250" y="0" width="170" height="58" rx="18" fill="#fff8ec" stroke="#201a17" stroke-width="2"/>
+    <text x="335" y="36" text-anchor="middle" font-size="24" fill="#1f1a17" class="elite">Review</text>
+
+    <rect x="462" y="0" width="158" height="58" rx="18" fill="#fff8ec" stroke="#201a17" stroke-width="2"/>
+    <text x="541" y="36" text-anchor="middle" font-size="24" fill="#1f1a17" class="elite">Deploy</text>
+
+    <rect x="662" y="0" width="198" height="58" rx="18" fill="#fff8ec" stroke="#201a17" stroke-width="2"/>
+    <text x="761" y="36" text-anchor="middle" font-size="24" fill="#1f1a17" class="elite">Orchestrate</text>
+
+    <path d="M205 29H245" fill="none" stroke="#d46a3f" stroke-width="3" stroke-dasharray="8 8"/>
+    <path d="M421 29H457" fill="none" stroke="#d46a3f" stroke-width="3" stroke-dasharray="8 8"/>
+    <path d="M621 29H657" fill="none" stroke="#d46a3f" stroke-width="3" stroke-dasharray="8 8"/>
+  </g>
+
+  <text x="144" y="564" font-size="21" fill="#64584d" class="sans">
+    Requirements quality, human checkpoints, traceability, orchestration, and continuous improvement.
+  </text>
+</svg>
