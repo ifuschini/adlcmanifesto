@@ -28,6 +28,7 @@ Security, runtime monitoring, and operational control are necessary, but they ar
 
 ADLC starts from requirements quality and extends through orchestration, human checkpoints, traceability, shared enterprise skills, and continuous operational improvement.
 
-## Website
+## Links
 
-https://adlcmanifesto.org/
+- Website: https://adlcmanifesto.org/
+- GitHub repository: https://github.com/ifuschini/adlcmanifesto
