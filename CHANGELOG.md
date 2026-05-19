@@ -2,6 +2,8 @@
 
 ## V1.1 - May 2026
 
+- Converted the repository from all-rights-reserved terms to the Apache License, Version 2.0.
+- Added open source project files for contribution guidelines, code of conduct, security reporting, notices, pull requests, and issues.
 - Added the ADLC in Practice section to make the manifesto more concrete.
 - Introduced a React Flow lifecycle diagram with animated double-loop flow.
 - Made lifecycle nodes clickable so each step links to its explanation.
