@@ -7,6 +7,13 @@
 
 The Agentic Delivery Lifecycle Manifesto.
 
+## Languages
+
+- English: [README.md](README.md)
+- Italiano: [README.it.md](README.it.md)
+- Español: [README.es.md](README.es.md)
+- Français: [README.fr.md](README.fr.md)
+
 ## Overview
 
 ADLC extends SDLC for agentic systems by adding requirements quality gates, human-in-the-loop checkpoints, orchestration, shared agents, shared skills, and continuous operational improvement.
@@ -42,6 +49,8 @@ public issue.
 - `manifesto.md`: the core manifesto.
 - `lifecycle.md`: the ADLC lifecycle stages.
 - `shared-skills.md`: reusable enterprise-specific skills for agents and teams.
+- `README.it.md`, `README.es.md`, `README.fr.md`: localized repository
+  overviews.
 - `CHANGELOG.md`: version history.
 - `docs/release-process.md`: release and tag checklist.
 - `CONTRIBUTING.md`: contribution workflow and local checks.

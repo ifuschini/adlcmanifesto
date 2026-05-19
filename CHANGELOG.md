@@ -7,6 +7,7 @@
 - Added Makefile targets for local preview, link checks, and release checks.
 - Added repository attributes for text normalization and binary assets.
 - Added README badges for CI, license, version, and website status.
+- Added localized repository README files for Italian, Spanish, and French.
 
 ## V1.1 - May 2026
 
