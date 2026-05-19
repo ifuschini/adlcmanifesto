@@ -2,12 +2,16 @@
 set -euo pipefail
 
 SCRIPT_DIR="${0:A:h}"
-SITE_DIR="${SCRIPT_DIR:h}"
-PROJECT_DIR="${SITE_DIR:h}"
-ENV_FILE="${PROJECT_DIR}/.env"
+REPO_DIR="${SCRIPT_DIR:h}"
+SITE_DIR="${REPO_DIR}/site"
+ENV_FILE="${REPO_DIR}/.env"
 
 if [[ ! -f "$ENV_FILE" ]]; then
-  echo "Missing .env at ${ENV_FILE}" >&2
+  ENV_FILE="${REPO_DIR:h}/.env"
+fi
+
+if [[ ! -f "$ENV_FILE" ]]; then
+  echo "Missing .env. Create it in ${REPO_DIR}/.env or ${REPO_DIR:h}/.env" >&2
   exit 1
 fi
 
@@ -25,13 +29,10 @@ cd "$SITE_DIR"
 echo "Publishing site to ${ADLC_FTPS_HOST}:${ADLC_WEB_DIR}"
 
 find . -type f \
-  ! -path './.git/*' \
-  ! -path './scripts/*' \
   ! -name '.DS_Store' \
   ! -name '.gitignore' \
   ! -name '.env' \
   ! -name '.env.*' \
-  ! -name 'Makefile' \
   | sort \
   | while IFS= read -r file; do
     remote_path="${ADLC_WEB_DIR%/}/${file#./}"
