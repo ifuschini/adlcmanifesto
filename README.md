@@ -53,3 +53,12 @@ Current version: `V1.1`
 
 - Published: April 2026
 - Last modified: May 2026
+
+## Release Tags
+
+Every public manifesto version must be marked with an annotated Git tag.
+
+Use the lowercase `vX.Y` format for repository tags, matching the manifesto
+version declared as `VX.Y` in `manifesto.md` and `CHANGELOG.md`.
+
+For example, `V1.1` in the manifesto is tagged as `v1.1` in Git.

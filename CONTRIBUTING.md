@@ -40,6 +40,21 @@ node --check site/practice-flow.js
 Do not commit `.env`, credentials, generated system files, or local editor
 artifacts.
 
+## Release Tags
+
+Every new public version of the manifesto must be marked with an annotated Git
+tag after the version commit is merged.
+
+Use the lowercase `vX.Y` format for tags, matching the manifesto version written
+as `VX.Y` in `manifesto.md` and `CHANGELOG.md`.
+
+Example:
+
+```sh
+git tag -a v1.1 -m "ADLC Manifesto v1.1"
+git push origin v1.1
+```
+
 ## License of Contributions
 
 Unless you explicitly state otherwise, any contribution intentionally
