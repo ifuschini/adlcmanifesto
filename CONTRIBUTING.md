@@ -32,13 +32,13 @@ The website is static and has no build step. Before opening a pull request,
 run the lightweight checks below when you have the required tools installed:
 
 ```sh
-zsh -n scripts/publish.sh
-node --check site/email.js
-node --check site/practice-flow.js
+make check
 ```
 
 Do not commit `.env`, credentials, generated system files, or local editor
 artifacts.
+
+See `site/README.md` for website editing guidelines.
 
 ## Release Tags
 
@@ -54,6 +54,8 @@ Example:
 git tag -a v1.1 -m "ADLC Manifesto v1.1"
 git push origin v1.1
 ```
+
+See `docs/release-process.md` for the full release checklist.
 
 ## License of Contributions
 

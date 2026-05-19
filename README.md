@@ -2,9 +2,16 @@
 
 The Agentic Delivery Lifecycle Manifesto.
 
-Website: https://adlcmanifesto.org/
+## Overview
 
 ADLC extends SDLC for agentic systems by adding requirements quality gates, human-in-the-loop checkpoints, orchestration, shared agents, shared skills, and continuous operational improvement.
+
+## Website
+
+Public website: https://adlcmanifesto.org/
+
+The website source lives in `site/`. See `site/README.md` for editing and
+publishing notes.
 
 ## Open Source
 
@@ -31,11 +38,20 @@ public issue.
 - `lifecycle.md`: the ADLC lifecycle stages.
 - `shared-skills.md`: reusable enterprise-specific skills for agents and teams.
 - `CHANGELOG.md`: version history.
+- `docs/release-process.md`: release and tag checklist.
 - `CONTRIBUTING.md`: contribution workflow and local checks.
 - `CODE_OF_CONDUCT.md`: participation expectations.
 - `SECURITY.md`: responsible disclosure policy.
 - `site/`: the static multilingual website published to `adlcmanifesto.org`.
 - `scripts/publish.sh`: FTPS publish script for the static website.
+
+## Local Checks
+
+Run the lightweight validation suite with:
+
+```sh
+make check
+```
 
 ## Publish
 
@@ -62,3 +78,5 @@ Use the lowercase `vX.Y` format for repository tags, matching the manifesto
 version declared as `VX.Y` in `manifesto.md` and `CHANGELOG.md`.
 
 For example, `V1.1` in the manifesto is tagged as `v1.1` in Git.
+
+See `docs/release-process.md` for the release checklist.

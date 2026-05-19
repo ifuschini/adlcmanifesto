@@ -1,3 +1,4 @@
+/* Theme tokens */
 :root {
   --paper-bg: #f5ecd7;
   --paper-panel: #fffdf6;
@@ -10,6 +11,7 @@
   --gold: #efcf72;
 }
 
+/* Base */
 * {
   box-sizing: border-box;
 }
@@ -44,6 +46,7 @@ button {
   font-size: 1rem;
 }
 
+/* Page accents */
 .paper-band {
   height: 18px;
   width: 100%;
@@ -61,6 +64,7 @@ button {
   margin-top: 3rem;
 }
 
+/* Header and navigation */
 .site-header {
   padding-top: 1.5rem;
 }
@@ -153,6 +157,7 @@ button {
   white-space: nowrap;
 }
 
+/* Hero */
 .hero {
   padding-top: 2rem;
 }
@@ -214,6 +219,7 @@ button {
   background: #fff7ea;
 }
 
+/* Intro note */
 .note-card {
   padding: 1.6rem;
   transform: rotate(-1.2deg);
@@ -236,6 +242,7 @@ button {
   line-height: 1.55;
 }
 
+/* Shared sections and cards */
 .section-block {
   margin-top: 3rem;
 }
@@ -307,6 +314,7 @@ button {
     var(--paper-panel);
 }
 
+/* Content grids */
 .principles-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -332,6 +340,7 @@ button {
   background: var(--paper-panel);
 }
 
+/* Operating model table */
 .operating-table {
   width: 100%;
   border-collapse: collapse;
@@ -372,6 +381,7 @@ button {
   margin-top: 0.55rem;
 }
 
+/* Lifecycle flow */
 .loop-card {
   position: relative;
   display: flex;
@@ -562,6 +572,7 @@ button {
   line-height: 1.2;
 }
 
+/* Manifesto, agents, and lifecycle cards */
 .principle-card {
   position: relative;
   padding: 1.6rem;
@@ -639,6 +650,7 @@ button {
     var(--paper-panel);
 }
 
+/* Timeline */
 .timeline {
   position: relative;
   display: grid;
@@ -687,6 +699,7 @@ button {
     var(--paper-panel);
 }
 
+/* Footer */
 .site-footer {
   display: flex;
   justify-content: space-between;
@@ -696,6 +709,7 @@ button {
   font-size: 0.95rem;
 }
 
+/* Responsive layout */
 @media (max-width: 900px) {
   .practice-grid {
     grid-template-columns: 1fr;
