@@ -35,4 +35,7 @@
     <xhtml:link rel="alternate" hreflang="it" href="https://adlcmanifesto.org/it/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://adlcmanifesto.org/" />
   </url>
+  <url>
+    <loc>https://adlcmanifesto.org/changelog/</loc>
+  </url>
 </urlset>
