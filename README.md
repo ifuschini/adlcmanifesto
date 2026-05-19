@@ -11,7 +11,18 @@ The Agentic Delivery Lifecycle Manifesto.
 
 ## Overview
 
-ADLC extends SDLC for agentic systems by adding requirements quality gates, human-in-the-loop checkpoints, orchestration, shared agents, shared skills, and continuous operational improvement.
+ADLC, the Agentic Delivery Lifecycle, is a governance and delivery framework for
+building agentic systems in enterprise environments with the same discipline
+expected from modern software delivery.
+
+It does not replace the SDLC. It extends it with the practices that enterprise
+agentic systems need to be reliable, auditable, and maintainable: validated
+requirements before implementation, explicit human-in-the-loop checkpoints,
+reusable agents and skills, orchestration across tools and teams, traceability,
+release governance, and continuous operational improvement.
+
+The manifesto is designed for organizations that need to move from isolated
+agent experiments to governed, reusable, and scalable agentic capabilities.
 
 ## Website
 
@@ -38,6 +49,15 @@ Contributions are welcome. Please read `CONTRIBUTING.md` and
 
 For security-sensitive reports, follow `SECURITY.md` instead of opening a
 public issue.
+
+## Contact
+
+For questions, proposals, or collaboration requests, contact:
+
+info [at] adlcmanifesto [dot] org
+
+For security-sensitive reports, follow `SECURITY.md` instead of sending details
+in a public issue.
 
 ## Repository Structure
 
