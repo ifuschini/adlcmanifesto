@@ -41,6 +41,28 @@ make check
 
 This validates the publish script and JavaScript files.
 
+To run only the local website link and anchor checker:
+
+```sh
+make link-check
+```
+
+## Local Preview
+
+From the repository root, run:
+
+```sh
+make serve
+```
+
+Then open `http://localhost:8000/`.
+
+Use another port when needed:
+
+```sh
+make serve PORT=8001
+```
+
 ## Publishing
 
 Publishing is handled from the repository root:

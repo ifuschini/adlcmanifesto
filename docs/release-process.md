@@ -18,6 +18,7 @@ Run:
 
 ```sh
 make check
+make release-check
 ```
 
 Review the changed website pages before publishing.
@@ -30,6 +31,7 @@ Use an annotated Git tag for every public manifesto version.
 git add .
 git commit -m "Release ADLC Manifesto vX.Y"
 git tag -a vX.Y -m "ADLC Manifesto vX.Y"
+make release-check
 git push origin main
 git push origin vX.Y
 make publish

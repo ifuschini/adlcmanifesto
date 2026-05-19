@@ -40,6 +40,15 @@ artifacts.
 
 See `site/README.md` for website editing guidelines.
 
+To preview the website locally, run:
+
+```sh
+make serve
+```
+
+Use `make release-check` only for release/version changes after creating the
+release tag.
+
 ## Release Tags
 
 Every new public version of the manifesto must be marked with an annotated Git

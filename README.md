@@ -1,5 +1,10 @@
 # ADLC Manifesto
 
+[![Check](https://github.com/ifuschini/adlcmanifesto/actions/workflows/check.yml/badge.svg)](https://github.com/ifuschini/adlcmanifesto/actions/workflows/check.yml)
+[![License: Apache-2.0](https://img.shields.io/badge/License-Apache--2.0-blue.svg)](LICENSE)
+[![Version](https://img.shields.io/github/v/tag/ifuschini/adlcmanifesto?label=version)](https://github.com/ifuschini/adlcmanifesto/tags)
+[![Website](https://img.shields.io/website?url=https%3A%2F%2Fadlcmanifesto.org&label=website)](https://adlcmanifesto.org/)
+
 The Agentic Delivery Lifecycle Manifesto.
 
 ## Overview
@@ -52,6 +57,20 @@ Run the lightweight validation suite with:
 ```sh
 make check
 ```
+
+Other maintenance targets:
+
+```sh
+make link-check
+make serve
+make release-check
+```
+
+`make serve` starts a local static preview at `http://localhost:8000/`.
+Use `make serve PORT=8001` if that port is already in use.
+
+`make release-check` is intended for release commits after the version tag has
+been created.
 
 ## Publish
 

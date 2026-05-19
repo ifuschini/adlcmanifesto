@@ -1,5 +1,13 @@
 # Changelog
 
+## Unreleased
+
+- Added GitHub Actions CI for static project checks.
+- Added local link and anchor validation for the static website.
+- Added Makefile targets for local preview, link checks, and release checks.
+- Added repository attributes for text normalization and binary assets.
+- Added README badges for CI, license, version, and website status.
+
 ## V1.1 - May 2026
 
 - Converted the repository from all-rights-reserved terms to the Apache License, Version 2.0.
