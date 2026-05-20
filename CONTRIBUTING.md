@@ -15,7 +15,7 @@ static website source.
   proprietary material.
 - Preserve multilingual consistency when changing shared website structure
   or navigation.
-- Follow the Code of Conduct in `CODE_OF_CONDUCT.md`.
+- Follow the Code of Conduct in [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md).
 
 ## How to Contribute
 
@@ -38,7 +38,7 @@ make check
 Do not commit `.env`, credentials, generated system files, or local editor
 artifacts.
 
-See `site/README.md` for website editing guidelines.
+See [site/README.md](site/README.md) for website editing guidelines.
 
 To preview the website locally, run:
 
@@ -55,7 +55,7 @@ Every new public version of the manifesto must be marked with an annotated Git
 tag after the version commit is merged.
 
 Use the lowercase `vX.Y` format for tags, matching the manifesto version written
-as `VX.Y` in `manifesto.md` and `CHANGELOG.md`.
+as `VX.Y` in [manifesto.md](manifesto.md) and [CHANGELOG.md](CHANGELOG.md).
 
 Example:
 
@@ -64,7 +64,8 @@ git tag -a v1.1 -m "ADLC Manifesto v1.1"
 git push origin v1.1
 ```
 
-See `docs/release-process.md` for the full release checklist.
+See [docs/release-process.md](docs/release-process.md) for the full release
+checklist.
 
 ## License of Contributions
 

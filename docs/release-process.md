@@ -5,9 +5,9 @@ Manifesto.
 
 ## Version Update
 
-1. Update the version in `manifesto.md`.
-2. Update the current version and dates in `README.md`.
-3. Add a new section to `CHANGELOG.md`.
+1. Update the version in [manifesto.md](../manifesto.md).
+2. Update the current version and dates in [README.md](../README.md).
+3. Add a new section to [CHANGELOG.md](../CHANGELOG.md).
 4. Update the public changelog page in `site/changelog/index.html` when the
    website should show the release.
 5. Update any visible version badges or release dates in the website.

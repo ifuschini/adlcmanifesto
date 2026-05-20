@@ -28,8 +28,8 @@ agent experiments to governed, reusable, and scalable agentic capabilities.
 
 Public website: https://adlcmanifesto.org/
 
-The website source lives in `site/`. See `site/README.md` for editing and
-publishing notes.
+The website source lives in `site/`. See [site/README.md](site/README.md) for
+editing and publishing notes.
 
 ## Open Source
 
@@ -44,11 +44,12 @@ trademark notes.
 
 ## Contributing
 
-Contributions are welcome. Please read `CONTRIBUTING.md` and
-`CODE_OF_CONDUCT.md` before opening issues or pull requests.
+Contributions are welcome. Please read [CONTRIBUTING.md](CONTRIBUTING.md) and
+[CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md) before opening issues or pull
+requests.
 
-For security-sensitive reports, follow `SECURITY.md` instead of opening a
-public issue.
+For security-sensitive reports, follow [SECURITY.md](SECURITY.md) instead of
+opening a public issue.
 
 ## Contact
 
@@ -56,21 +57,22 @@ For questions, proposals, or collaboration requests, contact:
 
 info [at] adlcmanifesto [dot] org
 
-For security-sensitive reports, follow `SECURITY.md` instead of sending details
-in a public issue.
+For security-sensitive reports, follow [SECURITY.md](SECURITY.md) instead of
+sending details in a public issue.
 
 ## Repository Structure
 
-- `manifesto.md`: the core manifesto.
-- `lifecycle.md`: the ADLC lifecycle stages.
-- `shared-skills.md`: reusable enterprise-specific skills for agents and teams.
-- `README.it.md`, `README.es.md`, `README.fr.md`: localized repository
-  overviews.
-- `CHANGELOG.md`: version history.
-- `docs/release-process.md`: release and tag checklist.
-- `CONTRIBUTING.md`: contribution workflow and local checks.
-- `CODE_OF_CONDUCT.md`: participation expectations.
-- `SECURITY.md`: responsible disclosure policy.
+- [manifesto.md](manifesto.md): the core manifesto.
+- [lifecycle.md](lifecycle.md): the ADLC lifecycle stages.
+- [shared-skills.md](shared-skills.md): reusable enterprise-specific skills for
+  agents and teams.
+- [README.it.md](README.it.md), [README.es.md](README.es.md),
+  [README.fr.md](README.fr.md): localized repository overviews.
+- [CHANGELOG.md](CHANGELOG.md): version history.
+- [docs/release-process.md](docs/release-process.md): release and tag checklist.
+- [CONTRIBUTING.md](CONTRIBUTING.md): contribution workflow and local checks.
+- [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md): participation expectations.
+- [SECURITY.md](SECURITY.md): responsible disclosure policy.
 - `site/`: the static multilingual website published to `adlcmanifesto.org`.
 - `scripts/publish.sh`: FTPS publish script for the static website.
 
@@ -118,8 +120,10 @@ Current version: `V1.1`
 Every public manifesto version must be marked with an annotated Git tag.
 
 Use the lowercase `vX.Y` format for repository tags, matching the manifesto
-version declared as `VX.Y` in `manifesto.md` and `CHANGELOG.md`.
+version declared as `VX.Y` in [manifesto.md](manifesto.md) and
+[CHANGELOG.md](CHANGELOG.md).
 
 For example, `V1.1` in the manifesto is tagged as `v1.1` in Git.
 
-See `docs/release-process.md` for the release checklist.
+See [docs/release-process.md](docs/release-process.md) for the release
+checklist.
