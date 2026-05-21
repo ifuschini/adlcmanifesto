@@ -1,6 +1,6 @@
 # ADLC Lifecycle
 
-Version: V1.1
+Version: V1.2
 
 The ADLC lifecycle is a governed loop for agentic delivery. It extends SDLC by adding explicit checkpoints for requirements quality, human control, orchestration, and continuous operational improvement.
 
@@ -30,15 +30,21 @@ Testing evaluates deterministic behavior, non-deterministic behavior, safety, ed
 
 For agentic systems, testing must consider behavior, not only code.
 
+Testing also covers behavioral regression caused by changes to prompts, RAG content, shared skills, model configuration, tools, and orchestration rules.
+
 ## Step 4: Deploy
 
 Deployment moves validated changes into controlled environments with release evidence, rollback guidance, ownership, and traceability.
+
+Release evidence must identify code changes, prompt changes, RAG or documentation changes, tool changes, model configuration changes, and orchestration changes.
 
 Human-in-the-loop is required here.
 
 ## Step 5: Operate
 
 Operation governs production behavior, monitoring, incidents, runbooks, escalation, and runtime evidence.
+
+Operations must monitor not only technical health, but also behavioral drift, unexpected answers, outdated knowledge usage, retrieval failures, and regressions introduced by knowledge updates.
 
 Human-in-the-loop is required here.
 
@@ -51,6 +57,8 @@ Improvement turns operational evidence, incidents, feedback, reviews, and lesson
 Orchestration is a cross-cutting layer, not a simple sequential step.
 
 It coordinates agents, skills, tools, policies, documentation, release governance, traceability, and feedback across the lifecycle.
+
+It must preserve traceability from requirement to knowledge source, agent behavior, test evidence, and release.
 
 ## Double Loop
 

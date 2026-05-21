@@ -60,8 +60,8 @@ as `VX.Y` in [manifesto.md](manifesto.md) and [CHANGELOG.md](CHANGELOG.md).
 Example:
 
 ```sh
-git tag -a v1.1 -m "ADLC Manifesto v1.1"
-git push origin v1.1
+git tag -a vX.Y -m "ADLC Manifesto vX.Y"
+git push origin vX.Y
 ```
 
 See [docs/release-process.md](docs/release-process.md) for the full release

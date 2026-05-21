@@ -44,8 +44,8 @@
         "description": "Framework gouverné et indépendant des outils pour construire des systèmes agentiques.",
         "inLanguage": "fr",
         "datePublished": "2026-04-13",
-        "dateModified": "2026-05-19T16:17:00+02:00",
-        "version": "1.1",
+        "dateModified": "2026-05-21T11:32:27+02:00",
+        "version": "1.2",
         "about": ["Développement Agentique", "Manifeste ADLC", "Cycle de Vie ADLC", "Porte de qualité des exigences"]
       }
     </script>
@@ -63,7 +63,7 @@
         <div class="nav-brand">
           <p class="site-kicker">Développement Agentique</p>
           <p class="brand-mark">ADLC</p>
-          <a class="site-version" href="/changelog/">V1.1</a>
+          <a class="site-version" href="/changelog/">V1.2</a>
         </div>
         <ul class="inline nav-links">
           <li><a href="#manifesto">Manifeste</a></li>
@@ -102,6 +102,8 @@
               <p class="section-tag">Message clé</p>
               <blockquote>Le développement d’agents doit être gouverné, indépendant des outils et piloté par le cycle de vie.</blockquote>
               <p>Aucune implémentation ne commence sans avoir validé une <strong>porte de qualité des exigences</strong>.</p>
+              <p><strong>Dans les systèmes agentiques, la connaissance est un comportement.</strong></p>
+              <p>Modifier la couche de connaissance peut changer la manière dont l'agent agit, décide, explique et escalade.</p>
               <p><strong>Human in the loop est obligatoire</strong> là où les exigences sont approuvées, la qualité est revue, les releases sont autorisées et l'exploitation en production est gouvernée.</p>
             </aside>
           </div>
@@ -168,9 +170,9 @@
           <article id="step-0" class="paper stage-card"><span class="stage-index">0</span><div><h3>Porte de qualité des exigences</h3><p>L’entrée dans l’ADLC ne commence que lorsqu’un agent dédié de quality gate a aidé le client à formuler des exigences validées, traçables et suffisamment claires pour guider l’implémentation, les tests, la gouvernance et la delivery sans ambiguïté.</p><p class="human-loop-inline"><strong>Human in the loop :</strong> approbation obligatoire de la qualité et de l'intention des exigences.</p></div></article>
           <article id="step-1" class="paper stage-card"><span class="stage-index">1</span><div><h3>Implémenter</h3><p>Transformer les exigences approuvées en capacités concrètes, services, prompts, flux, intégrations et composants réutilisables. C’est l’étape où l’intention devient une solution réelle, structurée de façon à pouvoir être revue, testée, gouvernée et améliorée dans le temps sans perdre sa cohérence architecturale.</p></div></article>
           <article id="step-2" class="paper stage-card"><span class="stage-index">2</span><div><h3>Revoir</h3><p>Examiner la solution sous l’angle de la qualité, de la cohérence, de la sécurité, de la maintenabilité et de l’alignement avec les principes du manifeste avant la validation.</p><p class="human-loop-inline"><strong>Human in the loop :</strong> revue experte, jugement sur le risque et décision d'avancer.</p></div></article>
-          <article id="step-3" class="paper stage-card"><span class="stage-index">3</span><div><h3>Tester</h3><p>Valider le comportement attendu, les cas limites, les modes de défaillance, la fiabilité et la préparation opérationnelle grâce à des preuves de test structurées et à des critères d’acceptation mesurables.</p></div></article>
-          <article id="step-4" class="paper stage-card"><span class="stage-index">4</span><div><h3>Déployer</h3><p>Mettre en production de façon contrôlée, observable et répétable, avec rollback, release notes, ownership et preuves de déploiement clairement définis.</p><p class="human-loop-inline"><strong>Human in the loop :</strong> autorisation de release et responsabilité du go-live.</p></div></article>
-          <article id="step-5" class="paper stage-card"><span class="stage-index">5</span><div><h3>Opérer</h3><p>Faire fonctionner la solution avec monitoring, alertes, runbooks, flux de support et checkpoints de gouvernance qui maintiennent le système fiable en conditions réelles.</p><p class="human-loop-inline"><strong>Human in the loop :</strong> gestion des incidents, escalade et supervision de gouvernance en production.</p></div></article>
+          <article id="step-3" class="paper stage-card"><span class="stage-index">3</span><div><h3>Tester</h3><p>Valider le comportement attendu, les cas limites, les modes de défaillance, la fiabilité et la préparation opérationnelle grâce à des preuves de test structurées et à des critères d’acceptation mesurables.</p><p>Les tests couvrent aussi les régressions comportementales causées par des changements de prompts, de contenu RAG, de shared skills, de configuration du modèle, d'outils et de règles d'orchestration.</p></div></article>
+          <article id="step-4" class="paper stage-card"><span class="stage-index">4</span><div><h3>Déployer</h3><p>Mettre en production de façon contrôlée, observable et répétable, avec rollback, release notes, ownership et preuves de déploiement clairement définis.</p><p>Les preuves de release doivent identifier les changements de code, de prompts, de RAG ou de documentation, d'outils, de configuration du modèle et d'orchestration.</p><p class="human-loop-inline"><strong>Human in the loop :</strong> autorisation de release et responsabilité du go-live.</p></div></article>
+          <article id="step-5" class="paper stage-card"><span class="stage-index">5</span><div><h3>Opérer</h3><p>Faire fonctionner la solution avec monitoring, alertes, runbooks, flux de support et checkpoints de gouvernance qui maintiennent le système fiable en conditions réelles.</p><p>Les opérations doivent surveiller non seulement la santé technique, mais aussi la dérive comportementale, les réponses inattendues, l'utilisation de connaissances obsolètes, les échecs de retrieval et les régressions introduites par les mises à jour de connaissance.</p><p class="human-loop-inline"><strong>Human in the loop :</strong> gestion des incidents, escalade et supervision de gouvernance en production.</p></div></article>
           <article id="step-6" class="paper stage-card"><span class="stage-index">6</span><div><h3>Améliorer</h3><p>Améliorer en continu à partir du feedback de production, des incidents, de l’analytics, des retours utilisateurs et des apprentissages de delivery qui révèlent quoi affiner ensuite.</p></div></article>
           <article id="step-7" class="paper stage-card"><span class="stage-index">7</span><div><h3>Orchestrer</h3><p>Coordonner agents, flux, politiques et capacités réutilisables dans un écosystème composable capable de dépasser des implémentations isolées.</p></div></article>
         </div>
@@ -182,7 +184,7 @@
         </div>
         <div class="agents-grid">
           <article class="paper summary-card"><h3>Conditions d'entrée</h3><p>Exigences validées, intention métier explicite, ownership désignée et quality gate franchi avant toute activité de build.</p></article>
-          <article class="paper summary-card"><h3>Modèle de preuve</h3><p>Chaque phase doit laisser des outputs traçables : décisions, preuves de test, approbations, release notes, signaux opérationnels et actions d'amélioration.</p></article>
+          <article class="paper summary-card"><h3>Modèle de preuve</h3><p>Chaque phase doit laisser des outputs traçables : décisions, sources de connaissance versionnées, historique des prompts, preuves de test, approbations, release notes, signaux opérationnels et actions d'amélioration.</p></article>
         </div>
         <div class="paper operating-table-wrap">
           <table class="operating-table">
@@ -190,14 +192,14 @@
               <tr><th>Stage</th><th>Output principal</th><th>Checkpoint humain</th><th>Preuve ou besoin de gouvernance</th></tr>
             </thead>
             <tbody>
-              <tr><td>0. Porte de qualité des exigences</td><td>Exigences clarifiées, critères d'acceptation, intention métier, liens de traçabilité</td><td>Approbation explicite que les exigences sont suffisamment claires pour entrer dans l'ADLC</td><td>Les exigences doivent être complètes, cohérentes et prêtes pour l'exécution</td></tr>
-              <tr><td>1. Implémenter</td><td>Services, prompts, agents, flux, intégrations et composants réutilisables</td><td>Non obligatoire comme gate formel dans cette phase</td><td>L'architecture doit rester révisable, testable et prête à évoluer de manière contrôlée</td></tr>
+              <tr><td>0. Porte de qualité des exigences</td><td>Exigences clarifiées, critères d'acceptation, intention métier, liens de traçabilité, sources RAG et de connaissance approuvées</td><td>Approbation explicite que les exigences sont suffisamment claires pour entrer dans l'ADLC</td><td>Les exigences doivent être complètes, cohérentes, prêtes pour l'exécution et traçables vers des sources RAG et de connaissance approuvées</td></tr>
+              <tr><td>1. Implémenter</td><td>Services, prompts, agents, flux, intégrations, composants réutilisables et historique des prompts et des changements</td><td>Non obligatoire comme gate formel dans cette phase</td><td>L'architecture et les changements de connaissance doivent rester révisables, testables et prêts à évoluer de manière contrôlée</td></tr>
               <tr><td>2. Revoir</td><td>Preuves de revue, évaluation du risque, corrections de conception et décision de readiness</td><td>Jugement responsable sur la qualité, la sécurité et l'aptitude à avancer</td><td>La qualité et le risque doivent être évalués avant d'avancer</td></tr>
-              <tr><td>3. Tester</td><td>Preuves de test, validation d'acceptation, contrôles de fiabilité et known issues</td><td>Optionnel selon le contexte, avec escalade toujours disponible</td><td>Le comportement doit être mesuré et non supposé avant le déploiement</td></tr>
-              <tr><td>4. Déployer</td><td>Release notes, preuves de déploiement, plan de rollback, ownership et trace du go-live</td><td>Autorisation formelle de release et responsabilité de l'entrée en production</td><td>Le déploiement doit être contrôlé, répétable et auditable</td></tr>
-              <tr><td>5. Opérer</td><td>Signaux de monitoring, incidents, runbooks, décisions opérationnelles et logs de gouvernance</td><td>Supervision de la production, gestion de l'escalade et intervention responsable</td><td>L'exploitation live doit rester observable et gouvernable</td></tr>
+              <tr><td>3. Tester</td><td>Preuves de test, validation d'acceptation, contrôles de fiabilité, preuves de régression comportementale et known issues</td><td>Optionnel selon le contexte, avec escalade toujours disponible</td><td>Le comportement, y compris les régressions liées aux prompts, au contenu RAG, aux skills, à la configuration du modèle, aux outils et à l'orchestration, doit être mesuré avant le déploiement</td></tr>
+              <tr><td>4. Déployer</td><td>Release notes, preuves de déploiement, registre des changements de la couche de connaissance, plan de rollback, ownership et trace du go-live</td><td>Autorisation formelle de release et responsabilité de l'entrée en production</td><td>Les preuves de release doivent identifier les changements de code, de prompts, de RAG ou de documentation, d'outils, de configuration du modèle et d'orchestration</td></tr>
+              <tr><td>5. Opérer</td><td>Signaux de monitoring, incidents, runbooks, décisions opérationnelles, logs de gouvernance et signaux de dérive et de retrieval</td><td>Supervision de la production, gestion de l'escalade et intervention responsable</td><td>L'exploitation live doit rester observable et gouvernable entre santé technique et comportement guidé par la connaissance</td></tr>
               <tr><td>6. Améliorer</td><td>Backlog d'amélioration, lessons learned, mises à jour de policy et priorités d'affinement</td><td>Ce n'est pas un gate obligatoire, mais une priorisation responsable est attendue</td><td>La preuve issue du réel doit alimenter l'itération suivante au lieu de rester isolée</td></tr>
-              <tr><td>7. Orchestrer</td><td>Flux partagés, règles de coordination, capacités réutilisables et alignement des policy</td><td>La supervision humaine dépend de la portée et de l'impact des changements d'orchestration</td><td>L'orchestration doit faire évoluer le système de manière cohérente entre équipes et itérations</td></tr>
+              <tr><td>7. Orchestrer</td><td>Flux partagés, règles de coordination, capacités réutilisables et alignement des policy</td><td>La supervision humaine dépend de la portée et de l'impact des changements d'orchestration</td><td>L'orchestration doit préserver la traçabilité de l'exigence &rarr; source de connaissance &rarr; comportement agentique &rarr; preuve de test &rarr; release</td></tr>
             </tbody>
           </table>
         </div>
@@ -213,6 +215,7 @@
             <ul class="practice-list">
               <li>Les exigences entrent uniquement après un quality gate dédié et une approbation humaine.</li>
               <li>Implémentation, revue et test transforment l'intention en solution gouvernée.</li>
+              <li>Les mises à jour de connaissance, sources RAG, prompts et shared skills sont traitées comme des changements contrôlés et doivent alimenter la même boucle de preuve, revue, test et amélioration que le code et les workflows.</li>
               <li>Déploiement et exploitation produisent des preuves opérationnelles, pas seulement un résultat de release.</li>
               <li>Amélioration et orchestration alimentent le cycle suivant avec apprentissage, réutilisation et coordination.</li>
             </ul>
@@ -236,6 +239,7 @@
         <div class="agents-grid">
           <article class="paper agent-card"><span class="agent-label">Gouvernance</span><h3>Supervision humaine</h3><p>La supervision humaine est une couche de contrôle obligatoire dans l'ADLC, en particulier lors de l'approbation des exigences, de la validation de la qualité, de l'autorisation des releases et de la gouvernance en production.</p><p>Les agents accélèrent et structurent le travail, mais les décisions critiques et responsables restent humaines.</p></article>
           <article class="paper agent-card"><span class="agent-label">Contrôle d'entrée</span><h3>Porte de qualité des exigences</h3><p>L'ADLC ne peut pas commencer sans un quality gate garantissant des exigences claires, complètes, traçables et porteuses de sens métier.</p><p>Ce gate est fondamental car il détermine si l'implémentation doit commencer ou non.</p></article>
+          <article class="paper agent-card"><span class="agent-label">Gouvernance de la connaissance</span><h3>Gouvernance de la connaissance et du RAG</h3><p>L'ADLC traite la couche de connaissance comme une partie gouvernée du système. Documents, prompts, sources RAG, shared skills, politiques, exemples et instructions d'outils peuvent influencer le comportement de l'agent et introduire des régressions silencieuses même lorsque le code applicatif ne change pas.</p><p>Les changements de connaissance doivent donc être revus, versionnés, traçables et validés par rapport au comportement attendu avant d'être utilisés en production.</p></article>
         </div>
       </section>
       <section id="agents" class="container section-block">
@@ -248,6 +252,7 @@
           <article class="paper agent-card"><span class="agent-label">Flux de delivery</span><h3>PR Governance Agent</h3><p>Accompagne les pull requests de bout en bout en resumant les changements, en verifiant les politiques, en signalant les risques et en proposant les reviewers.</p><p>Aide a maintenir des revues coherentes, tracables et alignees avec les garde-fous d'ingenierie partages.</p></article>
           <article class="paper agent-card"><span class="agent-label">Communication</span><h3>Release Notes Agent</h3><p>Genere les release notes a partir du travail fusionne, en regroupant fonctionnalites, correctifs, breaking changes, migrations et notes operationnelles.</p><p>Produit a la fois des resumes techniques et des versions lisibles pour des audiences metier.</p></article>
           <article class="paper agent-card"><span class="agent-label">Alignement</span><h3>Knowledge Sync Agent</h3><p>Detecte les ecarts entre code, tickets, releases et documentation, puis propose ou effectue les mises a jour manquantes.</p><p>Maintient l'alignement entre la realite de la delivery et la base de connaissance dans le temps.</p></article>
+          <article class="paper agent-card"><span class="agent-label">Gouvernance de la connaissance</span><h3>RAG Governance Agent</h3><p>Passe en revue et gouverne les sources de connaissance avant qu'elles soient utilisées par les agents. Il vérifie fraîcheur, ownership, statut d'approbation, duplication, contradictions, validité métier, traçabilité et impact de régression.</p><p>Il aide à garantir que le contenu RAG et la connaissance partagée améliorent le comportement des agents sans introduire de changement non contrôlé.</p></article>
           <article class="paper agent-card"><span class="agent-label">Gouvernance</span><h3>Compliance and Traceability Agent</h3><p>Relie exigences, implementations, tests, documentation et releases dans une chaine d'evidence auditable.</p><p>Soutient les quality gates, les revues et les checkpoints de gouvernance tout au long du lifecycle.</p></article>
           <article class="paper agent-card"><span class="agent-label">Opérations</span><h3>Operational Readiness Agent</h3><p>Verifie que chaque release dispose de runbooks, d'ownership, de guides de rollback, d'alertes et de preuves de préparation opérationnelle.</p><p>Aide les equipes a passer du deploiement a une operation stable avec moins d'angles morts.</p></article>
         </div>
@@ -260,6 +265,7 @@
         <div class="agents-grid">
           <article class="paper agent-card"><span class="agent-label">Principe</span><h3>Adaptees a l'entreprise</h3><p>Les shared skills peuvent partir de frameworks consolides, mais elles doivent etre adaptees a l'architecture, aux politiques, au vocabulaire, au modele de risque et a la culture de delivery de l'entreprise.</p><p>Elles transforment le know-how reutilisable en patterns d'execution gouvernes que les agents et les equipes peuvent appliquer de maniere coherente.</p></article>
           <article class="paper agent-card"><span class="agent-label">Documentation</span><h3>Documentation Skill</h3><p>Definit comment la documentation est redigee, structuree, reliee et publiee dans la base documentaire officielle.</p><p>Exemples : format ADR, structure des runbooks, templates Confluence, pages d'onboarding et liens vers les preuves.</p></article>
+          <article class="paper agent-card"><span class="agent-label">Connaissance</span><h3>RAG Governance Skill</h3><p>Définit comment les sources de connaissance sont sélectionnées, approuvées, découpées, versionnées, retirées, testées et tracées.</p><p>Elle inclut des règles pour l'ownership des sources, la fraîcheur des documents, la gestion des contradictions, l'évaluation du retrieval, les attentes de citation et les tests de régression après les mises à jour de connaissance.</p></article>
           <article class="paper agent-card"><span class="agent-label">Delivery</span><h3>Release Notes Skill</h3><p>Definit comment generer, regrouper, revoir et adapter les release notes pour des audiences techniques, metier et operationnelles.</p><p>Inclut les regles pour breaking changes, migrations, known issues, notes de rollback et resumes customer-facing.</p></article>
           <article class="paper agent-card"><span class="agent-label">Architecture</span><h3>Architecture Skill</h3><p>Encode les principes d'architecture, criteres de decision, reference patterns et attentes de revue de l'entreprise.</p><p>Aide les agents a raisonner avec des standards locaux plutot qu'avec des conseils generiques.</p></article>
           <article class="paper agent-card"><span class="agent-label">Infrastructure</span><h3>Infrastructure Skill</h3><p>Encode les conventions de plateforme sur environnements, deploiement, observabilite, rollback, naming, ownership et readiness operationnelle.</p><p>Elle doit refleter le modele d'infrastructure reel de l'entreprise, pas une checklist cloud abstraite.</p></article>

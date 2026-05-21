@@ -133,8 +133,8 @@
         "description": "A governed, tool-agnostic framework for building agentic systems from validated requirements to orchestration and continuous improvement.",
         "inLanguage": "en",
         "datePublished": "2026-04-13",
-        "dateModified": "2026-05-19T16:17:00+02:00",
-        "version": "1.1",
+        "dateModified": "2026-05-21T11:32:27+02:00",
+        "version": "1.2",
         "about": [
           "Agentic Development",
           "ADLC Manifesto",
@@ -177,7 +177,7 @@
         <div class="nav-brand">
           <p class="site-kicker">Agentic Development</p>
           <p class="brand-mark">ADLC</p>
-          <a class="site-version" href="/changelog/">V1.1</a>
+          <a class="site-version" href="/changelog/">V1.2</a>
         </div>
         <ul class="inline nav-links">
           <li><a href="#manifesto">Manifesto</a></li>
@@ -269,6 +269,13 @@
               <p>
                 No implementation starts without a passed
                 <strong>requirements quality gate</strong>.
+              </p>
+              <p>
+                <strong>In agentic systems, knowledge is behavior.</strong>
+              </p>
+              <p>
+                Changing the knowledge layer can change how the agent acts,
+                decides, explains, and escalates.
               </p>
               <p>
                 <strong>Human in the loop is mandatory</strong> wherever
@@ -476,6 +483,11 @@
                 reliability, and operational readiness through structured test
                 evidence and measurable acceptance criteria.
               </p>
+              <p>
+                Testing also covers behavioral regression caused by changes to
+                prompts, RAG content, shared skills, model configuration, tools,
+                and orchestration rules.
+              </p>
             </div>
           </article>
           <article id="step-4" class="paper stage-card">
@@ -486,6 +498,11 @@
                 Release in a controlled, observable, and repeatable way, with
                 rollback options, release notes, ownership, and deployment
                 evidence clearly defined.
+              </p>
+              <p>
+                Release evidence must identify code changes, prompt changes,
+                RAG or documentation changes, tool changes, model configuration
+                changes, and orchestration changes.
               </p>
               <p class="human-loop-inline"><strong>Human in the loop:</strong> release authorization and accountability for go-live.</p>
             </div>
@@ -498,6 +515,12 @@
                 Operate the solution using monitoring, alerts, runbooks,
                 support flows, and governance checkpoints that keep the system
                 reliable in real conditions.
+              </p>
+              <p>
+                Operations must monitor not only technical health, but also
+                behavioral drift, unexpected answers, outdated knowledge usage,
+                retrieval failures, and regressions introduced by knowledge
+                updates.
               </p>
               <p class="human-loop-inline"><strong>Human in the loop:</strong> incident handling, escalation, and governance oversight in production.</p>
             </div>
@@ -543,7 +566,7 @@
           </article>
           <article class="paper summary-card">
             <h3>Evidence Model</h3>
-            <p>Each phase must leave traceable outputs: decisions, test evidence, approvals, release notes, operational signals, and improvement actions.</p>
+            <p>Each phase must leave traceable outputs: decisions, versioned knowledge sources, prompt history, test evidence, approvals, release notes, operational signals, and improvement actions.</p>
           </article>
         </div>
 
@@ -560,15 +583,15 @@
             <tbody>
               <tr>
                 <td>0. Requirements Quality Gate</td>
-                <td>Clarified requirements, acceptance criteria, business intent, traceability links</td>
+                <td>Clarified requirements, acceptance criteria, business intent, traceability links, approved RAG and knowledge sources</td>
                 <td>Explicit approval that requirements are clear enough to enter the ADLC</td>
-                <td>Requirements must be complete, coherent, and ready for execution</td>
+                <td>Requirements must be complete, coherent, ready for execution, and traceable to approved RAG and knowledge sources</td>
               </tr>
               <tr>
                 <td>1. Implement</td>
-                <td>Services, prompts, agents, workflows, integrations, reusable components</td>
+                <td>Services, prompts, agents, workflows, integrations, reusable components, prompt and change history</td>
                 <td>Not mandatory as a formal gate in this phase</td>
-                <td>Architecture remains reviewable, testable, and ready for controlled evolution</td>
+                <td>Architecture and knowledge changes remain reviewable, testable, and ready for controlled evolution</td>
               </tr>
               <tr>
                 <td>2. Review</td>
@@ -578,21 +601,21 @@
               </tr>
               <tr>
                 <td>3. Test</td>
-                <td>Test evidence, acceptance validation, reliability checks, known issues</td>
+                <td>Test evidence, acceptance validation, reliability checks, behavioral regression evidence, known issues</td>
                 <td>Optional depending on context, but escalation remains available</td>
-                <td>Behavior must be measured, not assumed, before deployment</td>
+                <td>Behavior, including regressions from prompts, RAG content, skills, model configuration, tools, and orchestration, must be measured before deployment</td>
               </tr>
               <tr>
                 <td>4. Deploy</td>
-                <td>Release notes, deployment evidence, rollback plan, ownership, go-live record</td>
+                <td>Release notes, deployment evidence, knowledge-layer change record, rollback plan, ownership, go-live record</td>
                 <td>Formal release authorization and responsibility for production entry</td>
-                <td>Deployment must be controlled, repeatable, and auditable</td>
+                <td>Release evidence must identify code, prompt, RAG or documentation, tool, model configuration, and orchestration changes</td>
               </tr>
               <tr>
                 <td>5. Operate</td>
-                <td>Monitoring signals, incidents, runbooks, operational decisions, governance logs</td>
+                <td>Monitoring signals, incidents, runbooks, operational decisions, governance logs, drift and retrieval signals</td>
                 <td>Production oversight, escalation handling, and accountable intervention</td>
-                <td>Live operations must remain observable and governable</td>
+                <td>Live operations must remain observable and governable across technical health and knowledge-driven behavior</td>
               </tr>
               <tr>
                 <td>6. Improve</td>
@@ -604,7 +627,7 @@
                 <td>7. Orchestrate</td>
                 <td>Shared flows, coordination rules, reusable capabilities, policy alignment</td>
                 <td>Human oversight depends on scope and impact of orchestration changes</td>
-                <td>Orchestration must scale the system coherently across teams and iterations</td>
+                <td>Orchestration must preserve traceability from requirement &rarr; knowledge source &rarr; agent behavior &rarr; test evidence &rarr; release</td>
               </tr>
             </tbody>
           </table>
@@ -631,6 +654,7 @@
             <ul class="practice-list">
               <li>Requirements enter only after a dedicated quality gate and human approval.</li>
               <li>Implementation, review, and test transform intent into a governed solution.</li>
+              <li>Knowledge updates, RAG sources, prompts, and shared skills are treated as controlled changes and must feed the same evidence, review, test, and improvement loop as code and workflows.</li>
               <li>Deploy and operate create live evidence, not just release output.</li>
               <li>Improve and orchestrate feed the next cycle with learning, reuse, and coordination.</li>
             </ul>
@@ -674,6 +698,13 @@
             <p>The ADLC cannot start without a quality gate that ensures requirements are clear, complete, traceable, and meaningful from a business perspective.</p>
             <p>This gate is fundamental because it determines whether implementation should begin at all.</p>
           </article>
+
+          <article class="paper agent-card">
+            <span class="agent-label">Knowledge Governance</span>
+            <h3>Knowledge and RAG Governance</h3>
+            <p>The ADLC treats the knowledge layer as a governed part of the system. Documents, prompts, RAG sources, shared skills, policies, examples, and tool instructions can influence agent behavior and may introduce silent regressions even when no application code changes.</p>
+            <p>Knowledge changes must therefore be reviewed, versioned, traceable, and validated against expected behavior before they are used in production.</p>
+          </article>
         </div>
       </section>
 
@@ -715,6 +746,13 @@
           </article>
 
           <article class="paper agent-card">
+            <span class="agent-label">Knowledge Governance</span>
+            <h3>RAG Governance Agent</h3>
+            <p>Reviews and governs knowledge sources before they are used by agents. It checks freshness, ownership, approval status, duplication, contradictions, business validity, traceability, and regression impact.</p>
+            <p>It helps ensure that RAG content and shared knowledge improve agent behavior without introducing uncontrolled change.</p>
+          </article>
+
+          <article class="paper agent-card">
             <span class="agent-label">Governance</span>
             <h3>Compliance and Traceability Agent</h3>
             <p>Links requirements, implementations, tests, documentation, and releases into an auditable chain of evidence.</p>
@@ -751,6 +789,12 @@
             <h3>Documentation Skill</h3>
             <p>Defines how documentation is written, structured, linked, and published in the official knowledge base.</p>
             <p>Examples include ADR format, runbook structure, Confluence page templates, onboarding pages, and evidence links.</p>
+          </article>
+          <article class="paper agent-card">
+            <span class="agent-label">Knowledge</span>
+            <h3>RAG Governance Skill</h3>
+            <p>Defines how knowledge sources are selected, approved, chunked, versioned, retired, tested, and traced.</p>
+            <p>It includes rules for source ownership, document freshness, contradiction handling, retrieval evaluation, citation expectations, and regression testing after knowledge updates.</p>
           </article>
           <article class="paper agent-card">
             <span class="agent-label">Delivery</span>

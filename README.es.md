@@ -18,8 +18,9 @@ esperada en la entrega moderna de software.
 No reemplaza el SDLC. Lo extiende con las prácticas que los sistemas agénticos
 enterprise necesitan para ser fiables, auditables y mantenibles: requisitos
 validados antes de la implementación, checkpoints human-in-the-loop explícitos,
-agentes y skills reutilizables, orquestación entre herramientas y equipos,
-trazabilidad, gobernanza de releases y mejora operativa continua.
+agentes y skills reutilizables, gobernanza del conocimiento y RAG, orquestación
+entre herramientas y equipos, trazabilidad, gobernanza de releases y mejora
+operativa continua.
 
 El manifiesto está diseñado para organizaciones que necesitan pasar de
 experimentos aislados con agentes a capacidades agénticas gobernadas,
@@ -110,9 +111,9 @@ El comando sube el contenido de `site/` al directorio remoto `/public_html/`.
 
 ## Versión
 
-Versión actual: `V1.1`
+Versión actual: `V1.2`
 
-- Publicada: abril de 2026
+- Publicada: mayo de 2026
 - Última modificación: mayo de 2026
 
 ## Tags De Release
@@ -123,7 +124,7 @@ Usa el formato en minusculas `vX.Y` para los tags del repositorio, alineado con
 la versión declarada como `VX.Y` en [manifesto.md](manifesto.md) y
 [CHANGELOG.md](CHANGELOG.md).
 
-Por ejemplo, `V1.1` en el manifiesto se etiqueta como `v1.1` en Git.
+Por ejemplo, `V1.2` en el manifiesto se etiqueta como `v1.2` en Git.
 
 Consulta [docs/release-process.md](docs/release-process.md) para la checklist
 de release.

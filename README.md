@@ -18,8 +18,9 @@ expected from modern software delivery.
 It does not replace the SDLC. It extends it with the practices that enterprise
 agentic systems need to be reliable, auditable, and maintainable: validated
 requirements before implementation, explicit human-in-the-loop checkpoints,
-reusable agents and skills, orchestration across tools and teams, traceability,
-release governance, and continuous operational improvement.
+reusable agents and skills, knowledge and RAG governance, orchestration across
+tools and teams, traceability, release governance, and continuous operational
+improvement.
 
 The manifesto is designed for organizations that need to move from isolated
 agent experiments to governed, reusable, and scalable agentic capabilities.
@@ -110,9 +111,9 @@ The publish command uploads the content of `site/` to the remote `/public_html/`
 
 ## Version
 
-Current version: `V1.1`
+Current version: `V1.2`
 
-- Published: April 2026
+- Published: May 2026
 - Last modified: May 2026
 
 ## Release Tags
@@ -123,7 +124,7 @@ Use the lowercase `vX.Y` format for repository tags, matching the manifesto
 version declared as `VX.Y` in [manifesto.md](manifesto.md) and
 [CHANGELOG.md](CHANGELOG.md).
 
-For example, `V1.1` in the manifesto is tagged as `v1.1` in Git.
+For example, `V1.2` in the manifesto is tagged as `v1.2` in Git.
 
 See [docs/release-process.md](docs/release-process.md) for the release
 checklist.

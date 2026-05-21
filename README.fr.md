@@ -18,9 +18,9 @@ avec la même discipline que celle attendue de la delivery logicielle moderne.
 Il ne remplace pas le SDLC. Il l'étend avec les pratiques dont les systèmes
 agentiques enterprise ont besoin pour être fiables, auditables et maintenables:
 exigences validées avant l'implémentation, checkpoints human-in-the-loop
-explicites, agents et skills réutilisables, orchestration entre outils et
-équipes, traçabilité, gouvernance des releases et amélioration opérationnelle
-continue.
+explicites, agents et skills réutilisables, gouvernance de la connaissance et
+du RAG, orchestration entre outils et équipes, traçabilité, gouvernance des
+releases et amélioration opérationnelle continue.
 
 Le manifeste est conçu pour les organisations qui doivent passer
 d'expérimentations isolées avec des agents à des capacités agentiques
@@ -115,9 +115,9 @@ La commande envoie le contenu de `site/` vers le répertoire distant
 
 ## Version
 
-Version actuelle: `V1.1`
+Version actuelle: `V1.2`
 
-- Publiée: avril 2026
+- Publiée: mai 2026
 - Dernière modification: mai 2026
 
 ## Tags De Release
@@ -128,7 +128,7 @@ Utilise le format minuscule `vX.Y` pour les tags du dépôt, aligné avec la
 version déclarée comme `VX.Y` dans [manifesto.md](manifesto.md) et
 [CHANGELOG.md](CHANGELOG.md).
 
-Par exemple, `V1.1` dans le manifeste est taggée `v1.1` dans Git.
+Par exemple, `V1.2` dans le manifeste est taggée `v1.2` dans Git.
 
 Consulte [docs/release-process.md](docs/release-process.md) pour la checklist
 de release.

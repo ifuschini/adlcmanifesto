@@ -1,6 +1,6 @@
 # ADLC Shared Skills
 
-Version: V1.1
+Version: V1.2
 
 Shared skills are reusable company-specific capabilities that agents and teams can apply consistently across the ADLC.
 
@@ -18,6 +18,7 @@ They should:
 - encode reusable know-how into governed execution patterns
 - be usable by multiple agents and teams
 - remain aligned with architecture, security, infrastructure, documentation, and delivery policies
+- govern knowledge and RAG changes as controlled changes, not as invisible content edits
 - evolve as the enterprise learns from incidents, releases, reviews, and operations
 
 ## Documentation Skill
@@ -37,6 +38,26 @@ Typical scope:
 
 Expected outcome:
 Documentation remains consistent, findable, traceable, and connected to real delivery events.
+
+## RAG Governance Skill
+
+Purpose:
+Defines how knowledge sources are selected, approved, chunked, versioned, retired, tested, and traced.
+
+Typical scope:
+
+- source ownership
+- document freshness
+- RAG source approval
+- chunking and retrieval evaluation
+- contradiction handling
+- citation expectations
+- prompt and knowledge change history
+- regression testing after knowledge updates
+- traceability from requirement to knowledge source, agent behavior, test evidence, and release
+
+Expected outcome:
+RAG content and shared knowledge improve agent behavior without introducing uncontrolled change.
 
 ## Release Notes Skill
 
@@ -125,6 +146,7 @@ Shared skills should have clear ownership.
 Suggested owners:
 
 - Documentation Skill: knowledge management, architecture, or engineering enablement
+- RAG Governance Skill: knowledge management, product operations, compliance, or enterprise architecture
 - Release Notes Skill: engineering, product operations, or release management
 - Architecture Skill: architecture group or platform architecture
 - Infrastructure Skill: platform engineering, SRE, or cloud infrastructure
@@ -139,6 +161,7 @@ Shared agents use shared skills to perform work consistently.
 Examples:
 
 - a Documentation Agent can use the Documentation Skill
+- a RAG Governance Agent can use the RAG Governance Skill
 - a Release Notes Agent can use the Release Notes Skill
 - a PR Governance Agent can use the Architecture Skill and CISO Security Skill
 - an Operational Readiness Agent can use the Infrastructure Skill

@@ -18,8 +18,9 @@ attesa dalla moderna software delivery.
 Non sostituisce l'SDLC. Lo estende con le pratiche di cui i sistemi agentici
 enterprise hanno bisogno per essere affidabili, auditabili e manutenibili:
 requisiti validati prima dell'implementazione, checkpoint human-in-the-loop
-espliciti, agenti e skill riutilizzabili, orchestrazione tra tool e team,
-tracciabilità, governance delle release e miglioramento operativo continuo.
+espliciti, agenti e skill riutilizzabili, governance della conoscenza e del
+RAG, orchestrazione tra tool e team, tracciabilità, governance delle release e
+miglioramento operativo continuo.
 
 Il manifesto è pensato per organizzazioni che devono passare da esperimenti
 isolati con agenti a capability agentiche governate, riutilizzabili e scalabili.
@@ -111,9 +112,9 @@ Il comando carica il contenuto di `site/` nella directory remota
 
 ## Versione
 
-Versione corrente: `V1.1`
+Versione corrente: `V1.2`
 
-- Pubblicata: aprile 2026
+- Pubblicata: maggio 2026
 - Ultima modifica: maggio 2026
 
 ## Tag Di Release
@@ -125,7 +126,7 @@ Usa il formato minuscolo `vX.Y` per i tag del repository, allineato alla
 versione dichiarata come `VX.Y` in [manifesto.md](manifesto.md) e
 [CHANGELOG.md](CHANGELOG.md).
 
-Per esempio, `V1.1` nel manifesto è taggata come `v1.1` in Git.
+Per esempio, `V1.2` nel manifesto è taggata come `v1.2` in Git.
 
 Vedi [docs/release-process.md](docs/release-process.md) per la checklist di
 release.

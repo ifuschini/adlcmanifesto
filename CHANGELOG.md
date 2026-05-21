@@ -2,6 +2,11 @@
 
 ## Unreleased
 
+No unreleased changes.
+
+## V1.2 - May 2026
+
+- Added Knowledge Governance / RAG Governance across the website, lifecycle, manifesto, evidence model, shared agents, and shared skills.
 - Added GitHub Actions CI for static project checks.
 - Added local link and anchor validation for the static website.
 - Added Makefile targets for local preview, link checks, and release checks.
