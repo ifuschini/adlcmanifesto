@@ -9,6 +9,7 @@
   --line: #201a17;
   --sage: #9caf88;
   --gold: #efcf72;
+  --header-anchor-offset: 5.5rem;
 }
 
 /* Base */
@@ -18,6 +19,7 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: var(--header-anchor-offset);
 }
 
 body {
@@ -66,15 +68,33 @@ button {
 
 /* Header and navigation */
 .site-header {
-  padding-top: 1.5rem;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 0.18rem 0.9rem;
+  width: 100%;
+  max-width: none;
+  padding: 0.3rem max(0.85rem, calc((100% - 960px) / 2));
+  background: rgba(248, 241, 226, 0.96);
+  border-bottom: 2px solid rgba(32, 26, 23, 0.16);
+  box-shadow: 0 8px 18px rgba(31, 26, 23, 0.08);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 }
 
 .language-switcher {
   display: inline-flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  margin-top: 1rem;
-  padding: 0.75rem;
+  flex-wrap: nowrap;
+  gap: 0.25rem;
+  grid-column: 3;
+  grid-row: 1;
+  align-self: center;
+  justify-self: end;
+  margin: 0;
+  padding: 0.2rem;
   background: rgba(255, 253, 246, 0.92);
 }
 
@@ -82,8 +102,11 @@ button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-width: 64px;
+  min-width: 42px;
   margin: 0;
+  padding: 3px 8px;
+  font-size: 13px;
+  line-height: 1.2;
   background: #fff8ec;
   text-decoration: none;
 }
@@ -94,21 +117,24 @@ button {
 }
 
 .site-kicker {
-  margin: 0 0 0.35rem;
-  font-size: 0.85rem;
+  display: none;
+  margin: 0;
+  font-size: 11px;
   color: var(--muted);
 }
 
 .brand-mark {
   margin: 0;
-  font-size: clamp(2rem, 4vw, 3rem);
+  font-size: 38px;
   font-family: "Special Elite", serif;
+  line-height: 0.95;
 }
 
 .site-version {
   display: inline-block;
-  margin: 0.2rem 0 0;
-  font-size: 0.82rem;
+  margin: 0;
+  font-size: 11px;
+  line-height: 1.2;
   font-weight: 700;
   letter-spacing: 0.03em;
   color: var(--muted);
@@ -120,38 +146,44 @@ button {
 }
 
 .split-nav {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  gap: 2rem;
-  flex-wrap: wrap;
+  display: contents;
 }
 
 .nav-brand {
-  flex: 0 0 auto;
-  min-width: 140px;
+  display: inline-flex;
+  grid-column: 1;
+  grid-row: 1;
+  align-items: baseline;
+  gap: 0.4rem;
+  margin: 0;
 }
 
 .nav-links {
   display: flex;
-  flex: 1 1 580px;
+  grid-column: 1 / -1;
+  grid-row: 2;
+  min-width: 0;
   flex-wrap: wrap;
   align-items: center;
   justify-content: flex-start;
-  gap: 0.7rem 1rem;
-  margin: 0;
-  padding: 0.35rem 0 0;
+  gap: 0.24rem 1.15rem;
+  overflow: visible;
+  margin: 0 !important;
+  padding: 0;
   list-style: none;
 }
 
 .nav-links li {
-  margin: 0;
+  margin: 0 !important;
+  padding: 0 !important;
 }
 
 .nav-links a {
   display: inline-block;
-  padding: 0.1rem 0;
+  padding: 2px 0 !important;
   color: var(--ink);
+  font-size: 15px !important;
+  line-height: 1.2 !important;
   font-weight: 700;
   text-decoration-thickness: 2px;
   white-space: nowrap;
@@ -364,6 +396,149 @@ button {
 .operating-table td:first-child {
   font-weight: 700;
   white-space: nowrap;
+}
+
+@media (max-width: 720px) {
+  .operating-table-wrap.paper {
+    margin-top: 1rem;
+    padding: 0;
+    overflow-x: visible;
+    border: 0;
+    background: transparent;
+    box-shadow: none;
+  }
+
+  .operating-table {
+    display: block;
+    min-width: 0;
+    border-collapse: separate;
+  }
+
+  .operating-table thead {
+    position: absolute;
+    display: block;
+    top: auto;
+    left: 0;
+    width: 1px;
+    height: 1px;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    border: 0;
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
+
+  .operating-table thead tr,
+  .operating-table thead th {
+    display: block;
+    width: 1px;
+    max-width: 1px;
+    height: 1px;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    border: 0;
+  }
+
+  .operating-table tbody,
+  .operating-table tr,
+  .operating-table td {
+    display: block;
+    width: 100%;
+  }
+
+  .operating-table tr {
+    padding: 0.8rem 0.9rem;
+    border: 2px solid rgba(31, 26, 23, 0.16);
+    background: var(--paper-panel);
+    box-shadow: 2px 2px 0 rgba(31, 26, 23, 0.12);
+  }
+
+  .operating-table tr + tr {
+    margin-top: 0.9rem;
+  }
+
+  .operating-table td {
+    padding: 0.55rem 0;
+    border: 0;
+    white-space: normal;
+  }
+
+  .operating-table td + td {
+    border-top: 1px solid rgba(31, 26, 23, 0.12);
+  }
+
+  .operating-table td:first-child {
+    padding-top: 0;
+    white-space: normal;
+  }
+
+  .operating-table td:last-child {
+    padding-bottom: 0;
+  }
+
+  .operating-table td::before {
+    display: block;
+    margin-bottom: 0.18rem;
+    color: var(--accent);
+    font-family: "Special Elite", serif;
+    font-size: 0.78rem;
+    line-height: 1.2;
+  }
+
+  html[lang="en"] .operating-table td:nth-child(1)::before,
+  html[lang="it"] .operating-table td:nth-child(1)::before,
+  html[lang="es"] .operating-table td:nth-child(1)::before,
+  html[lang="fr"] .operating-table td:nth-child(1)::before {
+    content: "Stage";
+  }
+
+  html[lang="en"] .operating-table td:nth-child(2)::before {
+    content: "Primary Output";
+  }
+
+  html[lang="en"] .operating-table td:nth-child(3)::before {
+    content: "Human Checkpoint";
+  }
+
+  html[lang="en"] .operating-table td:nth-child(4)::before {
+    content: "Evidence or Governance Need";
+  }
+
+  html[lang="it"] .operating-table td:nth-child(2)::before {
+    content: "Output primario";
+  }
+
+  html[lang="it"] .operating-table td:nth-child(3)::before {
+    content: "Checkpoint umano";
+  }
+
+  html[lang="it"] .operating-table td:nth-child(4)::before {
+    content: "Evidenza o esigenza di governance";
+  }
+
+  html[lang="es"] .operating-table td:nth-child(2)::before,
+  html[lang="fr"] .operating-table td:nth-child(2)::before {
+    content: "Output principal";
+  }
+
+  html[lang="es"] .operating-table td:nth-child(3)::before {
+    content: "Checkpoint humano";
+  }
+
+  html[lang="es"] .operating-table td:nth-child(4)::before {
+    content: "Evidencia o necesidad de gobernanza";
+  }
+
+  html[lang="fr"] .operating-table td:nth-child(3)::before {
+    content: "Checkpoint humain";
+  }
+
+  html[lang="fr"] .operating-table td:nth-child(4)::before {
+    content: "Preuve ou besoin de gouvernance";
+  }
 }
 
 .practice-card,
@@ -770,13 +945,19 @@ button {
 }
 
 @media (max-width: 640px) {
-  .split-nav {
-    gap: 1rem;
+  :root {
+    --header-anchor-offset: 8rem;
+  }
+
+  .site-header {
+    grid-template-columns: auto minmax(0, 1fr) auto;
+    padding-top: 0.45rem;
+    padding-bottom: 0.5rem;
   }
 
   .nav-links {
-    flex-basis: 100%;
-    gap: 0.55rem 0.85rem;
+    flex-basis: auto;
+    gap: 0.22rem 0.85rem;
     padding-top: 0;
   }
 
@@ -815,13 +996,14 @@ button {
     max-width: 100%;
   }
 
-  .nav-links {
-    margin-top: 1rem;
-    justify-content: flex-start;
+  .language-switcher {
+    justify-self: end;
+    width: auto;
+    padding: 0.25rem;
   }
 
-  .language-switcher {
-    width: 100%;
+  .language-link {
+    min-width: 38px;
   }
 
   .loop-card {
