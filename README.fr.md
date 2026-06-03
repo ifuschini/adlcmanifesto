@@ -70,6 +70,8 @@ lieu d'envoyer des détails dans une issue publique.
 - [shared-skills.md](shared-skills.md): skills réutilisables pour agents et
   équipes.
 - [CHANGELOG.md](CHANGELOG.md): historique des versions.
+- [RELEASE_NOTES.md](RELEASE_NOTES.md): notes lisibles pour chaque version
+  publiée.
 - [docs/release-process.md](docs/release-process.md): checklist de release et
   de tags.
 - [CONTRIBUTING.md](CONTRIBUTING.md): workflow de contribution et contrôles

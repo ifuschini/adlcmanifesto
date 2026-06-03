@@ -70,6 +70,8 @@ sending details in a public issue.
 - [README.it.md](README.it.md), [README.es.md](README.es.md),
   [README.fr.md](README.fr.md): localized repository overviews.
 - [CHANGELOG.md](CHANGELOG.md): version history.
+- [RELEASE_NOTES.md](RELEASE_NOTES.md): reader-friendly notes for every
+  released version.
 - [docs/release-process.md](docs/release-process.md): release and tag checklist.
 - [CONTRIBUTING.md](CONTRIBUTING.md): contribution workflow and local checks.
 - [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md): participation expectations.

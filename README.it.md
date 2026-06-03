@@ -67,6 +67,8 @@ invece di inviare dettagli in una issue pubblica.
 - [lifecycle.md](lifecycle.md): le fasi del lifecycle ADLC.
 - [shared-skills.md](shared-skills.md): skill riutilizzabili per agenti e team.
 - [CHANGELOG.md](CHANGELOG.md): cronologia delle versioni.
+- [RELEASE_NOTES.md](RELEASE_NOTES.md): note leggibili per ogni versione
+  rilasciata.
 - [docs/release-process.md](docs/release-process.md): checklist per release e
   tag.
 - [CONTRIBUTING.md](CONTRIBUTING.md): flusso di contribuzione e controlli

@@ -1,9 +1,5 @@
 # Changelog
 
-## Unreleased
-
-No unreleased changes.
-
 ## V1.3 - June 2026
 
 - Clarified that human documentation and agent context are connected but separate artifacts.
