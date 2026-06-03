@@ -45,7 +45,7 @@
         "inLanguage": "it",
         "datePublished": "2026-04-13",
         "dateModified": "2026-05-21T11:32:27+02:00",
-        "version": "1.2",
+        "version": "1.3",
         "about": ["Sviluppo Agentico", "ADLC Manifesto", "ADLC Lifecycle", "Requirements Quality Gate"]
       }
     </script>
@@ -54,7 +54,7 @@
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;700&family=Special+Elite&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="https://unpkg.com/papercss@1.9.2/dist/paper.min.css" />
     <link rel="stylesheet" href="https://unpkg.com/@xyflow/react@12/dist/style.css" />
-    <link rel="stylesheet" href="../styles.css?v=1.2-mobile-table" />
+    <link rel="stylesheet" href="../styles.css?v=1.3" />
   </head>
   <body>
     <div class="paper-band paper-band-top"></div>
@@ -63,7 +63,7 @@
         <div class="nav-brand">
           <p class="site-kicker">Sviluppo Agentico</p>
           <p class="brand-mark">ADLC</p>
-          <a class="site-version" href="/changelog/">V1.2</a>
+          <a class="site-version" href="/changelog/">V1.3</a>
         </div>
         <ul class="inline nav-links">
           <li><a href="#manifesto">Manifesto</a></li>
@@ -248,7 +248,7 @@
           <h2>Capability riusabili che supportano l'intero ADLC</h2>
         </div>
         <div class="agents-grid">
-          <article class="paper agent-card"><span class="agent-label">Base di conoscenza</span><h3>Documentation Agent</h3><p>Produce e aggiorna la documentazione direttamente sulla doc base ufficiale, come Confluence, GitBook, Backstage TechDocs, Mintlify, Read the Docs o piattaforme equivalenti.</p><p>Produce documentazione sia per persone sia per agent: pagine leggibili dagli umani, più contesto agent-ready, link, indici e ancore di retrieval che riducono i token necessari per fornire il contesto di progetto.</p><p>Si occupa di ADR, runbook, onboarding, note architetturali, FAQ e documentazione di processo collegate agli eventi reali di delivery.</p></article>
+          <article class="paper agent-card"><span class="agent-label">Base di conoscenza</span><h3>Documentation Agent</h3><p>Produce e aggiorna documentazione per persone nella knowledge base umana ufficiale, come Confluence, SharePoint, Notion, GitBook, Backstage TechDocs, Read the Docs o piattaforme equivalenti.</p><p>La documentazione umana è ottimizzata per lettura, review, onboarding, governance e auditability. Non è, di default, l'interfaccia di contesto per gli AI agent.</p><p>Si occupa di ADR, runbook, onboarding, note architetturali, FAQ e documentazione di processo collegate agli eventi reali di delivery.</p></article>
           <article class="paper agent-card"><span class="agent-label">Flusso di delivery</span><h3>PR Governance Agent</h3><p>Supporta le pull request end-to-end, riassumendo i cambiamenti, verificando le policy, evidenziando i rischi e proponendo i reviewer.</p><p>Aiuta a mantenere le review coerenti, tracciabili e allineate ai guardrail condivisi di engineering.</p></article>
           <article class="paper agent-card"><span class="agent-label">Comunicazione</span><h3>Release Notes Agent</h3><p>Genera release note a partire dal lavoro integrato, raggruppando funzionalità, fix, breaking changes, migrazioni e note operative.</p><p>Produce sia sintesi tecniche sia versioni leggibili per audience business.</p></article>
           <article class="paper agent-card"><span class="agent-label">Allineamento</span><h3>Knowledge Sync Agent</h3><p>Rileva gap tra codice, ticket, release e documentazione, poi propone o applica gli aggiornamenti mancanti.</p><p>Mantiene allineate nel tempo la realtà del delivery e la knowledge base.</p></article>
@@ -264,7 +264,7 @@
         </div>
         <div class="agents-grid">
           <article class="paper agent-card"><span class="agent-label">Principio</span><h3>Adattate all'azienda</h3><p>Le shared skill possono partire da framework consolidati, ma devono essere adattate all'architettura, alle policy, al linguaggio, al modello di rischio e alla cultura di delivery dell'azienda.</p><p>Trasformano il know-how riusabile in pattern di esecuzione governati, applicabili in modo coerente da agent e team.</p></article>
-          <article class="paper agent-card"><span class="agent-label">Documentazione</span><h3>Documentation Skill</h3><p>Definisce come la documentazione viene scritta, strutturata, collegata, pubblicata e consumata da persone e agent nella knowledge base ufficiale.</p><p>Include regole per pagine human-readable, context brief agent-ready, link stabili tra progetti, integrazione docs-as-code o developer portal, struttura retrieval-friendly e context pack sintetici che riducono i token nei prompt.</p><p>L'enterprise dovrebbe dotarsi di una piattaforma documentale o developer portal governato capace di esporre link stabili tra progetti. Esempi possibili includono Confluence, GitBook, Backstage TechDocs, Mintlify, Read the Docs o sistemi equivalenti.</p></article>
+          <article class="paper agent-card"><span class="agent-label">Documentazione</span><h3>Documentation Skill</h3><p>Definisce come documentazione umana e agent context vengono prodotti come artefatti collegati ma separati.</p><p>La documentazione umana vive in strumenti progettati per persone. La documentazione per agent viene esposta tramite Agent Context Endpoint governati, come server MCP, file llms.txt, indici di retrieval o context pack versionati.</p><p>Gli strumenti per il contesto agentico possono includere Context7, GitMCP, MCPDoc, mcp-documentation-server, server MCP custom basati su SDK MCP open source o sistemi equivalenti. Questi endpoint devono esporre URL stabili, ownership delle fonti, versioning, stato di approvazione e regole di retrieval.</p></article>
           <article class="paper agent-card"><span class="agent-label">Knowledge</span><h3>RAG Governance Skill</h3><p>Definisce come le fonti di conoscenza vengono selezionate, approvate, segmentate, versionate, ritirate, testate e tracciate.</p><p>Include regole per ownership delle fonti, freschezza dei documenti, gestione delle contraddizioni, valutazione del retrieval, aspettative sulle citazioni e regression test dopo gli aggiornamenti di conoscenza.</p></article>
           <article class="paper agent-card"><span class="agent-label">Delivery</span><h3>Release Notes Skill</h3><p>Definisce come generare, raggruppare, revisionare e adattare le release note per audience tecniche, business e operative.</p><p>Include regole per breaking changes, migrazioni, known issues, note di rollback e sintesi customer-facing.</p></article>
           <article class="paper agent-card"><span class="agent-label">Architettura</span><h3>Architecture Skill</h3><p>Codifica principi architetturali, criteri decisionali, reference pattern e aspettative di review dell'azienda.</p><p>Aiuta gli agent a ragionare con standard locali invece che con consigli architetturali generici.</p></article>

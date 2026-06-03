@@ -4,6 +4,14 @@
 
 No unreleased changes.
 
+## V1.3 - June 2026
+
+- Clarified that human documentation and agent context are connected but separate artifacts.
+- Positioned Confluence, SharePoint, Notion, GitBook, Backstage TechDocs, Read the Docs, and similar systems as human-facing documentation channels.
+- Added governed Agent Context Endpoints for AI agents, including MCP servers, llms.txt files, retrieval indexes, and versioned context packs.
+- Added examples of agent-context tooling, including Context7, GitMCP, MCPDoc, mcp-documentation-server, and custom MCP servers built with open MCP SDKs.
+- Improved responsive layout with a fixed compact header and a mobile-readable operating model table.
+
 ## V1.2 - May 2026
 
 - Added Knowledge Governance / RAG Governance across the website, lifecycle, manifesto, evidence model, shared agents, and shared skills.

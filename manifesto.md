@@ -1,6 +1,6 @@
 # ADLC Manifesto
 
-Version: V1.2
+Version: V1.3
 
 ADLC, the Agentic Delivery Lifecycle, is a lifecycle model for building governed, tool-agnostic agentic systems.
 

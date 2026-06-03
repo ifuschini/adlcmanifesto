@@ -1,6 +1,6 @@
 # ADLC Shared Skills
 
-Version: V1.2
+Version: V1.3
 
 Shared skills are reusable company-specific capabilities that agents and teams can apply consistently across the ADLC.
 

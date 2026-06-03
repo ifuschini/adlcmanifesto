@@ -134,7 +134,7 @@
         "inLanguage": "en",
         "datePublished": "2026-04-13",
         "dateModified": "2026-05-21T11:32:27+02:00",
-        "version": "1.2",
+        "version": "1.3",
         "about": [
           "Agentic Development",
           "ADLC Manifesto",
@@ -166,7 +166,7 @@
     />
     <link
       rel="stylesheet"
-      href="./styles.css?v=1.2-mobile-table"
+      href="./styles.css?v=1.3"
     />
   </head>
   <body>
@@ -177,7 +177,7 @@
         <div class="nav-brand">
           <p class="site-kicker">Agentic Development</p>
           <p class="brand-mark">ADLC</p>
-          <a class="site-version" href="/changelog/">V1.2</a>
+          <a class="site-version" href="/changelog/">V1.3</a>
         </div>
         <ul class="inline nav-links">
           <li><a href="#manifesto">Manifesto</a></li>
@@ -721,8 +721,8 @@
           <article class="paper agent-card">
             <span class="agent-label">Knowledge Base</span>
             <h3>Documentation Agent</h3>
-            <p>Creates and updates documentation directly in the official doc base, such as Confluence, GitBook, Backstage TechDocs, Mintlify, Read the Docs, or similar platforms.</p>
-            <p>Produces documentation for both humans and agents: readable pages for people, plus agent-ready context, links, indexes, and retrieval anchors that reduce the tokens needed to provide project context.</p>
+            <p>Creates and updates human-facing documentation in the official human knowledge base, such as Confluence, SharePoint, Notion, GitBook, Backstage TechDocs, Read the Docs, or similar platforms.</p>
+            <p>Human documentation is optimized for reading, review, onboarding, governance, and auditability. It is not the default context interface for AI agents.</p>
             <p>Owns ADRs, runbooks, onboarding pages, architecture notes, FAQs, and process documentation tied to real delivery events.</p>
           </article>
           <article class="paper agent-card">
@@ -788,9 +788,9 @@
           <article class="paper agent-card">
             <span class="agent-label">Documentation</span>
             <h3>Documentation Skill</h3>
-            <p>Defines how documentation is written, structured, linked, published, and consumed by humans and agents in the official knowledge base.</p>
-            <p>It includes rules for human-readable pages, agent-ready context briefs, stable links across projects, docs-as-code or developer portal integration, retrieval-friendly structure, and concise context packs that reduce prompt tokens.</p>
-            <p>The enterprise should adopt a governed documentation platform or developer portal that can expose stable links across projects. Examples may include Confluence, GitBook, Backstage TechDocs, Mintlify, Read the Docs, or equivalent systems.</p>
+            <p>Defines how human documentation and agent context are produced as connected but separate artifacts.</p>
+            <p>Human documentation lives in tools designed for people. Agent documentation is exposed through governed Agent Context Endpoints, such as MCP servers, llms.txt files, retrieval indexes, or versioned context packs.</p>
+            <p>Agent-context tools may include Context7, GitMCP, MCPDoc, mcp-documentation-server, custom MCP servers built with open MCP SDKs, or equivalent open-source systems. These endpoints must expose stable URLs, source ownership, versioning, approval status, and retrieval rules.</p>
           </article>
           <article class="paper agent-card">
             <span class="agent-label">Knowledge</span>
