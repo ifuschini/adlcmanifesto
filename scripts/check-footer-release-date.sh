@@ -1,15 +1,17 @@
 #!/usr/bin/env zsh
 set -euo pipefail
 
+latest_tag="$(git for-each-ref --sort=-creatordate --format='%(refname:short)' refs/tags | head -n 1)"
 latest_tag_date="$(git for-each-ref --sort=-creatordate --format='%(creatordate:iso8601)' refs/tags | head -n 1)"
 
-if [[ -z "$latest_tag_date" ]]; then
+if [[ -z "$latest_tag" || -z "$latest_tag_date" ]]; then
   echo "No repository tags found; unable to validate footer release date." >&2
   exit 1
 fi
 
 year="${latest_tag_date[1,4]}"
 month="${latest_tag_date[6,7]}"
+tag_date_modified="${latest_tag_date[1,10]}T${latest_tag_date[12,19]}${latest_tag_date[21,23]}:${latest_tag_date[24,25]}"
 
 case "$month" in
   01) month_en="January"; month_it="gennaio"; month_es="enero"; month_fr="janvier" ;;
@@ -48,4 +50,19 @@ for check in "${checks[@]}"; do
   fi
 done
 
-echo "Footer release date matches latest tag month/year (${month_en} ${year})."
+metadata_files=(
+  "site/index.html"
+  "site/changelog/index.html"
+  "site/it/index.html"
+  "site/es/index.html"
+  "site/fr/index.html"
+)
+
+for file in "${metadata_files[@]}"; do
+  if ! grep -Fq "\"dateModified\": \"${tag_date_modified}\"" "$file"; then
+    echo "JSON-LD dateModified mismatch in ${file}. Expected: ${tag_date_modified}" >&2
+    exit 1
+  fi
+done
+
+echo "Footer release date and JSON-LD dateModified match latest tag ${latest_tag} (${month_en} ${year})."
