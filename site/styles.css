@@ -398,6 +398,42 @@ button {
   white-space: nowrap;
 }
 
+.resource-table-wrap {
+  margin-top: 1.25rem;
+  overflow-x: auto;
+  background: var(--paper-panel);
+}
+
+.resource-table {
+  width: 100%;
+  min-width: 720px;
+  border-collapse: collapse;
+}
+
+.resource-table th,
+.resource-table td {
+  padding: 0.9rem 1rem;
+  border: 1px solid rgba(31, 26, 23, 0.14);
+  vertical-align: top;
+  text-align: left;
+}
+
+.resource-table th {
+  font-family: "Special Elite", serif;
+  font-weight: 400;
+  background: #fff8ec;
+}
+
+.resource-table td:first-child {
+  width: 28%;
+  font-weight: 700;
+}
+
+.resource-table a {
+  font-weight: 700;
+  overflow-wrap: anywhere;
+}
+
 @media (max-width: 720px) {
   .operating-table-wrap.paper {
     margin-top: 1rem;
@@ -538,6 +574,62 @@ button {
 
   html[lang="fr"] .operating-table td:nth-child(4)::before {
     content: "Preuve ou besoin de gouvernance";
+  }
+
+  .resource-table-wrap.paper {
+    margin-top: 1rem;
+    padding: 0;
+    overflow-x: visible;
+    border: 0;
+    background: transparent;
+    box-shadow: none;
+  }
+
+  .resource-table {
+    display: block;
+    min-width: 0;
+    border-collapse: separate;
+  }
+
+  .resource-table thead {
+    display: none;
+  }
+
+  .resource-table tbody,
+  .resource-table tr,
+  .resource-table td {
+    display: block;
+    width: 100%;
+  }
+
+  .resource-table tr {
+    padding: 0.8rem 0.9rem;
+    border: 2px solid rgba(31, 26, 23, 0.16);
+    background: var(--paper-panel);
+    box-shadow: 2px 2px 0 rgba(31, 26, 23, 0.12);
+  }
+
+  .resource-table tr + tr {
+    margin-top: 0.9rem;
+  }
+
+  .resource-table td {
+    padding: 0.55rem 0;
+    border: 0;
+  }
+
+  .resource-table td + td {
+    border-top: 1px solid rgba(31, 26, 23, 0.12);
+  }
+
+  .resource-table td::before {
+    content: attr(data-label);
+    display: block;
+    margin-bottom: 0.18rem;
+    color: var(--accent);
+    font-family: "Special Elite", serif;
+    font-size: 0.78rem;
+    line-height: 1.2;
   }
 }
 

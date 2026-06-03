@@ -54,7 +54,7 @@
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;700&family=Special+Elite&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="https://unpkg.com/papercss@1.9.2/dist/paper.min.css" />
     <link rel="stylesheet" href="https://unpkg.com/@xyflow/react@12/dist/style.css" />
-    <link rel="stylesheet" href="../styles.css?v=1.3" />
+    <link rel="stylesheet" href="../styles.css?v=1.3-useful-links" />
   </head>
   <body>
     <div class="paper-band paper-band-top"></div>
@@ -74,6 +74,7 @@
           <li><a href="#guardrails">Controles</a></li>
           <li><a href="#agents">Agentes compartidos</a></li>
           <li><a href="#skills">Skills compartidas</a></li>
+          <li><a href="#useful-links">Links útiles</a></li>
         </ul>
       </nav>
       <div class="language-switcher paper" aria-label="Selector de idioma">
@@ -272,10 +273,30 @@
           <article class="paper agent-card"><span class="agent-label">Seguridad</span><h3>CISO Security Skill</h3><p>Las skills de seguridad deberían ser definidas o validadas por el grupo CISO y alineadas con las políticas enterprise.</p><p>Ejemplos: manejo de datos, identidad, secretos, access control, threat modeling, uso seguro de prompts/tools y evidencia de auditoría.</p></article>
         </div>
       </section>
+      <section id="useful-links" class="container section-block">
+        <div class="section-heading">
+          <p class="section-tag">Links útiles</p>
+          <h2>Recursos externos para delivery agéntico y gobernanza</h2>
+        </div>
+        <div class="paper resource-table-wrap">
+          <table class="resource-table">
+            <thead>
+              <tr><th>Recurso</th><th>Descripción</th><th>Link</th></tr>
+            </thead>
+            <tbody>
+              <tr><td data-label="Recurso">Microsoft APM</td><td data-label="Descripción">Dependency manager open source para AI agents. Ayuda a los equipos a declarar estándares, prompts, skills, plugins y servidores MCP en un manifiesto portable, haciendo reproducible el setup de los agentes.</td><td data-label="Link"><a href="https://github.com/microsoft/apm" target="_blank" rel="noopener noreferrer">github.com/microsoft/apm</a></td></tr>
+              <tr><td data-label="Recurso">GitHub Copilot Token Optimization</td><td data-label="Descripción">Guía comunitaria con técnicas prácticas para reducir el consumo de tokens en GitHub Copilot en Chat, Inline y Coding Agent, manteniendo la calidad del código.</td><td data-label="Link"><a href="https://github.com/olivomarco/github-copilot-token-optimization" target="_blank" rel="noopener noreferrer">github.com/olivomarco/github-copilot-token-optimization</a></td></tr>
+              <tr><td data-label="Recurso">caveman</td><td data-label="Descripción">Skill/plugin para AI coding agents que comprime respuestas y archivos de contexto, reduciendo el uso de tokens sin perder sustancia técnica.</td><td data-label="Link"><a href="https://github.com/JuliusBrussee/caveman" target="_blank" rel="noopener noreferrer">github.com/JuliusBrussee/caveman</a></td></tr>
+              <tr><td data-label="Recurso">Superpowers</td><td data-label="Descripción">Framework de skills y metodología de desarrollo para coding agents, con workflows para diseño, planificación, TDD, revisión y desarrollo guiado por subagents.</td><td data-label="Link"><a href="https://github.com/obra/superpowers" target="_blank" rel="noopener noreferrer">github.com/obra/superpowers</a></td></tr>
+              <tr><td data-label="Recurso">OWASP State of Agentic AI Security and Governance</td><td data-label="Descripción">Reporte del OWASP Gen AI Security Project sobre seguridad y gobernanza de sistemas AI autónomos y agénticos, con frameworks, modelos de gobernanza y estándares regulatorios.</td><td data-label="Link"><a href="https://genai.owasp.org/resource/state-of-agentic-ai-security-and-governance/" target="_blank" rel="noopener noreferrer">genai.owasp.org</a></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
     </main>
     <footer class="site-footer container">
       <p>Manifiesto ADLC + Ciclo de vida</p>
-      <p>mayo 2026</p>
+      <p>junio 2026</p>
       <p><a href="/changelog/">Changelog</a></p>
       <p>
         <a

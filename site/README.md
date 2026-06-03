@@ -55,9 +55,11 @@ From the repository root, run:
 make serve
 ```
 
-Then open `http://localhost:8000/`.
+Then open the URL printed by the command. The default starting point is
+`http://localhost:8000/`.
 
-Use another port when needed:
+If the requested port is already in use, `make serve` automatically tries the
+next free port. Use another starting port when needed:
 
 ```sh
 make serve PORT=8001

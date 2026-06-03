@@ -54,7 +54,7 @@
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;700&family=Special+Elite&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="https://unpkg.com/papercss@1.9.2/dist/paper.min.css" />
     <link rel="stylesheet" href="https://unpkg.com/@xyflow/react@12/dist/style.css" />
-    <link rel="stylesheet" href="../styles.css?v=1.3" />
+    <link rel="stylesheet" href="../styles.css?v=1.3-useful-links" />
   </head>
   <body>
     <div class="paper-band paper-band-top"></div>
@@ -74,6 +74,7 @@
           <li><a href="#guardrails">Controlli</a></li>
           <li><a href="#agents">Agenti condivisi</a></li>
           <li><a href="#skills">Skill condivise</a></li>
+          <li><a href="#useful-links">Link utili</a></li>
         </ul>
       </nav>
       <div class="language-switcher paper" aria-label="Selettore lingua">
@@ -272,10 +273,30 @@
           <article class="paper agent-card"><span class="agent-label">Sicurezza</span><h3>CISO Security Skill</h3><p>Le skill di sicurezza dovrebbero essere definite o validate dal gruppo CISO e allineate alle policy enterprise.</p><p>Esempi: gestione dati, identità, segreti, access control, threat modeling, uso sicuro di prompt/tool ed evidenze di audit.</p></article>
         </div>
       </section>
+      <section id="useful-links" class="container section-block">
+        <div class="section-heading">
+          <p class="section-tag">Link utili</p>
+          <h2>Risorse esterne per delivery agentica e governance</h2>
+        </div>
+        <div class="paper resource-table-wrap">
+          <table class="resource-table">
+            <thead>
+              <tr><th>Risorsa</th><th>Descrizione</th><th>Link</th></tr>
+            </thead>
+            <tbody>
+              <tr><td data-label="Risorsa">Microsoft APM</td><td data-label="Descrizione">Dependency manager open source per AI agent. Aiuta i team a dichiarare standard, prompt, skill, plugin e server MCP in un manifest portabile, rendendo il setup degli agent riproducibile.</td><td data-label="Link"><a href="https://github.com/microsoft/apm" target="_blank" rel="noopener noreferrer">github.com/microsoft/apm</a></td></tr>
+              <tr><td data-label="Risorsa">GitHub Copilot Token Optimization</td><td data-label="Descrizione">Guida community con tecniche pratiche per ridurre il consumo di token in GitHub Copilot su Chat, Inline e Coding Agent, mantenendo la qualità del codice.</td><td data-label="Link"><a href="https://github.com/olivomarco/github-copilot-token-optimization" target="_blank" rel="noopener noreferrer">github.com/olivomarco/github-copilot-token-optimization</a></td></tr>
+              <tr><td data-label="Risorsa">caveman</td><td data-label="Descrizione">Skill/plugin per AI coding agent che comprime risposte e file di contesto, riducendo l'uso di token senza perdere sostanza tecnica.</td><td data-label="Link"><a href="https://github.com/JuliusBrussee/caveman" target="_blank" rel="noopener noreferrer">github.com/JuliusBrussee/caveman</a></td></tr>
+              <tr><td data-label="Risorsa">Superpowers</td><td data-label="Descrizione">Framework di skill e metodologia di sviluppo per coding agent, con workflow per design, planning, TDD, review e sviluppo guidato da subagent.</td><td data-label="Link"><a href="https://github.com/obra/superpowers" target="_blank" rel="noopener noreferrer">github.com/obra/superpowers</a></td></tr>
+              <tr><td data-label="Risorsa">OWASP State of Agentic AI Security and Governance</td><td data-label="Descrizione">Report dell'OWASP Gen AI Security Project sulla sicurezza e governance dei sistemi AI autonomi e agentici, con framework, modelli di governance e standard regolatori.</td><td data-label="Link"><a href="https://genai.owasp.org/resource/state-of-agentic-ai-security-and-governance/" target="_blank" rel="noopener noreferrer">genai.owasp.org</a></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
     </main>
     <footer class="site-footer container">
       <p>ADLC Manifesto + Lifecycle</p>
-      <p>maggio 2026</p>
+      <p>giugno 2026</p>
       <p><a href="/changelog/">Changelog</a></p>
       <p>
         <a

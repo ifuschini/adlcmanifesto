@@ -94,8 +94,10 @@ make serve
 make release-check
 ```
 
-`make serve` inicia una preview estática local en `http://localhost:8000/`.
-Usa `make serve PORT=8001` si ese puerto ya está ocupado.
+`make serve` inicia una preview estática local desde `http://localhost:8000/`.
+Si el puerto solicitado ya está ocupado, prueba automáticamente el siguiente
+puerto libre. Usa `make serve PORT=8001` para empezar la búsqueda desde otro
+puerto.
 
 `make release-check` está pensado para commits de release después de crear el
 tag de version.
