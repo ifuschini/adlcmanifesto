@@ -44,8 +44,8 @@
         "description": "Framework gouverné et indépendant des outils pour construire des systèmes agentiques.",
         "inLanguage": "fr",
         "datePublished": "2026-04-13",
-        "dateModified": "2026-06-03T11:09:34+02:00",
-        "version": "1.3",
+        "dateModified": "2026-09-08T11:53:18+02:00",
+        "version": "1.4",
         "about": ["Développement Agentique", "Manifeste ADLC", "Cycle de Vie ADLC", "Porte de qualité des exigences"]
       }
     </script>
@@ -54,7 +54,7 @@
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;700&family=Special+Elite&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="https://unpkg.com/papercss@1.9.2/dist/paper.min.css" />
     <link rel="stylesheet" href="https://unpkg.com/@xyflow/react@12/dist/style.css" />
-    <link rel="stylesheet" href="../styles.css?v=1.3-useful-links" />
+    <link rel="stylesheet" href="../styles.css?v=1.4" />
   </head>
   <body>
     <div class="paper-band paper-band-top"></div>
@@ -63,7 +63,7 @@
         <div class="nav-brand">
           <p class="site-kicker">Développement Agentique</p>
           <p class="brand-mark">ADLC</p>
-          <a class="site-version" href="/changelog/">V1.3</a>
+          <a class="site-version" href="/changelog/">V1.4</a>
         </div>
         <ul class="inline nav-links">
           <li><a href="#manifesto">Manifeste</a></li>
@@ -120,7 +120,7 @@
           <div class="sm-12 md-4 col"><article class="paper info-card"><h3>Garde-fou</h3><p>Le cycle de vie fonctionne uniquement lorsque les exigences passent une porte de qualité claire et partagée.</p></article></div>
           <div class="sm-12 md-4 col"><article class="paper info-card accent-card"><h3>Focus</h3><p>Réutilisation, orchestration, indépendance vis-à-vis des outils et changement gouverné.</p></article></div>
           <div class="sm-12 md-12 col"><article class="paper info-card"><h3>Extension du SDLC</h3><p>L'ADLC est pensé comme une extension du SDLC. Il conserve la discipline du cycle de vie logiciel, tout en l'élargissant pour couvrir les besoins spécifiques des systèmes agentiques, y compris la gouvernance, l'orchestration, le contrôle human-in-the-loop et l'amélioration opérationnelle continue.</p></article></div>
-          <div class="sm-12 md-12 col"><article class="paper info-card"><h3>Positionnement</h3><p>Nous affirmons que la delivery agentique doit être gouvernée de bout en bout. La sécurité, le monitoring runtime et le contrôle opérationnel sont nécessaires, mais ne suffisent pas à eux seuls. L'ADLC commence par la qualité des exigences et s'étend à l'orchestration, aux checkpoints humains, à la traçabilité et à l'amélioration opérationnelle continue.</p></article></div>
+          <div class="sm-12 md-12 col"><article class="paper info-card"><h3>Positionnement</h3><p>Nous affirmons que la delivery agentique doit être gouvernée de bout en bout. La sécurité, le monitoring runtime et le contrôle opérationnel sont nécessaires, mais ne suffisent pas à eux seuls. L'ADLC commence par la qualité des exigences et s'étend à l'orchestration, aux checkpoints humains, à la traçabilité et à l'amélioration opérationnelle continue.</p><p>L'ADLC gouverne l'ensemble du cycle de vie du comportement d'un système agentique : exigences, code, prompts, connaissance, outils, configuration du modèle, orchestration, preuves, release et opérations. Il n'est pas synonyme de sécurité du code AI ni de programmation autonome.</p></article></div>
           <div class="sm-12 md-12 col">
             <article class="paper info-card">
               <h3>Dépôt open source</h3>
@@ -204,6 +204,51 @@
             </tbody>
           </table>
         </div>
+
+        <div class="section-heading section-subheading">
+          <p class="section-tag">Baseline d'implémentation</p>
+          <h3>Contrôles minimaux pour une adoption enterprise de l'ADLC</h3>
+          <p>Les principes deviennent opérationnels uniquement lorsqu'ils sont traduits en contrôles répétables, vérifications mesurables et preuves révisables.</p>
+        </div>
+        <div class="agents-grid implementation-grid">
+          <article class="paper summary-card"><h3>Entrée et ownership</h3><p>Requirements quality gate franchi, critères d'acceptation mesurables et responsables métier, techniques et risque identifiés.</p></article>
+          <article class="paper summary-card"><h3>Surface comportementale versionnée</h3><p>Code, prompts, connaissance, sources RAG, shared skills, configuration du modèle, descriptions des outils et règles d'orchestration sont des inputs contrôlés et versionnés.</p></article>
+          <article class="paper summary-card"><h3>Gates de preuve automatisés</h3><p>Tests, évaluations, contrôles de policy et approbations obligatoires s'exécutent dans les pipelines et bloquent la promotion lorsqu'un contrôle requis échoue.</p></article>
+          <article class="paper summary-card"><h3>Évaluation comportementale</h3><p>Des datasets d'évaluation versionnés couvrent le comportement attendu, les edge cases, les actions non sûres, la qualité du retrieval, l'escalade et les régressions.</p></article>
+          <article class="paper summary-card"><h3>Release contrôlée</h3><p>Chaque release comprend un ensemble de preuves approuvé, un inventaire complet des changements, une autorisation responsable et le rollback de chaque input comportemental.</p></article>
+          <article class="paper summary-card"><h3>Feedback de production</h3><p>Tracing, événements d'audit, signaux de qualité, drift, échecs de retrieval, incidents et feedback humain alimentent la boucle d'amélioration gouvernée.</p></article>
+        </div>
+
+        <article class="paper conformance-card">
+          <p class="section-tag">Checklist de conformité ADLC</p>
+          <h3>Une équipe peut déclarer son alignement uniquement lorsque les contrôles sont démontrables</h3>
+          <ul class="practice-list">
+            <li>Aucune implémentation ne commence avant que le requirements quality gate soit franchi.</li>
+            <li>Chaque input modifiant le comportement possède un owner, une version, un statut d'approbation et un historique des changements.</li>
+            <li>Les exigences sont traçables vers l'implémentation, la connaissance, le comportement attendu, les preuves de test et la release.</li>
+            <li>L'approbation humaine et l'escalade sont appliquées aux checkpoints requis par le risque et l'impact.</li>
+            <li>Les releases sont reproductibles, observables et réversibles pour les changements de code et de la couche de connaissance.</li>
+            <li>Les preuves de production sont revues et converties en activités d'amélioration gouvernées.</li>
+          </ul>
+        </article>
+
+        <div class="section-heading section-subheading">
+          <p class="section-tag">SDLC et ADLC</p>
+          <h3>La même discipline de lifecycle, appliquée à une surface comportementale plus large</h3>
+        </div>
+        <div class="paper resource-table-wrap">
+          <table class="resource-table comparison-table">
+            <thead><tr><th>Caractéristique</th><th>SDLC traditionnel</th><th>ADLC</th></tr></thead>
+            <tbody>
+              <tr><td data-label="Caractéristique">Exécution principale</td><td data-label="SDLC traditionnel">Delivery logicielle dirigée par les personnes</td><td data-label="ADLC">Delivery coordonnée entre personnes et agents, avec une responsabilité humaine explicite</td></tr>
+              <tr><td data-label="Caractéristique">Comportement</td><td data-label="SDLC traditionnel">Principalement déterministe et guidé par le code</td><td data-label="ADLC">Également non déterministe, adaptatif et influencé par le contexte runtime</td></tr>
+              <tr><td data-label="Caractéristique">Surface de changement contrôlée</td><td data-label="SDLC traditionnel">Code source, configuration, infrastructure et données</td><td data-label="ADLC">Également prompts, connaissance et RAG, skills, configuration du modèle, outils et orchestration</td></tr>
+              <tr><td data-label="Caractéristique">Validation</td><td data-label="SDLC traditionnel">Tests de code, d'intégration, système, sécurité et acceptation</td><td data-label="ADLC">Les mêmes contrôles plus une évaluation continue du comportement, du retrieval et des régressions</td></tr>
+              <tr><td data-label="Caractéristique">Rôle humain</td><td data-label="SDLC traditionnel">Auteur, reviewer, approbateur et opérateur</td><td data-label="ADLC">Gouverneur, approbateur, examinateur, responsable de l'escalade et des décisions</td></tr>
+              <tr><td data-label="Caractéristique">Preuves</td><td data-label="SDLC traditionnel">Records de build, test, approbation et release</td><td data-label="ADLC">Traçabilité end-to-end de l'exigence au comportement, aux preuves, à la release et aux opérations</td></tr>
+            </tbody>
+          </table>
+        </div>
       </section>
       <section class="container section-block">
         <div class="section-heading">
@@ -253,7 +298,7 @@
           <article class="paper agent-card"><span class="agent-label">Flux de delivery</span><h3>PR Governance Agent</h3><p>Accompagne les pull requests de bout en bout en resumant les changements, en verifiant les politiques, en signalant les risques et en proposant les reviewers.</p><p>Aide a maintenir des revues coherentes, tracables et alignees avec les garde-fous d'ingenierie partages.</p></article>
           <article class="paper agent-card"><span class="agent-label">Communication</span><h3>Release Notes Agent</h3><p>Genere les release notes a partir du travail fusionne, en regroupant fonctionnalites, correctifs, breaking changes, migrations et notes operationnelles.</p><p>Produit a la fois des resumes techniques et des versions lisibles pour des audiences metier.</p></article>
           <article class="paper agent-card"><span class="agent-label">Alignement</span><h3>Knowledge Sync Agent</h3><p>Detecte les ecarts entre code, tickets, releases et documentation, puis propose ou effectue les mises a jour manquantes.</p><p>Maintient l'alignement entre la realite de la delivery et la base de connaissance dans le temps.</p></article>
-          <article class="paper agent-card"><span class="agent-label">Gouvernance de la connaissance</span><h3>RAG Governance Agent</h3><p>Passe en revue et gouverne les sources de connaissance avant qu'elles soient utilisées par les agents. Il vérifie fraîcheur, ownership, statut d'approbation, duplication, contradictions, validité métier, traçabilité et impact de régression.</p><p>Il aide à garantir que le contenu RAG et la connaissance partagée améliorent le comportement des agents sans introduire de changement non contrôlé.</p></article>
+          <article class="paper agent-card"><span class="agent-label">Gouvernance de la connaissance</span><h3>Knowledge Governance Agent</h3><p>Passe en revue et gouverne les sources de connaissance et d'agent context avant leur utilisation par les agents. Il vérifie fraîcheur, ownership, statut d'approbation et version, duplication, contradictions, validité métier, traçabilité, qualité du retrieval et impact de régression.</p><p>Il aide à garantir que les documents, context endpoints, contenus RAG et connaissances partagées améliorent le comportement des agents sans introduire de changement non contrôlé.</p></article>
           <article class="paper agent-card"><span class="agent-label">Gouvernance</span><h3>Compliance and Traceability Agent</h3><p>Relie exigences, implementations, tests, documentation et releases dans une chaine d'evidence auditable.</p><p>Soutient les quality gates, les revues et les checkpoints de gouvernance tout au long du lifecycle.</p></article>
           <article class="paper agent-card"><span class="agent-label">Opérations</span><h3>Operational Readiness Agent</h3><p>Verifie que chaque release dispose de runbooks, d'ownership, de guides de rollback, d'alertes et de preuves de préparation opérationnelle.</p><p>Aide les equipes a passer du deploiement a une operation stable avec moins d'angles morts.</p></article>
         </div>
@@ -266,7 +311,7 @@
         <div class="agents-grid">
           <article class="paper agent-card"><span class="agent-label">Principe</span><h3>Adaptees a l'entreprise</h3><p>Les shared skills peuvent partir de frameworks consolides, mais elles doivent etre adaptees a l'architecture, aux politiques, au vocabulaire, au modele de risque et a la culture de delivery de l'entreprise.</p><p>Elles transforment le know-how reutilisable en patterns d'execution gouvernes que les agents et les equipes peuvent appliquer de maniere coherente.</p></article>
           <article class="paper agent-card"><span class="agent-label">Documentation</span><h3>Documentation Skill</h3><p>Definit comment la documentation humaine et l'agent context sont produits comme des artefacts connectes mais separes.</p><p>La documentation humaine vit dans des outils concus pour les personnes. La documentation pour agents est exposee via des Agent Context Endpoints gouvernes, comme des serveurs MCP, des fichiers llms.txt, des index de retrieval ou des context packs versionnes.</p><p>Les outils de contexte agentique peuvent inclure Context7, GitMCP, MCPDoc, mcp-documentation-server, des serveurs MCP custom bases sur des SDK MCP open source ou des systemes equivalents. Ces endpoints doivent exposer des URLs stables, l'ownership des sources, le versioning, le statut d'approbation et les regles de retrieval.</p></article>
-          <article class="paper agent-card"><span class="agent-label">Connaissance</span><h3>RAG Governance Skill</h3><p>Définit comment les sources de connaissance sont sélectionnées, approuvées, découpées, versionnées, retirées, testées et tracées.</p><p>Elle inclut des règles pour l'ownership des sources, la fraîcheur des documents, la gestion des contradictions, l'évaluation du retrieval, les attentes de citation et les tests de régression après les mises à jour de connaissance.</p></article>
+          <article class="paper agent-card"><span class="agent-label">Connaissance</span><h3>Knowledge Governance Skill</h3><p>Définit comment les sources de connaissance et l'agent context sont sélectionnés, attribués à un owner, approuvés, structurés, versionnés, publiés, testés, tracés et retirés.</p><p>Elle couvre les sources RAG, context endpoints, connaissances partagées, la gestion des contradictions, la fraîcheur, l'évaluation du retrieval, les attentes de citation, les règles d'accès et les tests de régression comportementale après un changement de connaissance.</p></article>
           <article class="paper agent-card"><span class="agent-label">Delivery</span><h3>Release Notes Skill</h3><p>Definit comment generer, regrouper, revoir et adapter les release notes pour des audiences techniques, metier et operationnelles.</p><p>Inclut les regles pour breaking changes, migrations, known issues, notes de rollback et resumes customer-facing.</p></article>
           <article class="paper agent-card"><span class="agent-label">Architecture</span><h3>Architecture Skill</h3><p>Encode les principes d'architecture, criteres de decision, reference patterns et attentes de revue de l'entreprise.</p><p>Aide les agents a raisonner avec des standards locaux plutot qu'avec des conseils generiques.</p></article>
           <article class="paper agent-card"><span class="agent-label">Infrastructure</span><h3>Infrastructure Skill</h3><p>Encode les conventions de plateforme sur environnements, deploiement, observabilite, rollback, naming, ownership et readiness operationnelle.</p><p>Elle doit refleter le modele d'infrastructure reel de l'entreprise, pas une checklist cloud abstraite.</p></article>
@@ -278,17 +323,77 @@
           <p class="section-tag">Liens utiles</p>
           <h2>Ressources externes pour la delivery agentique et la gouvernance</h2>
         </div>
+        <div class="resource-group">
+          <div class="resource-group-heading">
+            <h3>Gouvernance et standards</h3>
+            <p>Références durables pour le risque enterprise, la responsabilité, la sécurité et la gouvernance du cycle de vie.</p>
+          </div>
+          <div class="paper resource-table-wrap">
+            <table class="resource-table">
+              <thead><tr><th>Ressource</th><th>Description</th><th>Lien</th></tr></thead>
+              <tbody>
+                <tr><td data-label="Ressource">NIST AI Risk Management Framework</td><td data-label="Description">Framework vendor-neutral pour gérer les risques et la fiabilité de l'AI durant la conception, le développement, le déploiement, l'utilisation et l'évaluation.</td><td data-label="Lien"><a href="https://www.nist.gov/itl/ai-risk-management-framework" target="_blank" rel="noopener noreferrer">nist.gov/ai-rmf</a></td></tr>
+                <tr><td data-label="Ressource">NIST Generative AI Profile</td><td data-label="Description">Profil complémentaire qui applique l'AI RMF aux risques et contrôles du cycle de vie de l'AI générative.</td><td data-label="Lien"><a href="https://www.nist.gov/publications/artificial-intelligence-risk-management-framework-generative-artificial-intelligence" target="_blank" rel="noopener noreferrer">nist.gov/genai-profile</a></td></tr>
+                <tr><td data-label="Ressource">ISO/IEC 42001</td><td data-label="Description">Standard international pour les systèmes de management de l'AI, couvrant politiques, responsabilité, contrôles du risque et amélioration continue. Le standard complet est commercial.</td><td data-label="Lien"><a href="https://www.iso.org/standard/42001" target="_blank" rel="noopener noreferrer">iso.org/standard/42001</a></td></tr>
+                <tr><td data-label="Ressource">MITRE ATLAS</td><td data-label="Description">Base de connaissances évolutive sur les tactiques et techniques adverses visant les systèmes AI, y compris les menaces agentiques et leurs mitigations.</td><td data-label="Lien"><a href="https://atlas.mitre.org/" target="_blank" rel="noopener noreferrer">atlas.mitre.org</a></td></tr>
+                <tr><td data-label="Ressource">OWASP Agentic AI Threats and Mitigations</td><td data-label="Description">Taxonomie fondée sur le threat modeling et recommandations de mitigation pour les systèmes AI autonomes et agentiques.</td><td data-label="Lien"><a href="https://genai.owasp.org/resource/agentic-ai-threats-and-mitigations/" target="_blank" rel="noopener noreferrer">genai.owasp.org</a></td></tr>
+                <tr><td data-label="Ressource">OWASP State of Agentic AI Security and Governance</td><td data-label="Description">Rapport sur l'état actuel de la sécurité et de la gouvernance agentiques, utile comme lecture de contexte et non comme standard normatif.</td><td data-label="Lien"><a href="https://genai.owasp.org/resource/state-of-agentic-ai-security-and-governance/" target="_blank" rel="noopener noreferrer">genai.owasp.org/state-of-agentic-ai</a></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="resource-group">
+          <div class="resource-group-heading">
+            <h3>Protocoles et observabilité</h3>
+            <p>Spécifications ouvertes pour intégrer le contexte, assurer l'interopérabilité des agents et produire des preuves opérationnelles portables.</p>
+          </div>
+          <div class="paper resource-table-wrap">
+            <table class="resource-table">
+              <thead><tr><th>Ressource</th><th>Description</th><th>Lien</th></tr></thead>
+              <tbody>
+                <tr><td data-label="Ressource">Model Context Protocol</td><td data-label="Description">Protocole ouvert pour connecter les applications agentiques aux outils, sources de données et services de contexte gouvernés.</td><td data-label="Lien"><a href="https://modelcontextprotocol.io/specification/latest" target="_blank" rel="noopener noreferrer">modelcontextprotocol.io</a></td></tr>
+                <tr><td data-label="Ressource">Agent2Agent Protocol</td><td data-label="Description">Standard ouvert Apache-2.0 pour la discovery, l'interaction sécurisée et la collaboration entre systèmes agentiques indépendants.</td><td data-label="Lien"><a href="https://a2a-protocol.org/latest/specification/" target="_blank" rel="noopener noreferrer">a2a-protocol.org</a></td></tr>
+                <tr><td data-label="Ressource">OpenTelemetry GenAI Semantic Conventions</td><td data-label="Description">Conventions Apache-2.0 pour des traces, métriques et événements portables couvrant retrieval, appels d'outils, MCP et exécution des agents.</td><td data-label="Lien"><a href="https://github.com/open-telemetry/semantic-conventions-genai" target="_blank" rel="noopener noreferrer">github.com/open-telemetry/semantic-conventions-genai</a></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="resource-group">
+          <div class="resource-group-heading">
+            <h3>Pratiques et optimisation</h3>
+            <p>Ressources d'implémentation que les équipes doivent évaluer selon leurs contrôles, plateformes et modèles de risque.</p>
+          </div>
+          <div class="paper resource-table-wrap">
+            <table class="resource-table">
+              <thead><tr><th>Ressource</th><th>Description</th><th>Lien</th></tr></thead>
+              <tbody>
+                <tr><td data-label="Ressource">Microsoft APM</td><td data-label="Description">Dependency manager sous licence MIT pour distribuer des instructions, skills, plugins et serveurs MCP portables, versionnés et gouvernés par des politiques.</td><td data-label="Lien"><a href="https://github.com/microsoft/apm" target="_blank" rel="noopener noreferrer">github.com/microsoft/apm</a></td></tr>
+                <tr><td data-label="Ressource">Superpowers</td><td data-label="Description">Framework open source de skills et méthodologie de delivery pour design, planification, TDD, revue et développement assisté par agents.</td><td data-label="Lien"><a href="https://github.com/obra/superpowers" target="_blank" rel="noopener noreferrer">github.com/obra/superpowers</a></td></tr>
+                <tr><td data-label="Ressource">GitHub Copilot Token Optimization</td><td data-label="Description">Guide communautaire spécifique au produit pour réduire le contexte et la consommation de tokens sans compromettre la qualité de la delivery.</td><td data-label="Lien"><a href="https://github.com/olivomarco/github-copilot-token-optimization" target="_blank" rel="noopener noreferrer">github.com/olivomarco/github-copilot-token-optimization</a></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="section-heading section-subheading">
+          <p class="section-tag">Exemples de tooling enterprise</p>
+          <h3>Produits pouvant implémenter certaines parties du modèle de contrôle ADLC</h3>
+          <p>Ces exemples ne sont pas normatifs. L'utilisation d'un produit ne rend pas à elle seule une équipe alignée avec l'ADLC : les contrôles, les preuves, l'ownership et les décisions responsables restent obligatoires.</p>
+        </div>
         <div class="paper resource-table-wrap">
-          <table class="resource-table">
-            <thead>
-              <tr><th>Ressource</th><th>Description</th><th>Lien</th></tr>
-            </thead>
+          <table class="resource-table tooling-table">
+            <thead><tr><th>Capacité</th><th>Outil</th><th>Usage enterprise</th><th>Statut open source</th><th>URL</th></tr></thead>
             <tbody>
-              <tr><td data-label="Ressource">Microsoft APM</td><td data-label="Description">Dependency manager open source pour AI agents. Il aide les équipes à déclarer standards, prompts, skills, plugins et serveurs MCP dans un manifeste portable afin de rendre le setup des agents reproductible.</td><td data-label="Lien"><a href="https://github.com/microsoft/apm" target="_blank" rel="noopener noreferrer">github.com/microsoft/apm</a></td></tr>
-              <tr><td data-label="Ressource">GitHub Copilot Token Optimization</td><td data-label="Description">Guide communautaire avec des techniques pratiques pour réduire la consommation de tokens dans GitHub Copilot sur Chat, Inline et Coding Agent, tout en préservant la qualité du code.</td><td data-label="Lien"><a href="https://github.com/olivomarco/github-copilot-token-optimization" target="_blank" rel="noopener noreferrer">github.com/olivomarco/github-copilot-token-optimization</a></td></tr>
-              <tr><td data-label="Ressource">caveman</td><td data-label="Description">Skill/plugin pour AI coding agents qui compresse les réponses et fichiers de contexte, réduisant l'usage de tokens sans perdre la substance technique.</td><td data-label="Lien"><a href="https://github.com/JuliusBrussee/caveman" target="_blank" rel="noopener noreferrer">github.com/JuliusBrussee/caveman</a></td></tr>
-              <tr><td data-label="Ressource">Superpowers</td><td data-label="Description">Framework de skills et méthodologie de développement pour coding agents, avec workflows pour design, planification, TDD, revue et développement guidé par subagents.</td><td data-label="Lien"><a href="https://github.com/obra/superpowers" target="_blank" rel="noopener noreferrer">github.com/obra/superpowers</a></td></tr>
-              <tr><td data-label="Ressource">OWASP State of Agentic AI Security and Governance</td><td data-label="Description">Rapport de l'OWASP Gen AI Security Project sur la sécurité et la gouvernance des systèmes AI autonomes et agentiques, avec frameworks, modèles de gouvernance et standards réglementaires.</td><td data-label="Lien"><a href="https://genai.owasp.org/resource/state-of-agentic-ai-security-and-governance/" target="_blank" rel="noopener noreferrer">genai.owasp.org</a></td></tr>
+              <tr><td data-label="Capacité">Exigences et approbations</td><td data-label="Outil">Jira</td><td data-label="Usage enterprise">Exigences structurées, workflows, approbations, ownership et records de traçabilité.</td><td data-label="Statut open source">Non - commercial</td><td data-label="URL"><a href="https://www.atlassian.com/software/jira" target="_blank" rel="noopener noreferrer">https://www.atlassian.com/software/jira</a></td></tr>
+              <tr><td data-label="Capacité">Delivery et gates de preuve</td><td data-label="Outil">GitLab</td><td data-label="Usage enterprise">Gestion de versions, revue, CI/CD, policy gates, contrôles de sécurité et preuves de release.</td><td data-label="Statut open source">Open core - CE est MIT ; les fonctions enterprise sont propriétaires</td><td data-label="URL"><a href="https://about.gitlab.com/" target="_blank" rel="noopener noreferrer">https://about.gitlab.com/</a></td></tr>
+              <tr><td data-label="Capacité">Tests comportementaux</td><td data-label="Outil">promptfoo</td><td data-label="Usage enterprise">Évaluations de prompts, RAG, agents et red teaming exécutables localement ou dans les pipelines CI.</td><td data-label="Statut open source">Oui - MIT</td><td data-label="URL"><a href="https://www.promptfoo.dev/" target="_blank" rel="noopener noreferrer">https://www.promptfoo.dev/</a></td></tr>
+              <tr><td data-label="Capacité">Tracing et évaluation</td><td data-label="Outil">Langfuse</td><td data-label="Usage enterprise">Tracing, gestion des prompts, datasets d'évaluation, expériences et feedback de production.</td><td data-label="Statut open source">Open core - le cœur est MIT ; les add-ons enterprise sont commerciaux</td><td data-label="URL"><a href="https://langfuse.com/" target="_blank" rel="noopener noreferrer">https://langfuse.com/</a></td></tr>
+              <tr><td data-label="Capacité">Observabilité AI</td><td data-label="Outil">Arize Phoenix</td><td data-label="Usage enterprise">Tracing, évaluation du retrieval, expériences, analyse des prompts et diagnostic comportemental.</td><td data-label="Statut open source">Source-available - ELv2, non approuvé comme open source par l'OSI</td><td data-label="URL"><a href="https://phoenix.arize.com/" target="_blank" rel="noopener noreferrer">https://phoenix.arize.com/</a></td></tr>
+              <tr><td data-label="Capacité">Application des policies</td><td data-label="Outil">Open Policy Agent</td><td data-label="Usage enterprise">Policy-as-code pour gates de delivery, décisions runtime, contrôle des appels d'outils et audit trails.</td><td data-label="Statut open source">Oui - Apache-2.0</td><td data-label="URL"><a href="https://www.openpolicyagent.org/" target="_blank" rel="noopener noreferrer">https://www.openpolicyagent.org/</a></td></tr>
+              <tr><td data-label="Capacité">Documentation humaine</td><td data-label="Outil">Backstage TechDocs</td><td data-label="Usage enterprise">Catalogue logiciel et docs-as-code destinés aux personnes, intégrés à l'ownership engineering.</td><td data-label="Statut open source">Oui - Apache-2.0</td><td data-label="URL"><a href="https://backstage.io/docs/features/techdocs/" target="_blank" rel="noopener noreferrer">https://backstage.io/docs/features/techdocs/</a></td></tr>
+              <tr><td data-label="Capacité">Documentation pour agents</td><td data-label="Outil">Context7</td><td data-label="Usage enterprise">Accès distant MCP et CLI à un contexte technique sensible aux versions pour les coding agents.</td><td data-label="Statut open source">Partiel - le serveur MCP est MIT ; le backend hosted est privé</td><td data-label="URL"><a href="https://context7.com/" target="_blank" rel="noopener noreferrer">https://context7.com/</a></td></tr>
             </tbody>
           </table>
         </div>
@@ -296,7 +401,7 @@
     </main>
     <footer class="site-footer container">
       <p>Manifeste ADLC + Cycle de vie</p>
-      <p>juin 2026</p>
+      <p>septembre 2026</p>
       <p><a href="/changelog/">Changelog</a></p>
       <p>
         <a

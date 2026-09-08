@@ -4,6 +4,31 @@ These release notes summarize every public ADLC Manifesto version in a
 reader-friendly format. For the concise change log, see
 [CHANGELOG.md](CHANGELOG.md).
 
+## V1.4 - September 2026
+
+Tag: [v1.4](https://github.com/ifuschini/adlcmanifesto/tree/v1.4)
+
+V1.4 turns the ADLC's enterprise intent into a more concrete adoption model.
+It clarifies that ADLC extends SDLC with governance for agent behavior,
+knowledge, prompts, tools, models, and orchestration, while accountable humans
+remain responsible for requirements, approvals, exceptions, and releases.
+
+The website now includes a minimum implementation baseline, an ADLC
+conformance checklist, and an explicit SDLC-versus-ADLC comparison. Enterprise
+tooling examples map capabilities to practical use, URLs, and open source
+status without making any product normative.
+
+RAG Governance Agent and RAG Governance Skill have been renamed Knowledge
+Governance Agent and Knowledge Governance Skill. Their scope now covers the
+full governed context surface, including RAG sources, shared knowledge,
+prompts, context endpoints, access rules, traceability, and behavioral
+regression evidence.
+
+External resources are now organized into governance and standards, protocols
+and observability, and practices and optimization. The release adds references
+to NIST, ISO/IEC 42001, MITRE ATLAS, OWASP, MCP, A2A, and OpenTelemetry GenAI,
+and improves desktop and mobile table readability.
+
 ## V1.3 - June 2026
 
 Tag: [v1.3](https://github.com/ifuschini/adlcmanifesto/tree/v1.3)
@@ -87,4 +112,3 @@ governed, tool-agnostic, and lifecycle-driven. It frames ADLC as an extension
 of SDLC rather than a replacement, and introduces the first version of the
 manifesto, lifecycle framing, multilingual static website, and PaperCSS visual
 direction.
-

@@ -116,10 +116,10 @@ Il comando carica il contenuto di `site/` nella directory remota
 
 ## Versione
 
-Versione corrente: `V1.3`
+Versione corrente: `V1.4`
 
-- Pubblicata: giugno 2026
-- Ultima modifica: giugno 2026
+- Pubblicata: settembre 2026
+- Ultima modifica: settembre 2026
 
 ## Tag Di Release
 
@@ -130,7 +130,7 @@ Usa il formato minuscolo `vX.Y` per i tag del repository, allineato alla
 versione dichiarata come `VX.Y` in [manifesto.md](manifesto.md) e
 [CHANGELOG.md](CHANGELOG.md).
 
-Per esempio, `V1.3` nel manifesto è taggata come `v1.3` in Git.
+Per esempio, `V1.4` nel manifesto è taggata come `v1.4` in Git.
 
 Vedi [docs/release-process.md](docs/release-process.md) per la checklist di
 release.

@@ -1,5 +1,16 @@
 # Changelog
 
+## V1.4 - September 2026
+
+- Strengthened ADLC's enterprise positioning as behavioral lifecycle governance that extends SDLC beyond code-centric delivery.
+- Added a minimum implementation baseline and an ADLC conformance checklist for practical enterprise adoption.
+- Added an SDLC-versus-ADLC comparison and clarified the continuing role of accountable human governance.
+- Expanded the enterprise tooling examples with capability, adoption purpose, URL, and open source status.
+- Renamed RAG Governance Agent and Skill to Knowledge Governance Agent and Skill, broadening their scope to all governed agent context.
+- Reorganized external resources into governance and standards, protocols and observability, and practices and optimization.
+- Added NIST AI RMF, NIST Generative AI Profile, ISO/IEC 42001, MITRE ATLAS, OWASP threat guidance, MCP, A2A, and OpenTelemetry GenAI references.
+- Improved desktop and mobile table layouts so long content and resource names remain readable without page overflow.
+
 ## V1.3 - June 2026
 
 - Clarified that human documentation and agent context are connected but separate artifacts.
