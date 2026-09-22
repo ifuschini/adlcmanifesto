@@ -12,7 +12,9 @@ The site has no build step. Files in this directory are published directly to
 - `es/index.html`: Spanish homepage.
 - `fr/index.html`: French homepage.
 - `changelog/index.html`: public changelog page.
-- `styles.css`: shared visual system and responsive layout.
+- `styles.css`: base layout, lifecycle diagram, and responsive tables.
+- `technical.css`: editorial theme, reading widths, and desktop/mobile navigation layout; loaded after the base styles.
+- `navigation.js`: collapsible mobile index and active-section tracking.
 - `practice-flow.js`: lifecycle diagram and interaction logic.
 - `email.js`: contact email de-obfuscation.
 - `robots.txt` and `sitemap.xml`: crawler metadata.
@@ -40,6 +42,11 @@ make check
 ```
 
 This validates the publish script and JavaScript files.
+
+For layout changes, verify all four languages and the changelog at desktop,
+tablet, and narrow mobile widths. Check the index toggle, anchor destinations,
+keyboard focus, table readability, and absence of horizontal page overflow.
+Navigation remains available through native HTML details when JavaScript is disabled.
 
 To run only the local website link and anchor checker:
 

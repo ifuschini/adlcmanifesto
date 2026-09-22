@@ -121,7 +121,7 @@ La commande envoie le contenu de `site/` vers le répertoire distant
 
 ## Version
 
-Version actuelle: `V1.4`
+Version actuelle: `V1.5`
 
 - Publiée: septembre 2026
 - Dernière modification: septembre 2026
@@ -134,7 +134,7 @@ Utilise le format minuscule `vX.Y` pour les tags du dépôt, aligné avec la
 version déclarée comme `VX.Y` dans [manifesto.md](manifesto.md) et
 [CHANGELOG.md](CHANGELOG.md).
 
-Par exemple, `V1.4` dans le manifeste est taggée `v1.4` dans Git.
+Par exemple, `V1.5` dans le manifeste est taggée `v1.5` dans Git.
 
 Consulte [docs/release-process.md](docs/release-process.md) pour la checklist
 de release.

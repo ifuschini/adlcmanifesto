@@ -3,10 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ADLC Manifesto Changelog | V1.4</title>
+    <title>ADLC Manifesto Changelog | V1.5</title>
     <meta
       name="description"
-      content="Changelog for the ADLC Manifesto, including version 1.4 updates to enterprise adoption, conformance, knowledge governance, tooling, and external resources."
+      content="Changelog for the ADLC Manifesto, including version 1.5 updates to enterprise adoption, conformance, knowledge governance, tooling, and external resources."
     />
     <meta
       name="robots"
@@ -14,7 +14,7 @@
     />
     <link rel="canonical" href="https://adlcmanifesto.org/changelog/" />
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="ADLC Manifesto Changelog | V1.4" />
+    <meta property="og:title" content="ADLC Manifesto Changelog | V1.5" />
     <meta property="og:site_name" content="ADLC Manifesto" />
     <meta property="og:url" content="https://adlcmanifesto.org/changelog/" />
     <meta
@@ -28,7 +28,7 @@
     <meta property="og:image:height" content="630" />
     <meta property="og:image:alt" content="ADLC Manifesto open graph card" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="ADLC Manifesto Changelog | V1.4" />
+    <meta name="twitter:title" content="ADLC Manifesto Changelog | V1.5" />
     <meta
       name="twitter:description"
       content="Version history for the ADLC Manifesto and Lifecycle."
@@ -42,8 +42,8 @@
         "description": "Version history for the ADLC Manifesto and Lifecycle.",
         "inLanguage": "en",
         "datePublished": "2026-05-19",
-        "dateModified": "2026-09-08T11:53:18+02:00",
-        "version": "1.4",
+        "dateModified": "2026-09-22T12:02:58+02:00",
+        "version": "1.5",
         "isPartOf": {
           "@type": "WebSite",
           "name": "ADLC Manifesto",
@@ -54,14 +54,17 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;700&family=Special+Elite&display=swap"
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
     <link
       rel="stylesheet"
       href="https://unpkg.com/papercss@1.9.2/dist/paper.min.css"
     />
-    <link rel="stylesheet" href="../styles.css?v=1.4" />
+    <link rel="stylesheet" href="../styles.css?v=1.5" />
+    <script src="../theme.js?v=1.5"></script>
+    <link rel="stylesheet" href="../technical.css?v=1.5-theme" />
+    <script src="../navigation.js?v=1.5" defer></script>
   </head>
   <body>
     <div class="paper-band paper-band-top"></div>
@@ -71,16 +74,26 @@
         <div class="nav-brand">
           <p class="site-kicker">Agentic Development</p>
           <p class="brand-mark">ADLC</p>
-          <a class="site-version" href="/changelog/" aria-current="page">V1.4</a>
+          <a class="site-version" href="/changelog/" aria-current="page">V1.5</a>
         </div>
-        <ul class="inline nav-links">
-          <li><a href="/">Manifesto</a></li>
+        <details class="section-navigation" open>
+          <summary>Contents</summary>
+<ul class="inline nav-links">
+          <li><a href="/#manifesto">Manifesto</a></li>
+          <li><a href="/#principles">Principles</a></li>
+          <li><a href="/#guardrails">Guardrails</a></li>
+          <li><a href="/#requirements-quality-gate">Requirements Quality Gate</a></li>
           <li><a href="/#lifecycle">Lifecycle</a></li>
           <li><a href="/#operating-model">Operating Model</a></li>
           <li><a href="/#practice">In Practice</a></li>
-          <li><a href="/#agents">Shared Agents</a></li>
           <li><a href="/#skills">Shared Skills</a></li>
+          <li><a href="/#agents">Shared Agents</a></li>
+          <li><a href="/#tool-families">Tool Families</a></li>
+          <li><a href="/#enterprise-tools">Enterprise Tools</a></li>
+          <li><a href="/#llm-gateways">LLM Gateways</a></li>
+          <li><a href="/#useful-links">Useful Links</a></li>
         </ul>
+        </details>
       </nav>
     </header>
 
@@ -95,8 +108,32 @@
           </p>
           <div class="hero-actions">
             <a href="/" class="paper-btn btn-secondary-outline">Back to manifesto</a>
-            <a href="#v1-4" class="paper-btn">Read V1.4</a>
+            <a href="#v1-5" class="paper-btn">Read V1.5</a>
           </div>
+        </article>
+      </section>
+
+      <section id="v1-5" class="container section-block">
+        <div class="section-heading">
+          <p class="section-tag">September 2026</p>
+          <h2>V1.5</h2>
+        </div>
+        <article class="paper info-card">
+          <h3>Practical governance and competent oversight</h3>
+          <ul>
+            <li>Expanded to five principles, with minimum necessary autonomy and evidence-based authority.</li>
+            <li>Made the requirements quality gate incremental while keeping it mandatory before implementation.</li>
+            <li>Added autonomy contracts, runtime enforcement, memory governance, and the Behavioral Evaluation Skill.</li>
+            <li>Clarified recovery, operational value, and criteria for reducing autonomy or retiring systems.</li>
+            <li>Required trained human reviewers with evidence, sufficient time, and effective authority to intervene.</li>
+            <li>Added an enterprise adoption guide with a worked refund-assistance example.</li>
+            <li>Expanded tooling examples with Temporal, OpenBao, and OpenMetadata; listed Phoenix as an alternative and LangGraph as optional, and clarified policy enforcement and tool scope.</li>
+          </ul>
+        </article>
+        <article class="paper info-card">
+          <h3>Technical Standard layout</h3>
+          <p>Added a vendor-neutral tool-family map and a dedicated LLM gateway comparison, with open-source options first, multi-provider routing, and input/output token policies.</p>
+          <p>Introduced readable typography, open sections, a fixed desktop index, a collapsible mobile menu, and responsive tables across all four languages and the changelog.</p>
         </article>
       </section>
 

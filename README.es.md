@@ -117,7 +117,7 @@ El comando sube el contenido de `site/` al directorio remoto `/public_html/`.
 
 ## Versión
 
-Versión actual: `V1.4`
+Versión actual: `V1.5`
 
 - Publicada: septiembre de 2026
 - Última modificación: septiembre de 2026
@@ -130,7 +130,7 @@ Usa el formato en minusculas `vX.Y` para los tags del repositorio, alineado con
 la versión declarada como `VX.Y` en [manifesto.md](manifesto.md) y
 [CHANGELOG.md](CHANGELOG.md).
 
-Por ejemplo, `V1.4` en el manifiesto se etiqueta como `v1.4` en Git.
+Por ejemplo, `V1.5` en el manifiesto se etiqueta como `v1.5` en Git.
 
 Consulta [docs/release-process.md](docs/release-process.md) para la checklist
 de release.

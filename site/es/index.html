@@ -44,17 +44,20 @@
         "description": "Framework gobernado y agnóstico a las herramientas para construir sistemas agénticos.",
         "inLanguage": "es",
         "datePublished": "2026-04-13",
-        "dateModified": "2026-09-08T11:53:18+02:00",
-        "version": "1.4",
+        "dateModified": "2026-09-22T12:02:58+02:00",
+        "version": "1.5",
         "about": ["Desarrollo Agéntico", "Manifiesto ADLC", "Ciclo de Vida ADLC", "Control de calidad de requisitos"]
       }
     </script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;700&family=Special+Elite&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="https://unpkg.com/papercss@1.9.2/dist/paper.min.css" />
     <link rel="stylesheet" href="https://unpkg.com/@xyflow/react@12/dist/style.css" />
-    <link rel="stylesheet" href="../styles.css?v=1.4" />
+    <link rel="stylesheet" href="../styles.css?v=1.5" />
+    <script src="../theme.js?v=1.5"></script>
+    <link rel="stylesheet" href="../technical.css?v=1.5-theme" />
+    <script src="../navigation.js?v=1.5" defer></script>
   </head>
   <body>
     <div class="paper-band paper-band-top"></div>
@@ -63,19 +66,26 @@
         <div class="nav-brand">
           <p class="site-kicker">Desarrollo Agéntico</p>
           <p class="brand-mark">ADLC</p>
-          <a class="site-version" href="/changelog/">V1.4</a>
+          <a class="site-version" href="/changelog/">V1.5</a>
         </div>
-        <ul class="inline nav-links">
+        <details class="section-navigation" open>
+          <summary>Índice</summary>
+          <ul class="inline nav-links">
           <li><a href="#manifesto">Manifiesto</a></li>
+          <li><a href="#principles">Principios</a></li>
+          <li><a href="#guardrails">Controles</a></li>
+          <li><a href="#requirements-quality-gate">Quality Gate de requisitos</a></li>
           <li><a href="#lifecycle">Ciclo de vida</a></li>
           <li><a href="#operating-model">Operating Model</a></li>
           <li><a href="#practice">En práctica</a></li>
-          <li><a href="#principles">Principios</a></li>
-          <li><a href="#guardrails">Controles</a></li>
-          <li><a href="#agents">Agentes compartidos</a></li>
           <li><a href="#skills">Skills compartidas</a></li>
+          <li><a href="#agents">Agentes compartidos</a></li>
+          <li><a href="#tool-families">Familias de herramientas</a></li>
+          <li><a href="#enterprise-tools">Herramientas enterprise</a></li>
+          <li><a href="#llm-gateways">LLM Gateways</a></li>
           <li><a href="#useful-links">Links útiles</a></li>
         </ul>
+        </details>
       </nav>
       <div class="language-switcher paper" aria-label="Selector de idioma">
         <a href="/" class="paper-btn language-link" lang="en" hreflang="en">EN</a>
@@ -86,11 +96,12 @@
     </header>
     <main>
       <section class="hero container">
-        <div class="row flex-spaces child-borders">
+        <div class="row flex-spaces">
           <div class="sm-12 md-7 col">
             <article class="paper hero-card">
               <p class="section-tag">Manifiesto</p>
-              <h1>Construir sistemas agénticos con método, gobierno y claridad.</h1>
+              <h1>Manifiesto ADLC</h1>
+              <p class="hero-subtitle">Construir sistemas agénticos con método, gobierno y claridad.</p>
               <p class="hero-text">El manifiesto ADLC define principios comunes para diseñar sistemas agénticos gobernados, agnósticos a las herramientas y guiados por un ciclo de vida explícito.</p>
               <div class="hero-actions">
                 <a href="#manifesto" class="paper-btn btn-secondary-outline">Leer el manifiesto</a>
@@ -110,6 +121,7 @@
           </div>
         </div>
       </section>
+
       <section id="manifesto" class="container section-block">
         <div class="section-heading">
           <p class="section-tag">Manifiesto ADLC</p>
@@ -143,6 +155,7 @@
           </div>
         </div>
       </section>
+
       <section id="principles" class="container section-block">
         <div class="section-heading">
           <p class="section-tag">Principios</p>
@@ -156,7 +169,22 @@
           <article class="paper principle-card"><span class="principle-number">05</span><h3>Conceder autonomía basada en evidencia</h3><p>Permisos, aprobaciones, presupuestos y controles de parada se aplican en runtime, no solo se describen en prompts.</p></article>
         </div>
       </section>
-      <section id="practice" class="container section-block">
+
+      <section id="guardrails" class="container section-block">
+        <div class="section-heading">
+          <p class="section-tag">Controles de gobernanza</p>
+          <h2>Controles obligatorios para entrar y gobernar el ADLC</h2>
+        </div>
+        <div class="agents-grid">
+          <article class="paper agent-card"><span class="agent-label">Gobernanza</span><h3>Supervisión humana</h3><p>La supervisión humana es una capa de control obligatoria en el ADLC, especialmente al aprobar requisitos, validar calidad, autorizar releases y gobernar el comportamiento en producción.</p><p>Los agentes aceleran y estructuran el trabajo, pero las decisiones críticas y responsables siguen siendo humanas.</p><p><strong>Supervisión competente, no aprobación rutinaria.</strong></p><p>Quienes aprueban deben recibir formación sobre el dominio, los límites de los agentes y los riesgos de las decisiones, con ejercicios sobre errores e incidentes proporcionales al riesgo. Necesitan acceso a evidencias, fuentes, incertidumbres y consecuencias de las acciones, además de tiempo suficiente y una carga de trabajo sostenible para evaluarlas.</p><p>Deben tener autoridad para cuestionar, rechazar, suspender, solicitar una revisión y escalar. Una aprobación formal sin verificación sustancial no constituye un control de gobernanza.</p></article>
+          <article class="paper agent-card"><span class="agent-label">Control de entrada</span><h3>Control de calidad de requisitos</h3><p>Ninguna implementación comienza sin superar el control de calidad de requisitos. El gate aprueba el siguiente incremento, no todos los requisitos futuros. Un agente puede ayudar a prepararlo; las personas responsables aprueban alcance, resultados medibles, riesgos e incertidumbres conocidas.</p><p>Este gate es fundamental porque determina si la implementación debe empezar o no.</p></article>
+          <article class="paper agent-card"><span class="agent-label">Gobernanza del conocimiento</span><h3>Gobernanza del conocimiento y RAG</h3><p>El ADLC trata la capa de conocimiento como una parte gobernada del sistema. Documentos, prompts, fuentes RAG, shared skills, políticas, ejemplos e instrucciones de herramientas pueden influir en el comportamiento del agente e introducir regresiones silenciosas incluso cuando el código de aplicación no cambia.</p><p>Por lo tanto, los cambios de conocimiento deben revisarse, versionarse, ser trazables y validarse frente al comportamiento esperado antes de usarse en producción.</p><p>El contexto runtime y la memoria requieren procedencia, permisos de escritura, retención, aislamiento entre usuarios y tenants, eliminación y gestión de contradicciones. El contenido recuperado no otorga autoridad. La compresión debe preservar permisos, restricciones y evidencia decisiva.</p></article>
+          <article class="paper agent-card"><span class="agent-label">Gobernanza</span><h3>Contrato de autonomía explícito</h3><p>Definir responsable, acciones y datos permitidos, autoridad delegada, presupuestos, condiciones de parada y escalado. Aplicar permisos y aprobaciones fuera del prompt, con credenciales revocables y un mecanismo de parada probado.</p></article>
+          <article class="paper agent-card"><span class="agent-label">Evaluación</span><h3>Comportamiento y valor medibles</h3><p>Usar datasets representativos y versionados, ensayos repetidos, estado aislado y umbrales basados en el riesgo. Verificar resultados reales y cumplimiento de políticas; calibrar evaluadores basados en modelos con juicio humano y declarar incertidumbres y lagunas de cobertura.</p><p>Medir coste por tarea exitosa, latencia, intervención humana, retrabajo, escalado y valor de negocio frente a una referencia. La evidencia puede justificar reducir la autonomía o retirar el sistema.</p></article>
+        </div>
+      </section>
+
+      <section id="requirements-quality-gate" class="container section-block">
         <article class="paper gate-banner">
           <p class="section-tag">Etapa 0</p>
           <h2>Control de calidad de requisitos</h2>
@@ -164,6 +192,7 @@
           <p>La presencia humana es necesaria aquí para confirmar alcance, intención, significado de negocio y aprobación antes de iniciar el lifecycle.</p>
         </article>
       </section>
+
       <section id="lifecycle" class="container section-block">
         <div class="section-heading">
           <p class="section-tag">Ciclo de vida ADLC</p>
@@ -180,6 +209,7 @@
           <article id="step-7" class="paper stage-card"><span class="stage-index">7</span><div><h3>Orquestar</h3><p>Coordinar agentes, flujos, políticas y capacidades reutilizables en un ecosistema componible que escala más allá de implementaciones aisladas.</p><p>Propagar identidad, límites de permisos, presupuestos, estado de aprobaciones y trazabilidad durante la delegación. Gobernar estado compartido y memoria sin ampliar implícitamente la autoridad.</p></div></article>
         </div>
       </section>
+
       <section id="operating-model" class="container section-block">
         <div class="section-heading">
           <p class="section-tag">ADLC Operating Model</p>
@@ -206,6 +236,7 @@
             </tbody>
           </table>
         </div>
+
 
         <div class="section-heading section-subheading">
           <p class="section-tag">Baseline de implementación</p>
@@ -254,10 +285,11 @@
           </table>
         </div>
       </section>
-      <section class="container section-block">
+
+<section id="practice" class="container section-block">
         <div class="section-heading">
           <p class="section-tag">ADLC en práctica</p>
-          <h2>Cómo el lifecycle se comporta como un bucle infinito gobernado</h2>
+          <h2>Entrega y aprendizaje conectados por la gobernanza</h2>
         </div>
         <div class="practice-grid">
           <article class="paper practice-card">
@@ -271,44 +303,11 @@
             </ul>
           </article>
           <article class="paper loop-card">
-            <div class="practice-flow" aria-label="Diagrama de bucle infinito ADLC"></div>
-            <div class="loop-legend" aria-label="Diagram legend">
-              <span class="loop-human-badge loop-human-badge-legend" aria-hidden="true">
-                <span class="loop-human-icon"></span>
-              </span>
-              <span>Human in the loop checkpoint</span>
-            </div>
+            <div class="practice-flow" aria-label="Diagrama ADLC de entrega y aprendizaje"></div>
           </article>
         </div>
       </section>
-      <section id="guardrails" class="container section-block">
-        <div class="section-heading">
-          <p class="section-tag">Controles de gobernanza</p>
-          <h2>Controles obligatorios para entrar y gobernar el ADLC</h2>
-        </div>
-        <div class="agents-grid">
-          <article class="paper agent-card"><span class="agent-label">Gobernanza</span><h3>Supervisión humana</h3><p>La supervisión humana es una capa de control obligatoria en el ADLC, especialmente al aprobar requisitos, validar calidad, autorizar releases y gobernar el comportamiento en producción.</p><p>Los agentes aceleran y estructuran el trabajo, pero las decisiones críticas y responsables siguen siendo humanas.</p><p><strong>Supervisión competente, no aprobación rutinaria.</strong></p><p>Quienes aprueban deben recibir formación sobre el dominio, los límites de los agentes y los riesgos de las decisiones, con ejercicios sobre errores e incidentes proporcionales al riesgo. Necesitan acceso a evidencias, fuentes, incertidumbres y consecuencias de las acciones, además de tiempo suficiente y una carga de trabajo sostenible para evaluarlas.</p><p>Deben tener autoridad para cuestionar, rechazar, suspender, solicitar una revisión y escalar. Una aprobación formal sin verificación sustancial no constituye un control de gobernanza.</p></article>
-          <article class="paper agent-card"><span class="agent-label">Control de entrada</span><h3>Control de calidad de requisitos</h3><p>Ninguna implementación comienza sin superar el control de calidad de requisitos. El gate aprueba el siguiente incremento, no todos los requisitos futuros. Un agente puede ayudar a prepararlo; las personas responsables aprueban alcance, resultados medibles, riesgos e incertidumbres conocidas.</p><p>Este gate es fundamental porque determina si la implementación debe empezar o no.</p></article>
-          <article class="paper agent-card"><span class="agent-label">Gobernanza del conocimiento</span><h3>Gobernanza del conocimiento y RAG</h3><p>El ADLC trata la capa de conocimiento como una parte gobernada del sistema. Documentos, prompts, fuentes RAG, shared skills, políticas, ejemplos e instrucciones de herramientas pueden influir en el comportamiento del agente e introducir regresiones silenciosas incluso cuando el código de aplicación no cambia.</p><p>Por lo tanto, los cambios de conocimiento deben revisarse, versionarse, ser trazables y validarse frente al comportamiento esperado antes de usarse en producción.</p><p>El contexto runtime y la memoria requieren procedencia, permisos de escritura, retención, aislamiento entre usuarios y tenants, eliminación y gestión de contradicciones. El contenido recuperado no otorga autoridad. La compresión debe preservar permisos, restricciones y evidencia decisiva.</p></article>
-          <article class="paper agent-card"><span class="agent-label">Gobernanza</span><h3>Contrato de autonomía explícito</h3><p>Definir responsable, acciones y datos permitidos, autoridad delegada, presupuestos, condiciones de parada y escalado. Aplicar permisos y aprobaciones fuera del prompt, con credenciales revocables y un mecanismo de parada probado.</p></article>
-          <article class="paper agent-card"><span class="agent-label">Evaluación</span><h3>Comportamiento y valor medibles</h3><p>Usar datasets representativos y versionados, ensayos repetidos, estado aislado y umbrales basados en el riesgo. Verificar resultados reales y cumplimiento de políticas; calibrar evaluadores basados en modelos con juicio humano y declarar incertidumbres y lagunas de cobertura.</p><p>Medir coste por tarea exitosa, latencia, intervención humana, retrabajo, escalado y valor de negocio frente a una referencia. La evidencia puede justificar reducir la autonomía o retirar el sistema.</p></article>
-        </div>
-      </section>
-      <section id="agents" class="container section-block">
-        <div class="section-heading">
-          <p class="section-tag">Agentes compartidos</p>
-          <h2>Capacidades reutilizables que sostienen todo el ADLC</h2>
-        </div>
-        <div class="agents-grid">
-          <article class="paper agent-card"><span class="agent-label">Base de conocimiento</span><h3>Documentation Agent</h3><p>Produce y actualiza documentación para personas en la base de conocimiento humana oficial, como Confluence, SharePoint, Notion, GitBook, Backstage TechDocs, Read the Docs o plataformas equivalentes.</p><p>La documentación humana se optimiza para lectura, revisión, onboarding, gobernanza y auditabilidad. No es, por defecto, la interfaz de contexto para los AI agents.</p><p>Se encarga de ADR, runbooks, onboarding, notas de arquitectura, FAQ y documentación de proceso ligada a eventos reales de delivery.</p></article>
-          <article class="paper agent-card"><span class="agent-label">Flujo de entrega</span><h3>PR Governance Agent</h3><p>Da soporte a las pull requests de punta a punta, resumiendo cambios, comprobando políticas, señalando riesgos y proponiendo reviewers.</p><p>Ayuda a mantener las revisiones consistentes, trazables y alineadas con los guardarraíles compartidos de ingeniería.</p></article>
-          <article class="paper agent-card"><span class="agent-label">Comunicación</span><h3>Release Notes Agent</h3><p>Genera release notes a partir del trabajo integrado, agrupando funcionalidades, fixes, breaking changes, migraciones y notas operativas.</p><p>Produce tanto resúmenes técnicos como versiones legibles para audiencias de negocio.</p></article>
-          <article class="paper agent-card"><span class="agent-label">Alineamiento</span><h3>Knowledge Sync Agent</h3><p>Detecta gaps entre código, tickets, releases y documentación, y luego propone o ejecuta las actualizaciones faltantes.</p><p>Mantiene alineadas en el tiempo la realidad del delivery y la base de conocimiento.</p></article>
-          <article class="paper agent-card"><span class="agent-label">Gobernanza del conocimiento</span><h3>Knowledge Governance Agent</h3><p>Revisa y gobierna las fuentes de conocimiento y agent context antes de que las usen los agentes. Comprueba frescura, ownership, estado de aprobación y versión, duplicación, contradicciones, validez de negocio, trazabilidad, calidad del retrieval e impacto de regresión.</p><p>Ayuda a asegurar que documentos, context endpoints, contenido RAG y conocimiento compartido mejoren el comportamiento de los agentes sin introducir cambios no controlados.</p></article>
-          <article class="paper agent-card"><span class="agent-label">Gobernanza</span><h3>Compliance and Traceability Agent</h3><p>Conecta requisitos, implementaciones, pruebas, documentación y releases en una cadena auditable de evidencias.</p><p>Da soporte a quality gates, revisiones y checkpoints de gobernanza a lo largo del lifecycle.</p></article>
-          <article class="paper agent-card"><span class="agent-label">Operaciones</span><h3>Operational Readiness Agent</h3><p>Verifica que cada release tenga runbooks, ownership, guías de rollback, alertas y evidencias de readiness operativa.</p><p>Ayuda a que los equipos pasen del deploy a una operación estable con menos puntos ciegos.</p></article>
-        </div>
-      </section>
+
       <section id="skills" class="container section-block">
         <div class="section-heading">
           <p class="section-tag">Skills compartidas</p>
@@ -325,6 +324,109 @@
           <article class="paper agent-card"><span class="agent-label">Evaluación</span><h3>Behavioral Evaluation Skill</h3><p>Define datasets representativos, ensayos repetidos, umbrales de aceptación basados en riesgo, comprobación de resultados y políticas, evaluadores calibrados por personas y evidencia de regresión tras cambios de comportamiento. Vincula calidad, costes, latencia e intervención humana con decisiones de release.</p></article>
         </div>
       </section>
+
+      <section id="agents" class="container section-block">
+        <div class="section-heading">
+          <p class="section-tag">Agentes compartidos</p>
+          <h2>Capacidades reutilizables que sostienen todo el ADLC</h2>
+        </div>
+        <div class="agents-grid">
+          <article class="paper agent-card"><span class="agent-label">Base de conocimiento</span><h3>Documentation Agent</h3><p>Produce y actualiza documentación para personas en la base de conocimiento humana oficial, como Confluence, SharePoint, Notion, GitBook, Backstage TechDocs, Read the Docs o plataformas equivalentes.</p><p>La documentación humana se optimiza para lectura, revisión, onboarding, gobernanza y auditabilidad. No es, por defecto, la interfaz de contexto para los AI agents.</p><p>Se encarga de ADR, runbooks, onboarding, notas de arquitectura, FAQ y documentación de proceso ligada a eventos reales de delivery.</p></article>
+          <article class="paper agent-card"><span class="agent-label">Flujo de entrega</span><h3>PR Governance Agent</h3><p>Da soporte a las pull requests de punta a punta, resumiendo cambios, comprobando políticas, señalando riesgos y proponiendo reviewers.</p><p>Ayuda a mantener las revisiones consistentes, trazables y alineadas con los guardarraíles compartidos de ingeniería.</p></article>
+          <article class="paper agent-card"><span class="agent-label">Comunicación</span><h3>Release Notes Agent</h3><p>Genera release notes a partir del trabajo integrado, agrupando funcionalidades, fixes, breaking changes, migraciones y notas operativas.</p><p>Produce tanto resúmenes técnicos como versiones legibles para audiencias de negocio.</p></article>
+          <article class="paper agent-card"><span class="agent-label">Alineamiento</span><h3>Knowledge Sync Agent</h3><p>Detecta gaps entre código, tickets, releases y documentación, y luego propone o ejecuta las actualizaciones faltantes.</p><p>Mantiene alineadas en el tiempo la realidad del delivery y la base de conocimiento.</p></article>
+          <article class="paper agent-card"><span class="agent-label">Gobernanza del conocimiento</span><h3>Knowledge Governance Agent</h3><p>Revisa y gobierna las fuentes de conocimiento y agent context antes de que las usen los agentes. Comprueba frescura, ownership, estado de aprobación y versión, duplicación, contradicciones, validez de negocio, trazabilidad, calidad del retrieval e impacto de regresión.</p><p>Ayuda a asegurar que documentos, context endpoints, contenido RAG y conocimiento compartido mejoren el comportamiento de los agentes sin introducir cambios no controlados.</p></article>
+          <article class="paper agent-card"><span class="agent-label">Gobernanza</span><h3>Compliance and Traceability Agent</h3><p>Conecta requisitos, implementaciones, pruebas, documentación y releases en una cadena auditable de evidencias.</p><p>Da soporte a quality gates, revisiones y checkpoints de gobernanza a lo largo del lifecycle.</p></article>
+          <article class="paper agent-card"><span class="agent-label">Operaciones</span><h3>Operational Readiness Agent</h3><p>Verifica que cada release tenga runbooks, ownership, guías de rollback, alertas y evidencias de readiness operativa.</p><p>Ayuda a que los equipos pasen del deploy a una operación estable con menos puntos ciegos.</p></article>
+        </div>
+      </section>
+
+      <section id="tool-families" class="container section-block">
+        <div class="section-heading">
+          <p class="section-tag">Familias de herramientas</p>
+          <h2>Capacidades necesarias para implementar ADLC</h2>
+          <p>Cubrir estas capacidades según el alcance aprobado y el riesgo. No es una lista de compras: una plataforma puede cubrir varias familias y se pueden reutilizar servicios empresariales existentes.</p>
+        </div>
+        <div class="paper resource-table-wrap">
+<table class="resource-table tool-families-table">
+            <thead><tr><th scope="col">Familia</th><th scope="col">Qué utilizar</th><th scope="col">Control que demostrar</th></tr></thead>
+            <tbody>
+              <tr><td data-label="Familia">Requisitos y trazabilidad</td><td data-label="Qué utilizar">Un registro de requisitos vinculado a decisiones, pruebas y releases.</td><td data-label="Control que demostrar">Alcance aprobado, criterios de aceptación medibles, responsables y quality gate superado.</td></tr>
+              <tr><td data-label="Familia">Versionado y entrega</td><td data-label="Qué utilizar">Control de versiones, almacenamiento de artefactos y pipelines de entrega automatizados.</td><td data-label="Control que demostrar">Cambios revisables en código, prompts, skills y configuración; promoción bloqueada si fallan controles obligatorios.</td></tr>
+              <tr><td data-label="Familia">Conocimiento y documentación</td><td data-label="Qué utilizar">Documentación para personas y una interfaz separada de contexto para agentes, catálogo de fuentes, índice de retrieval y políticas de memoria cuando sean necesarios.</td><td data-label="Control que demostrar">Responsables, aprobación, procedencia, actualización, acceso, retención y eliminación de fuentes; el contexto debe preservar las restricciones.</td></tr>
+              <tr><td data-label="Familia">Identidad y acceso delegado</td><td data-label="Qué utilizar">Proveedor de identidad, identidades de servicio, controles de autorización y gestor de secretos.</td><td data-label="Control que demostrar">Quién actúa, en nombre de quién y con qué permisos; mínimo privilegio, delegación limitada, caducidad y revocación.</td></tr>
+              <tr><td data-label="Familia">Políticas y presupuestos runtime</td><td data-label="Qué utilizar">Aplicación de políticas en los límites de las herramientas, contadores de uso, cuotas y controles de parada.</td><td data-label="Control que demostrar">Límites de acciones, gasto, duración, llamadas y reintentos; las acciones prohibidas se bloquean, no solo se registran.</td></tr>
+              <tr><td data-label="Familia">Orquestación y recuperación</td><td data-label="Qué utilizar">Un motor de workflows con estado persistente, reintentos controlados y procedimientos de recuperación.</td><td data-label="Control que demostrar">Ejecución reanudable, idempotencia, condiciones de parada, reconciliación del estado y compensación autorizada.</td></tr>
+              <tr><td data-label="Familia">Revisión humana</td><td data-label="Qué utilizar">Una cola de revisión con evidencias, asignación a revisores autorizados, caducidad y escalado.</td><td data-label="Control que demostrar">Revisores formados pueden cuestionar o detener acciones; aprobación vinculada a la acción exacta, con evidencia de la decisión y sin aprobación implícita al vencer el plazo.</td></tr>
+              <tr><td data-label="Familia">Evaluación del comportamiento</td><td data-label="Qué utilizar">Datasets de prueba versionados, motores de evaluación, pruebas adversariales y calibración humana.</td><td data-label="Control que demostrar">Ensayos repetidos, resultados reales, cumplimiento de políticas, umbrales basados en riesgo y gates de regresión.</td></tr>
+              <tr><td data-label="Familia">Observabilidad y valor</td><td data-label="Qué utilizar">Trazas, métricas, alertas, contabilidad de costes y paneles operativos.</td><td data-label="Control que demostrar">Deriva del comportamiento, fallos de retrieval, coste por tarea exitosa, latencia, intervención humana y resultados de negocio.</td></tr>
+              <tr><td data-label="Familia">Auditoría e incidentes</td><td data-label="Qué utilizar">Almacenamiento protegido de evidencias, flujos de gestión de incidentes y runbooks operativos.</td><td data-label="Control que demostrar">Reconstruir decisiones y cambios, gestionar incidentes, probar recuperación y retirar accesos y datos según políticas.</td></tr>
+              <tr><td data-label="Familia">LLM Gateway y routing de modelos</td><td data-label="Qué utilizar">Un gateway multiproveedor con routing evaluado, políticas de tokens de entrada/salida, caché y control de consumo.</td><td data-label="Control que demostrar">Selección de modelos aprobados, evidencia separada del consumo de entrada/salida, gasto limitado y optimización que preserve la calidad.</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="section-heading section-subheading">
+          <h3>Criterios de selección enterprise</h3>
+          <p>Verificar SSO y roles, aislamiento entre tenants, retención y eliminación, evidencias de auditoría exportables, hosting y residencia de datos, soporte operativo e integración con controles existentes. La licencia open source por sí sola no garantiza la idoneidad.</p>
+        </div>
+      </section>
+
+      <section id="enterprise-tools" class="container section-block">
+        <div class="section-heading">
+          <p class="section-tag">Ejemplos de tooling empresarial</p>
+          <h2>Productos que pueden implementar partes del modelo de control ADLC</h2>
+          <p>Estos ejemplos no son normativos. Usar un producto no hace por sí solo que un equipo esté alineado con ADLC: los controles, la evidencia, el ownership y las decisiones responsables siguen siendo obligatorios.</p>
+        </div>
+        <div class="paper resource-table-wrap">
+<table class="resource-table tooling-table">
+            <thead><tr><th>Capacidad</th><th>Herramienta</th><th>Uso empresarial</th><th>Estado open source</th><th>URL</th></tr></thead>
+            <tbody>
+              <tr><td data-label="Capacidad">Requisitos y aprobaciones</td><td data-label="Herramienta">Jira</td><td data-label="Uso empresarial">Requisitos estructurados, workflows, aprobaciones, ownership y registros de trazabilidad.</td><td data-label="Estado open source">No - comercial</td><td data-label="URL"><a href="https://www.atlassian.com/software/jira" target="_blank" rel="noopener noreferrer">https://www.atlassian.com/software/jira</a></td></tr>
+              <tr><td data-label="Capacidad">Delivery y gates de evidencia</td><td data-label="Herramienta">GitLab</td><td data-label="Uso empresarial">Control de versiones, review, CI/CD, policy gates, controles de seguridad y evidencia de release.</td><td data-label="Estado open source">Open core - CE es MIT; las funciones enterprise son propietarias</td><td data-label="URL"><a href="https://about.gitlab.com/" target="_blank" rel="noopener noreferrer">https://about.gitlab.com/</a></td></tr>
+              <tr><td data-label="Capacidad">Pruebas de comportamiento</td><td data-label="Herramienta">promptfoo</td><td data-label="Uso empresarial">Evaluaciones de prompts, RAG, agentes y red teaming ejecutables localmente o en pipelines CI.</td><td data-label="Estado open source">Sí - proyecto MIT; oferta enterprise comercial</td><td data-label="URL"><a href="https://www.promptfoo.dev/" target="_blank" rel="noopener noreferrer">https://www.promptfoo.dev/</a></td></tr>
+              <tr><td data-label="Capacidad">Tracing y evaluación</td><td data-label="Herramienta">Langfuse</td><td data-label="Uso empresarial">Tracing, gestión de prompts, datasets de evaluación, experimentos y feedback de producción.</td><td data-label="Estado open source">Open core - el core es MIT; los add-ons enterprise son comerciales</td><td data-label="URL"><a href="https://langfuse.com/" target="_blank" rel="noopener noreferrer">https://langfuse.com/</a></td></tr>
+              <tr><td data-label="Capacidad">Decisiones de políticas</td><td data-label="Herramienta">Open Policy Agent</td><td data-label="Uso empresarial">Policy-as-code para gates de entrega y autorización runtime. El servicio o gateway integrado debe aplicar las decisiones; los registros de decisiones apoyan la trazabilidad.</td><td data-label="Estado open source">Sí - Apache-2.0</td><td data-label="URL"><a href="https://www.openpolicyagent.org/" target="_blank" rel="noopener noreferrer">https://www.openpolicyagent.org/</a></td></tr>
+              <tr><td data-label="Capacidad">Documentación humana</td><td data-label="Herramienta">Backstage TechDocs</td><td data-label="Uso empresarial">Catálogo de software y docs-as-code para personas, integrados con el ownership de ingeniería.</td><td data-label="Estado open source">Sí - Apache-2.0</td><td data-label="URL"><a href="https://backstage.io/docs/features/techdocs/" target="_blank" rel="noopener noreferrer">https://backstage.io/docs/features/techdocs/</a></td></tr>
+              <tr><td data-label="Capacidad">Contexto técnico para agentes de programación</td><td data-label="Herramienta">Context7</td><td data-label="Uso empresarial">Documentación de bibliotecas y ejemplos de código acordes con la versión mediante MCP y CLI. Un ejemplo de distribución de contexto técnico, no una plataforma completa de gobernanza de todo el conocimiento empresarial.</td><td data-label="Estado open source">Parcial - el servidor MCP es MIT; el backend hosted es privado</td><td data-label="URL"><a href="https://context7.com/" target="_blank" rel="noopener noreferrer">https://context7.com/</a></td></tr>
+              <tr><td data-label="Capacidad">Ejecución persistente de workflows</td><td data-label="Herramienta">Temporal</td><td data-label="Uso empresarial">Workflows persistentes, recuperación ante fallos y coordinación de esperas y aprobaciones. La idempotencia y compensación de efectos externos deben diseñarse igualmente.</td><td data-label="Estado open source">Sí - servidor MIT; servicio cloud comercial</td><td data-label="URL"><a href="https://github.com/temporalio/temporal" target="_blank" rel="noopener noreferrer">https://github.com/temporalio/temporal</a></td></tr>
+              <tr><td data-label="Capacidad">Secretos y credenciales temporales</td><td data-label="Herramienta">OpenBao</td><td data-label="Uso empresarial">Secretos centralizados, credenciales dinámicas para sistemas compatibles, caducidad y revocación. Apoya el acceso de mínimo privilegio sin introducir credenciales en prompts.</td><td data-label="Estado open source">Sí - MPL-2.0</td><td data-label="URL"><a href="https://github.com/openbao/openbao" target="_blank" rel="noopener noreferrer">https://github.com/openbao/openbao</a></td></tr>
+              <tr><td data-label="Capacidad">Responsabilidad y procedencia de fuentes</td><td data-label="Herramienta">OpenMetadata</td><td data-label="Uso empresarial">Catálogo de metadatos, responsables, señales de calidad, linaje y análisis de impacto para un contexto de datos gobernado. Complementa, sin sustituir, la aprobación del conocimiento y las pruebas de comportamiento.</td><td data-label="Estado open source">Sí - proyecto Apache-2.0</td><td data-label="URL"><a href="https://github.com/open-metadata/OpenMetadata" target="_blank" rel="noopener noreferrer">https://github.com/open-metadata/OpenMetadata</a></td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="section-heading section-subheading">
+          <h3>Alternativas y componentes opcionales</h3>
+          <p><a href="https://phoenix.arize.com/" target="_blank" rel="noopener noreferrer">Arize Phoenix</a>: Arize Phoenix es una alternativa para tracing, evaluación del retrieval, experimentos y diagnóstico del comportamiento. Es source-available bajo ELv2, no open source aprobado por OSI. <a href="https://github.com/Arize-ai/phoenix/blob/main/LICENSE" target="_blank" rel="noopener noreferrer">Licencia</a>.</p>
+          <p><a href="https://github.com/langchain-ai/langgraph" target="_blank" rel="noopener noreferrer">LangGraph</a>: LangGraph es un framework opcional con licencia MIT para agentes con estado, checkpoints y suspensión/reanudación para revisión humana. No es una plataforma completa de gobernanza: aún deben implementarse la interfaz de revisión, la competencia de los revisores, las autorizaciones y las políticas de aprobación.</p>
+          <p>Son ejemplos de capacidades, no un stack obligatorio ni una garantía de conformidad ADLC. Seleccionar solo los componentes necesarios para el alcance aprobado y verificar licencias y requisitos operativos de la edición concreta.</p>
+        </div>
+      </section>
+
+      <section id="llm-gateways" class="container section-block">
+        <div class="section-heading">
+          <p class="section-tag">LLM Gateway</p>
+          <h2>LLM Gateways: routing multiproveedor y control de tokens</h2>
+          <p>Un LLM Gateway debe gobernar el acceso a varios proveedores y dirigir cada tarea al modelo aprobado más adecuado, equilibrando calidad evaluada, riesgo, latencia, disponibilidad y coste. El balanceo de carga o elegir el modelo más barato no demuestra por sí solo su idoneidad.</p>
+        </div>
+        <ul class="practice-list">
+          <li><strong>Tokens de entrada (inbound):</strong> Seleccionar contexto relevante, eliminar duplicaciones y usar caché o compresión evaluada sin perder instrucciones, permisos, citas ni evidencias. Aislar cachés por tenant y autorización; incluir versiones de fuentes y modelos en las políticas de caché.</li>
+          <li><strong>Tokens de salida (outbound):</strong> Configurar antes de la inferencia límites de generación admitidos por el proveedor, formatos de respuesta y políticas de verbosidad. Limitar reintentos y ciclos de agentes. Acortar una respuesta ya generada no reduce los tokens ya facturados.</li>
+          <li><strong>Evidencia y presupuestos:</strong> Medir tokens de entrada, salida, caché y razonamiento cuando se reporten, junto al coste por tarea exitosa. Aplicar presupuestos por equipo y carga de trabajo; probar regresiones tras cambios de routing, compresión y fallback. El fallback debe preservar residencia de datos, permisos y requisitos de calidad.</li>
+        </ul>
+        <div class="paper resource-table-wrap">
+          <table class="resource-table gateway-table">
+            <thead><tr><th scope="col">Gateway / fuentes oficiales</th><th scope="col">Licencia / oferta</th><th scope="col">Routing multiproveedor</th><th scope="col">Control de tokens y consumo</th></tr></thead>
+            <tbody>
+              <tr><td data-label="Gateway / fuentes oficiales"><a href="https://github.com/BerriAI/litellm" target="_blank" rel="noopener noreferrer">LiteLLM</a><br><a href="https://docs.litellm.ai/docs/routing" target="_blank" rel="noopener noreferrer">Documentación</a></td><td data-label="Licencia / oferta">Core open source: MIT; módulos enterprise con licencia separada.</td><td data-label="Routing multiproveedor">Estrategias por coste/latencia y fallbacks entre proveedores.</td><td data-label="Control de tokens y consumo">Caché y límites de uso; configurar parámetros de tokens de salida y reducción de contexto cuando corresponda.</td></tr>
+              <tr><td data-label="Gateway / fuentes oficiales"><a href="https://github.com/Portkey-AI/gateway" target="_blank" rel="noopener noreferrer">Portkey AI Gateway</a><br><a href="https://github.com/Portkey-AI/gateway#cost-management" target="_blank" rel="noopener noreferrer">Documentación</a></td><td data-label="Licencia / oferta">Gateway open source: MIT; ofertas hosted/enterprise separadas.</td><td data-label="Routing multiproveedor">Routing multiproveedor, balanceo y fallback.</td><td data-label="Control de tokens y consumo">Caché; optimización avanzada según edición. Validar límites de salida y políticas de contexto.</td></tr>
+              <tr><td data-label="Gateway / fuentes oficiales"><a href="https://developer.konghq.com/ai-gateway/" target="_blank" rel="noopener noreferrer">Kong AI Gateway</a><br><a href="https://developer.konghq.com/cookbooks/llm-cost-optimization/" target="_blank" rel="noopener noreferrer">Documentación</a></td><td data-label="Licencia / oferta">Funciones AI avanzadas comerciales; verificar edición y licencias de plugins.</td><td data-label="Routing multiproveedor">Routing multiproveedor y semántico mediante plugins configurados.</td><td data-label="Control de tokens y consumo">Caché semántica, límites de tokens/coste; compresión con servicio adicional. Configurar límites de salida por separado.</td></tr>
+              <tr><td data-label="Gateway / fuentes oficiales"><a href="https://developers.cloudflare.com/ai-gateway/" target="_blank" rel="noopener noreferrer">Cloudflare AI Gateway</a><br><a href="https://developers.cloudflare.com/ai-gateway/features/dynamic-routing/" target="_blank" rel="noopener noreferrer">Documentación</a></td><td data-label="Licencia / oferta">Servicio gestionado propietario; verificar límites del plan.</td><td data-label="Routing multiproveedor">Rutas condicionales, selección de modelos, fallbacks y presupuestos.</td><td data-label="Control de tokens y consumo">Caché y cuotas de coste; límites de generación según parámetros del proveedor. Reducir contexto requiere integración.</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p>Primero los gateways open source, después los servicios comerciales. Son ejemplos, no un stack obligatorio ni un respaldo comercial. Ninguna fila implica soporte automático de todas las políticas de entrada/salida: verificar versión, compatibilidad y edición, incluidos streaming y presupuestos con solicitudes concurrentes.</p>
+      </section>
+
       <section id="useful-links" class="container section-block">
         <div class="section-heading">
           <p class="section-tag">Links útiles</p>
@@ -384,26 +486,6 @@
           </div>
         </div>
 
-        <div class="section-heading section-subheading">
-          <p class="section-tag">Ejemplos de tooling empresarial</p>
-          <h3>Productos que pueden implementar partes del modelo de control ADLC</h3>
-          <p>Estos ejemplos no son normativos. Usar un producto no hace por sí solo que un equipo esté alineado con ADLC: los controles, la evidencia, el ownership y las decisiones responsables siguen siendo obligatorios.</p>
-        </div>
-        <div class="paper resource-table-wrap">
-          <table class="resource-table tooling-table">
-            <thead><tr><th>Capacidad</th><th>Herramienta</th><th>Uso empresarial</th><th>Estado open source</th><th>URL</th></tr></thead>
-            <tbody>
-              <tr><td data-label="Capacidad">Requisitos y aprobaciones</td><td data-label="Herramienta">Jira</td><td data-label="Uso empresarial">Requisitos estructurados, workflows, aprobaciones, ownership y registros de trazabilidad.</td><td data-label="Estado open source">No - comercial</td><td data-label="URL"><a href="https://www.atlassian.com/software/jira" target="_blank" rel="noopener noreferrer">https://www.atlassian.com/software/jira</a></td></tr>
-              <tr><td data-label="Capacidad">Delivery y gates de evidencia</td><td data-label="Herramienta">GitLab</td><td data-label="Uso empresarial">Control de versiones, review, CI/CD, policy gates, controles de seguridad y evidencia de release.</td><td data-label="Estado open source">Open core - CE es MIT; las funciones enterprise son propietarias</td><td data-label="URL"><a href="https://about.gitlab.com/" target="_blank" rel="noopener noreferrer">https://about.gitlab.com/</a></td></tr>
-              <tr><td data-label="Capacidad">Pruebas de comportamiento</td><td data-label="Herramienta">promptfoo</td><td data-label="Uso empresarial">Evaluaciones de prompts, RAG, agentes y red teaming ejecutables localmente o en pipelines CI.</td><td data-label="Estado open source">Sí - MIT</td><td data-label="URL"><a href="https://www.promptfoo.dev/" target="_blank" rel="noopener noreferrer">https://www.promptfoo.dev/</a></td></tr>
-              <tr><td data-label="Capacidad">Tracing y evaluación</td><td data-label="Herramienta">Langfuse</td><td data-label="Uso empresarial">Tracing, gestión de prompts, datasets de evaluación, experimentos y feedback de producción.</td><td data-label="Estado open source">Open core - el core es MIT; los add-ons enterprise son comerciales</td><td data-label="URL"><a href="https://langfuse.com/" target="_blank" rel="noopener noreferrer">https://langfuse.com/</a></td></tr>
-              <tr><td data-label="Capacidad">Observabilidad AI</td><td data-label="Herramienta">Arize Phoenix</td><td data-label="Uso empresarial">Tracing, evaluación del retrieval, experimentos, análisis de prompts y diagnóstico del comportamiento.</td><td data-label="Estado open source">Source-available - ELv2, no open source aprobado por OSI</td><td data-label="URL"><a href="https://phoenix.arize.com/" target="_blank" rel="noopener noreferrer">https://phoenix.arize.com/</a></td></tr>
-              <tr><td data-label="Capacidad">Aplicación de políticas</td><td data-label="Herramienta">Open Policy Agent</td><td data-label="Uso empresarial">Policy-as-code para gates de delivery, decisiones de runtime, control de llamadas a herramientas y audit trails.</td><td data-label="Estado open source">Sí - Apache-2.0</td><td data-label="URL"><a href="https://www.openpolicyagent.org/" target="_blank" rel="noopener noreferrer">https://www.openpolicyagent.org/</a></td></tr>
-              <tr><td data-label="Capacidad">Documentación humana</td><td data-label="Herramienta">Backstage TechDocs</td><td data-label="Uso empresarial">Catálogo de software y docs-as-code para personas, integrados con el ownership de ingeniería.</td><td data-label="Estado open source">Sí - Apache-2.0</td><td data-label="URL"><a href="https://backstage.io/docs/features/techdocs/" target="_blank" rel="noopener noreferrer">https://backstage.io/docs/features/techdocs/</a></td></tr>
-              <tr><td data-label="Capacidad">Documentación para agentes</td><td data-label="Herramienta">Context7</td><td data-label="Uso empresarial">Acceso remoto MCP y CLI a contexto técnico sensible a la versión para coding agents.</td><td data-label="Estado open source">Parcial - el servidor MCP es MIT; el backend hosted es privado</td><td data-label="URL"><a href="https://context7.com/" target="_blank" rel="noopener noreferrer">https://context7.com/</a></td></tr>
-            </tbody>
-          </table>
-        </div>
       </section>
     </main>
     <footer class="site-footer container">
@@ -424,7 +506,7 @@
       </p>
     </footer>
     <div class="paper-band paper-band-bottom"></div>
-    <script type="module" src="../practice-flow.js"></script>
+    <script type="module" src="../practice-flow.js?v=1.5.1"></script>
     <script src="../email.js"></script>
   </body>
 </html>

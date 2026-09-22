@@ -1,5 +1,21 @@
 # Changelog
 
+## V1.5 - September 2026
+
+- Added a light/dark theme toggle with system preference detection and a persistent choice across languages and the changelog.
+
+- Redesigned the practice diagram with explicit gate entry, delivery and learning paths, human checkpoints, cross-cutting orchestration, and a vertical mobile layout.
+- Ordered content from principles and governance through delivery, evidence, reusable capabilities, tooling, and references; aligned all navigation and corrected localized practice anchors.
+- Added a vendor-neutral tool-family map and a separate LLM gateway comparison, with open-source options first and explicit multi-provider routing and input/output token policies.
+- Added Temporal, OpenBao, and OpenMetadata to enterprise tooling examples; moved Phoenix to alternatives, included LangGraph as optional, and clarified policy enforcement and tool scope.
+- Expanded the manifesto to five principles, including minimum necessary autonomy and evidence-based authority.
+- Made the requirements quality gate incremental while retaining mandatory human approval before implementation.
+- Added explicit autonomy contracts, runtime enforcement, memory governance, behavioral evaluation, recovery controls, and value-based retirement criteria.
+- Required competent human oversight with training, accessible evidence, sufficient time, and effective authority to intervene.
+- Added the Behavioral Evaluation Skill and aligned shared documentation and knowledge governance guidance.
+- Added an enterprise adoption guide with a worked refund-assistance example and reusable evidence records.
+- Introduced the Technical Standard layout across all four languages and the changelog, with a desktop sidebar, collapsible mobile index, readable typography, and responsive tables.
+
 ## V1.4 - September 2026
 
 - Strengthened ADLC's enterprise positioning as behavioral lifecycle governance that extends SDLC beyond code-centric delivery.

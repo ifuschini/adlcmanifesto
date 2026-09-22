@@ -1,6 +1,6 @@
 # ADLC Lifecycle
 
-Version: V1.4
+Version: V1.5
 
 The ADLC lifecycle is a governed loop for agentic delivery. It extends SDLC by adding explicit checkpoints for requirements quality, human control, orchestration, and continuous operational improvement.
 

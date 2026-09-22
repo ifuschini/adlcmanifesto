@@ -115,7 +115,7 @@ The publish command uploads the content of `site/` to the remote `/public_html/`
 
 ## Version
 
-Current version: `V1.4`
+Current version: `V1.5`
 
 - Published: September 2026
 - Last modified: September 2026
@@ -128,7 +128,7 @@ Use the lowercase `vX.Y` format for repository tags, matching the manifesto
 version declared as `VX.Y` in [manifesto.md](manifesto.md) and
 [CHANGELOG.md](CHANGELOG.md).
 
-For example, `V1.4` in the manifesto is tagged as `v1.4` in Git.
+For example, `V1.5` in the manifesto is tagged as `v1.5` in Git.
 
 See [docs/release-process.md](docs/release-process.md) for the release
 checklist.

@@ -8,8 +8,11 @@ check:
 	zsh -n scripts/check-footer-release-date.sh
 	node --check site/email.js
 	node --check site/practice-flow.js
+	node --check site/navigation.js
+	node --check site/theme.js
 	node --check scripts/check-links.js
 	node scripts/check-links.js
+	node scripts/check-navigation.js
 	zsh scripts/check-footer-release-date.sh
 
 link-check:

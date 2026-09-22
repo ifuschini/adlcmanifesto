@@ -1,255 +1,120 @@
 import React from "https://esm.sh/react@18.3.1";
 import { createRoot } from "https://esm.sh/react-dom@18.3.1/client?deps=react@18.3.1";
-import {
-  ReactFlow,
-  ReactFlowProvider,
-  Background,
-  MarkerType,
-  Position
-} from "https://esm.sh/@xyflow/react@12.8.5?bundle&deps=react@18.3.1,react-dom@18.3.1";
+import { ReactFlow, Handle, MarkerType, Position } from "https://esm.sh/@xyflow/react@12.8.5?bundle&deps=react@18.3.1,react-dom@18.3.1";
 
-const labelsByLang = {
+const h = React.createElement;
+const translations = {
   en: {
-    step: "Step",
-    nodes: [
-      "Requirements Gate",
-      "Implement",
-      "Review",
-      "Test",
-      "Deploy",
-      "Operate",
-      "Improve",
-      "Orchestrate"
-    ]
-  },
-  es: {
-    step: "Step",
-    nodes: [
-      "Quality Gate",
-      "Implement",
-      "Review",
-      "Test",
-      "Deploy",
-      "Operate",
-      "Improve",
-      "Orchestrate"
-    ]
-  },
-  fr: {
-    step: "Step",
-    nodes: [
-      "Quality Gate",
-      "Implement",
-      "Review",
-      "Test",
-      "Deploy",
-      "Operate",
-      "Improve",
-      "Orchestrate"
-    ]
+    nodes: ["Requirements Quality Gate", "Implement", "Review", "Test", "Deploy", "Operate", "Improve"],
+    checks: { 0: "Human approval", 2: "Expert review", 4: "Release approval", 5: "Human oversight" },
+    delivery: "Delivery", learning: "Learning and revalidation",
+    return: "The next increment returns to the requirements gate.",
+    orchestrate: "Orchestrate", layer: "Across every stage: agents, skills, policies, permissions, and evidence.",
+    legend: "Human checkpoints require trained reviewers with authority to intervene.",
   },
   it: {
-    step: "Step",
-    nodes: [
-      "Quality Gate",
-      "Implement",
-      "Review",
-      "Test",
-      "Deploy",
-      "Operate",
-      "Improve",
-      "Orchestrate"
-    ]
-  }
+    nodes: ["Quality Gate dei requisiti", "Implementare", "Revisionare", "Testare", "Rilasciare", "Operare", "Migliorare"],
+    checks: { 0: "Approvazione umana", 2: "Revisione esperta", 4: "Autorizzazione release", 5: "Supervisione umana" },
+    delivery: "Delivery", learning: "Apprendimento e rivalidazione",
+    return: "Il prossimo incremento torna al quality gate dei requisiti.",
+    orchestrate: "Orchestrare", layer: "In ogni fase: agent, skill, policy, permessi ed evidenze.",
+    legend: "I checkpoint umani richiedono reviewer formati con autorità di intervento.",
+  },
+  es: {
+    nodes: ["Quality Gate de requisitos", "Implementar", "Revisar", "Probar", "Desplegar", "Operar", "Mejorar"],
+    checks: { 0: "Aprobación humana", 2: "Revisión experta", 4: "Autorización de release", 5: "Supervisión humana" },
+    delivery: "Entrega", learning: "Aprendizaje y revalidación",
+    return: "El siguiente incremento vuelve al quality gate de requisitos.",
+    orchestrate: "Orquestar", layer: "En cada etapa: agentes, skills, políticas, permisos y evidencias.",
+    legend: "Los checkpoints humanos requieren revisores formados con autoridad para intervenir.",
+  },
+  fr: {
+    nodes: ["Quality Gate des exigences", "Implémenter", "Revoir", "Tester", "Déployer", "Exploiter", "Améliorer"],
+    checks: { 0: "Approbation humaine", 2: "Revue experte", 4: "Autorisation de release", 5: "Supervision humaine" },
+    delivery: "Delivery", learning: "Apprentissage et revalidation",
+    return: "Le prochain incrément revient au quality gate des exigences.",
+    orchestrate: "Orchestrer", layer: "À chaque étape : agents, skills, politiques, permissions et preuves.",
+    legend: "Les checkpoints humains exigent des reviewers formés et habilités à intervenir.",
+  },
 };
 
-const positions = [
-  { x: 330, y: 42 },
-  { x: 56, y: 128 },
-  { x: 56, y: 272 },
-  { x: 368, y: 470 },
-  { x: 580, y: 272 },
-  { x: 580, y: 128 },
-  { x: 112, y: 500 },
-  { x: 262, y: 250 }
-];
-
-const nodeMeta = [
-  { source: Position.Left, target: Position.Bottom },
-  { source: Position.Bottom, target: Position.Right },
-  { source: Position.Right, target: Position.Top },
-  { source: Position.Right, target: Position.Top },
-  { source: Position.Top, target: Position.Left },
-  { source: Position.Left, target: Position.Bottom },
-  { source: Position.Top, target: Position.Right },
-  { source: Position.Bottom, target: Position.Top }
-];
-
-const nodeStyle = {
-  border: "none",
-  background: "transparent",
-  boxShadow: "none",
-  padding: 0,
-  width: 172
-};
-
-const layerNodeStyle = {
-  ...nodeStyle,
-  width: 210
-};
-
-const humanInLoopSteps = new Set([0, 2, 4, 5]);
-
-function buildHumanBadge() {
-  return React.createElement(
-    "span",
-    {
-      className: "loop-human-badge",
-      title: "Human in the loop",
-      "aria-label": "Human in the loop"
-    },
-    React.createElement("span", {
-      className: "loop-human-icon",
-      "aria-hidden": "true"
-    })
-  );
-}
-
-function buildLabel(stepLabel, step, label, isLayer = false) {
-  return React.createElement(
-    "div",
-    { className: `loop-node-card${isLayer ? " loop-node-layer" : ""}` },
-    React.createElement(
-      "div",
-      { className: "loop-node-topline" },
-      React.createElement("span", null, `${stepLabel} ${step}`),
-      humanInLoopSteps.has(step) ? buildHumanBadge() : null
+function StageNode({ data }) {
+  return h(React.Fragment, null,
+    ...Object.entries(Position).flatMap(([key, position]) => [
+      h(Handle, { key: key + "-s", id: position + "-s", type: "source", position }),
+      h(Handle, { key: key + "-t", id: position + "-t", type: "target", position }),
+    ]),
+    h("a", { href: "#step-" + data.index, className: "delivery-node nodrag" + (data.index === 6 ? " learning-node" : "") },
+      h("span", { className: "delivery-node-number" }, String(data.index).padStart(2, "0")),
+      h("strong", null, data.title),
+      data.check ? h("span", { className: "delivery-checkpoint" },
+        h("span", { "aria-hidden": true }, "✓ "), data.check)
+        : h("span", { className: "delivery-node-caption" }, data.caption),
     ),
-    React.createElement("strong", null, label),
-    isLayer
-      ? React.createElement(
-          "small",
-          { className: "loop-layer-note" },
-          "Cross-cutting coordination layer"
-        )
-      : null
   );
 }
 
-function buildNodes(lang) {
-  const labels = labelsByLang[lang] || labelsByLang.en;
+const nodeTypes = { stage: StageNode };
+const desktopPositions = [
+  { x: 30, y: 24 }, { x: 265, y: 24 }, { x: 500, y: 24 }, { x: 735, y: 24 },
+  { x: 735, y: 240 }, { x: 500, y: 240 }, { x: 265, y: 240 },
+];
 
-  return labels.nodes.map((label, index) => ({
-    id: String(index),
-    position: positions[index],
-    data: {
-      label: buildLabel(labels.step, index, label, index === 7),
-      targetId: `step-${index}`
-    },
-    sourcePosition: nodeMeta[index].source,
-    targetPosition: nodeMeta[index].target,
-    draggable: false,
-    selectable: false,
-    style: index === 7 ? layerNodeStyle : nodeStyle
+function diagramData(labels, vertical, width) {
+  const nodeWidth = vertical ? Math.min(360, Math.max(190, width - 70)) : 190;
+  const nodes = labels.nodes.map((title, index) => ({
+    id: String(index), type: "stage", position: vertical ? { x: 48, y: 16 + index * 150 } : desktopPositions[index],
+    data: { title, index, check: labels.checks[index], caption: index === 6 ? labels.learning : labels.delivery },
+    style: { width: nodeWidth, height: 118 },
+    draggable: false, selectable: false, focusable: false,
   }));
+  const connections = [[0, 1, "right", "left"], [1, 2, "right", "left"], [2, 3, "right", "left"],
+    [3, 4, "bottom", "top"], [4, 5, "left", "right"], [5, 6, "left", "right"], [6, 0, "left", "bottom"]];
+  const edges = connections.map(([from, to, source, target]) => {
+    const learning = from >= 5;
+    if (vertical) { source = from === 6 ? "left" : "bottom"; target = from === 6 ? "left" : "top"; }
+    const color = learning ? "#28705d" : "#1859a9";
+    return { id: from + "-" + to, source: String(from), target: String(to),
+      sourceHandle: source + "-s", targetHandle: target + "-t", type: "smoothstep",
+      style: { stroke: color, strokeWidth: 2, ...(learning ? { strokeDasharray: "6 4" } : {}) },
+      pathOptions: { borderRadius: 10, offset: from === 6 ? 30 : 18 },
+      markerEnd: { type: MarkerType.ArrowClosed, color }, selectable: false, focusable: false,
+    };
+  });
+  return { nodes, edges };
 }
 
-function buildEdges() {
-  const base = {
-    type: "smoothstep",
-    animated: true,
-    selectable: false,
-    style: {
-      stroke: "#d46a3f",
-      strokeWidth: 2.2
-    },
-    markerEnd: {
-      type: MarkerType.ArrowClosed,
-      color: "#d46a3f"
-    }
-  };
-
-  const layerEdge = {
-    type: "smoothstep",
-    animated: true,
-    selectable: false,
-    style: {
-      stroke: "rgba(212, 106, 63, 0.72)",
-      strokeWidth: 1.9,
-      strokeDasharray: "6 6"
-    },
-    markerEnd: {
-      type: MarkerType.ArrowClosed,
-      color: "rgba(212, 106, 63, 0.72)"
-    }
-  };
-
-  return [
-    { id: "e0-1", source: "0", target: "1", pathOptions: { offset: 22, borderRadius: 42 }, ...base },
-    { id: "e1-2", source: "1", target: "2", pathOptions: { offset: 20, borderRadius: 32 }, ...base },
-    { id: "e2-3", source: "2", target: "3", pathOptions: { offset: 30, borderRadius: 38 }, ...base },
-    { id: "e3-4", source: "3", target: "4", pathOptions: { offset: 28, borderRadius: 36 }, ...base },
-    { id: "e4-5", source: "4", target: "5", pathOptions: { offset: 20, borderRadius: 32 }, ...base },
-    { id: "e5-0", source: "5", target: "0", pathOptions: { offset: 24, borderRadius: 42 }, ...base },
-    { id: "e5-6", source: "5", target: "6", pathOptions: { offset: 42, borderRadius: 48 }, ...base },
-    { id: "e6-3", source: "6", target: "3", pathOptions: { offset: 30, borderRadius: 42 }, ...base },
-    { id: "e7-0", source: "7", target: "0", pathOptions: { offset: 20, borderRadius: 22 }, ...layerEdge },
-    { id: "e7-1", source: "7", target: "1", pathOptions: { offset: 34, borderRadius: 28 }, ...layerEdge },
-    { id: "e7-2", source: "7", target: "2", pathOptions: { offset: 22, borderRadius: 26 }, ...layerEdge },
-    { id: "e7-4", source: "7", target: "4", pathOptions: { offset: 22, borderRadius: 26 }, ...layerEdge },
-    { id: "e7-5", source: "7", target: "5", pathOptions: { offset: 34, borderRadius: 28 }, ...layerEdge },
-    { id: "e7-6", source: "7", target: "6", pathOptions: { offset: 24, borderRadius: 28 }, ...layerEdge }
-  ];
-}
-
-function scrollToStage(node) {
-  const targetId = node?.data?.targetId;
-  if (!targetId) {
-    return;
-  }
-
-  const element = document.getElementById(targetId);
-  if (!element) {
-    return;
-  }
-
-  history.replaceState(null, "", `#${targetId}`);
-  element.scrollIntoView({ behavior: "smooth", block: "start" });
-}
-
-function FlowDiagram({ lang }) {
-  return React.createElement(
-    ReactFlowProvider,
-    null,
-    React.createElement(
-      ReactFlow,
-      {
-        nodes: buildNodes(lang),
-        edges: buildEdges(),
-        fitView: true,
-        fitViewOptions: { padding: 0.06 },
-        panOnDrag: false,
-        zoomOnScroll: false,
-        zoomOnPinch: false,
-        zoomOnDoubleClick: false,
-        nodesDraggable: false,
-        nodesConnectable: false,
-        elementsSelectable: false,
-        preventScrolling: false,
-        onNodeClick: (_event, node) => scrollToStage(node),
-        proOptions: { hideAttribution: true }
-      },
-      React.createElement(Background, {
-        color: "rgba(31, 26, 23, 0.08)",
-        gap: 22,
-        size: 1
-      })
-    )
+function FlowDiagram({ labels, width }) {
+  const vertical = width < 940;
+  const { nodes, edges } = diagramData(labels, vertical, width);
+  return h(React.Fragment, null,
+    h("div", { className: "delivery-legend" },
+      h("span", { className: "delivery-key" }, labels.delivery),
+      h("span", { className: "learning-key" }, labels.learning)),
+    h("div", { className: "delivery-canvas", style: { height: vertical ? 1060 : 400 } },
+      h(ReactFlow, { key: String(vertical) + "-" + Math.round(width), nodes, edges, nodeTypes,
+        fitView: true, fitViewOptions: { padding: 0.02 }, minZoom: 0.5, maxZoom: 1,
+        panOnDrag: false, panOnScroll: false, zoomOnScroll: false, zoomOnPinch: false,
+        zoomOnDoubleClick: false, nodesDraggable: false, nodesConnectable: false,
+        elementsSelectable: false, preventScrolling: false, proOptions: { hideAttribution: true },
+      })),
+    h("p", { className: "delivery-return" }, labels.return),
+    h("a", { href: "#step-7", className: "orchestration-band" },
+      h("strong", null, labels.orchestrate), h("span", null, labels.layer)),
+    h("p", { className: "delivery-human-legend" }, labels.legend),
   );
 }
 
-document.querySelectorAll(".practice-flow").forEach((container) => {
-  const lang = document.documentElement.lang || "en";
+document.querySelectorAll(".practice-flow").forEach(container => {
+  const labels = translations[document.documentElement.lang] || translations.en;
   const root = createRoot(container);
-  root.render(React.createElement(FlowDiagram, { lang }));
+  let previousWidth = 0;
+  const observer = new ResizeObserver(([entry]) => {
+    const width = Math.round(entry.contentRect.width);
+    if (width > 0 && width !== previousWidth) {
+      previousWidth = width;
+      root.render(h(FlowDiagram, { labels, width }));
+    }
+  });
+  observer.observe(container);
 });
