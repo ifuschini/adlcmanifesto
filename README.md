@@ -65,6 +65,7 @@ sending details in a public issue.
 
 - [manifesto.md](manifesto.md): the core manifesto.
 - [lifecycle.md](lifecycle.md): the ADLC lifecycle stages.
+- [Enterprise adoption guide](docs/enterprise-adoption.md): controls, evidence, and an end-to-end refund-assistance example.
 - [shared-skills.md](shared-skills.md): reusable enterprise-specific skills for
   agents and teams.
 - [README.it.md](README.it.md), [README.es.md](README.es.md),

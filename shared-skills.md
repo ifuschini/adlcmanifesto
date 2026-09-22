@@ -24,7 +24,7 @@ They should:
 ## Documentation Skill
 
 Purpose:
-Defines how documentation is written, structured, linked, and published in the official knowledge base.
+Defines how human documentation and agent context are produced as connected but separate artifacts, with shared provenance and approval.
 
 Typical scope:
 
@@ -35,14 +35,18 @@ Typical scope:
 - architecture notes
 - FAQ structure
 - evidence links between documentation, tickets, PRs, releases, and operational records
+- human-facing knowledge bases, such as Confluence or Backstage TechDocs
+- agent-facing context endpoints, such as governed MCP servers, retrieval indexes, or versioned context packs
+- stable cross-project URLs, access controls, source versions, ownership, and approval status
+- concise, task-relevant context that reduces token usage without losing constraints, permissions, or source evidence
 
 Expected outcome:
-Documentation remains consistent, findable, traceable, and connected to real delivery events.
+People receive readable documentation; agents retrieve approved, relevant context through a dedicated interface. Both remain traceable to the same authoritative sources. A URL or llms.txt file alone does not provide access control or governance.
 
-## RAG Governance Skill
+## Knowledge Governance Skill
 
 Purpose:
-Defines how knowledge sources are selected, approved, chunked, versioned, retired, tested, and traced.
+Defines how knowledge sources, RAG content, context endpoints, and runtime memory are selected, owned, approved, structured, versioned, tested, traced, and retired.
 
 Typical scope:
 
@@ -55,9 +59,31 @@ Typical scope:
 - prompt and knowledge change history
 - regression testing after knowledge updates
 - traceability from requirement to knowledge source, agent behavior, test evidence, and release
+- memory provenance, permitted writers, retention, tenant and user isolation, deletion, and contradiction handling
+- treatment of retrieved content as data, not authority to override system policy
+- context compression that preserves permissions, constraints, and decision-critical evidence
 
 Expected outcome:
-RAG content and shared knowledge improve agent behavior without introducing uncontrolled change.
+Knowledge and runtime context improve agent behavior without introducing uncontrolled change or unauthorized memory persistence.
+
+## Behavioral Evaluation Skill
+
+Purpose:
+Defines how teams measure agent outcomes, policy compliance, reliability, and regression risk before release and during operation.
+
+Typical scope:
+
+- representative, versioned datasets linked to requirements and risk scenarios
+- repeated trials with isolated state and recorded model, prompt, tool, and knowledge versions
+- risk-based acceptance thresholds, sample size, variability, and known coverage gaps
+- actual task outcomes and external effects, not only plausible answers or exact execution paths
+- human calibration of model-based graders and review of disagreements
+- adversarial cases, permission boundaries, retrieval failures, escalation, and stopping behavior
+- regression checks after any behavior-changing input changes
+- cost per successful task, latency, human intervention, and business value against a baseline
+
+Expected outcome:
+Release and improvement decisions use reviewable behavioral evidence. Passing a finite test set is not a guarantee of safety in production.
 
 ## Release Notes Skill
 
@@ -146,7 +172,8 @@ Shared skills should have clear ownership.
 Suggested owners:
 
 - Documentation Skill: knowledge management, architecture, or engineering enablement
-- RAG Governance Skill: knowledge management, product operations, compliance, or enterprise architecture
+- Knowledge Governance Skill: knowledge management, product operations, compliance, or enterprise architecture
+- Behavioral Evaluation Skill: quality engineering, product owners, domain experts, and risk owners
 - Release Notes Skill: engineering, product operations, or release management
 - Architecture Skill: architecture group or platform architecture
 - Infrastructure Skill: platform engineering, SRE, or cloud infrastructure
@@ -161,7 +188,8 @@ Shared agents use shared skills to perform work consistently.
 Examples:
 
 - a Documentation Agent can use the Documentation Skill
-- a RAG Governance Agent can use the RAG Governance Skill
+- a Knowledge Governance Agent can use the Knowledge Governance Skill
+- implementation, review, and operational agents can use the Behavioral Evaluation Skill, with accountable human approval of thresholds and release decisions
 - a Release Notes Agent can use the Release Notes Skill
 - a PR Governance Agent can use the Architecture Skill and CISO Security Skill
 - an Operational Readiness Agent can use the Infrastructure Skill

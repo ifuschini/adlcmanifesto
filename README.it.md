@@ -63,6 +63,8 @@ invece di inviare dettagli in una issue pubblica.
 
 ## Struttura Del Repository
 
+- [Guida all'adozione enterprise](docs/enterprise-adoption.md): controlli, evidenze ed esempio completo di assistenza ai rimborsi (in inglese).
+
 - [manifesto.md](manifesto.md): il manifesto principale.
 - [lifecycle.md](lifecycle.md): le fasi del lifecycle ADLC.
 - [shared-skills.md](shared-skills.md): skill riutilizzabili per agenti e team.

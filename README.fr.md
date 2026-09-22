@@ -65,6 +65,8 @@ lieu d'envoyer des détails dans une issue publique.
 
 ## Structure Du Dépôt
 
+- [Guide d'adoption enterprise](docs/enterprise-adoption.md): contrôles, preuves et exemple complet d'assistance aux remboursements (en anglais).
+
 - [manifesto.md](manifesto.md): le manifeste principal.
 - [lifecycle.md](lifecycle.md): les étapes du lifecycle ADLC.
 - [shared-skills.md](shared-skills.md): skills réutilisables pour agents et

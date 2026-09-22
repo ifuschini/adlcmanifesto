@@ -384,7 +384,7 @@
       >
         <div class="section-heading">
           <p class="section-tag">Principles</p>
-          <h2>Three simple rules to guide every decision</h2>
+          <h2>Five principles to guide every decision</h2>
         </div>
 
         <div class="principles-grid">
@@ -414,6 +414,16 @@
               and governance come before the tool.
             </p>
           </article>
+          <article class="paper principle-card">
+            <span class="principle-number">04</span>
+            <h3>Choose the simplest effective solution</h3>
+            <p>Use the least autonomy and complexity needed to achieve the validated outcome. Compare deterministic automation, an LLM workflow, a single agent, and multi-agent orchestration against a measurable business baseline.</p>
+          </article>
+          <article class="paper principle-card">
+            <span class="principle-number">05</span>
+            <h3>Grant autonomy on evidence</h3>
+            <p>Permissions, approvals, budgets, and stop controls are enforced at runtime, not only described in prompts.</p>
+          </article>
         </div>
       </section>
 
@@ -421,12 +431,9 @@
         <article class="paper gate-banner">
           <p class="section-tag">Stage 0</p>
           <h2>Requirements Quality Gate</h2>
-          <p>
-            Before implementation, the customer must have a dedicated
-            requirements quality gate agent. It is fundamental for entering the
-            ADLC because it helps write requirements as clearly as possible, so
-            they become complete, coherent, traceable, and ready for execution.
-          </p>
+          <p>No implementation starts without a passed requirements quality gate. The gate approves the next increment, not every future requirement. A quality gate agent may support preparation; accountable humans approve scope, measurable outcomes, risks, and known uncertainties.</p>
+          <p>Use the least autonomy and complexity needed to achieve the validated outcome. Compare deterministic automation, an LLM workflow, a single agent, and multi-agent orchestration against a measurable business baseline.</p>
+          <p>Experiments also require an approved hypothesis, sandbox, permitted data, budget, and exit criteria before implementation.</p>
           <p>
             Human presence is required here to confirm scope, intent, business
             meaning, and approval before the lifecycle can start.
@@ -448,12 +455,7 @@
             <span class="stage-index">0</span>
             <div>
               <h3>Requirements Quality Gate</h3>
-              <p>
-                Entry into the ADLC starts only when a dedicated quality gate
-                agent has helped the customer shape requirements that are
-                validated, traceable, and clear enough to guide implementation,
-                testing, governance, and delivery without ambiguity.
-              </p>
+              <p>No implementation starts without a passed requirements quality gate. The gate approves the next increment, not every future requirement. A quality gate agent may support preparation; accountable humans approve scope, measurable outcomes, risks, and known uncertainties.</p>
               <p class="human-loop-inline"><strong>Human in the loop:</strong> mandatory approval of requirements quality and intent.</p>
             </div>
           </article>
@@ -468,6 +470,7 @@
                 structured in a way that can be reviewed, tested, governed, and
                 evolved over time without losing architectural coherence.
               </p>
+              <p>Implement the autonomy contract with least-privilege access, runtime policy enforcement, budgets, and stop controls. Humans remain designers and implementers as well as reviewers.</p>
             </div>
           </article>
           <article id="step-2" class="paper stage-card">
@@ -480,6 +483,7 @@
                 advancing toward validation.
               </p>
               <p class="human-loop-inline"><strong>Human in the loop:</strong> expert review, risk judgment, and decision to proceed.</p>
+              <p>Review delegated authority, trust boundaries, memory handling, evaluation quality, and recovery plans, including irreversible effects.</p>
             </div>
           </article>
           <article id="step-3" class="paper stage-card">
@@ -496,6 +500,7 @@
                 prompts, RAG content, shared skills, model configuration, tools,
                 and orchestration rules.
               </p>
+              <p>Use representative, versioned datasets, repeated trials, isolated state, and risk-based thresholds. Verify actual outcomes and policy compliance; calibrate model-based graders against human judgment and disclose uncertainty and coverage gaps.</p>
             </div>
           </article>
           <article id="step-4" class="paper stage-card">
@@ -513,6 +518,7 @@
                 changes, and orchestration changes.
               </p>
               <p class="human-loop-inline"><strong>Human in the loop:</strong> release authorization and accountability for go-live.</p>
+              <p>Distinguish configuration rollback, state restoration, and compensation for external effects. Irreversible actions require preventive controls and explicit approval; a rollback cannot undo every action.</p>
             </div>
           </article>
           <article id="step-5" class="paper stage-card">
@@ -531,6 +537,7 @@
                 updates.
               </p>
               <p class="human-loop-inline"><strong>Human in the loop:</strong> incident handling, escalation, and governance oversight in production.</p>
+              <p>Bound retries and prevent duplicate side effects. Test degraded operation, escalation, stop controls, and revocation. Measure cost per successful task, latency, intervention, rework, escalation, and business value against a baseline. Evidence may justify reducing autonomy or retiring a system.</p>
             </div>
           </article>
           <article id="step-6" class="paper stage-card">
@@ -542,6 +549,7 @@
                 analytics, user insight, and delivery learnings that reveal what
                 should be refined next.
               </p>
+              <p>Use production evidence to reduce autonomy or retire systems when value or reliability is insufficient. Revoke credentials, endpoints, and scheduled work; retain or delete memory under approved policy.</p>
             </div>
           </article>
           <article id="step-7" class="paper stage-card">
@@ -553,6 +561,7 @@
                 a composable ecosystem that scales beyond isolated
                 implementations.
               </p>
+              <p>Propagate identity, permission limits, budgets, approval state, and traceability across delegation. Govern shared state and memory without silently expanding authority.</p>
             </div>
           </article>
         </div>
@@ -591,49 +600,49 @@
             <tbody>
               <tr>
                 <td>0. Requirements Quality Gate</td>
-                <td>Clarified requirements, acceptance criteria, business intent, traceability links, approved RAG and knowledge sources</td>
+                <td>Clarified requirements, acceptance criteria, business intent, traceability links, approved RAG and knowledge sources. Approved increment, suitability decision, business baseline, experiment constraints.</td>
                 <td>Explicit approval that requirements are clear enough to enter the ADLC</td>
                 <td>Requirements must be complete, coherent, ready for execution, and traceable to approved RAG and knowledge sources</td>
               </tr>
               <tr>
                 <td>1. Implement</td>
-                <td>Services, prompts, agents, workflows, integrations, reusable components, prompt and change history</td>
+                <td>Services, prompts, agents, workflows, integrations, reusable components, prompt and change history. Autonomy contract, runtime enforcement and memory policy.</td>
                 <td>Not mandatory as a formal gate in this phase</td>
                 <td>Architecture and knowledge changes remain reviewable, testable, and ready for controlled evolution</td>
               </tr>
               <tr>
                 <td>2. Review</td>
-                <td>Review evidence, risk assessment, design corrections, readiness decision</td>
+                <td>Review evidence, risk assessment, design corrections, readiness decision. Authority and recovery review, evaluator calibration.</td>
                 <td>Accountable judgment on quality, security, and fitness to proceed</td>
                 <td>Quality and risk must be evaluated before moving forward</td>
               </tr>
               <tr>
                 <td>3. Test</td>
-                <td>Test evidence, acceptance validation, reliability checks, behavioral regression evidence, known issues</td>
+                <td>Test evidence, acceptance validation, reliability checks, behavioral regression evidence, known issues. Versioned datasets, repeated trials, risk thresholds and coverage gaps.</td>
                 <td>Optional depending on context, but escalation remains available</td>
                 <td>Behavior, including regressions from prompts, RAG content, skills, model configuration, tools, and orchestration, must be measured before deployment</td>
               </tr>
               <tr>
                 <td>4. Deploy</td>
-                <td>Release notes, deployment evidence, knowledge-layer change record, rollback plan, ownership, go-live record</td>
+                <td>Release notes, deployment evidence, knowledge-layer change record, rollback plan, ownership, go-live record. Configuration rollback, state restoration and compensation evidence.</td>
                 <td>Formal release authorization and responsibility for production entry</td>
                 <td>Release evidence must identify code, prompt, RAG or documentation, tool, model configuration, and orchestration changes</td>
               </tr>
               <tr>
                 <td>5. Operate</td>
-                <td>Monitoring signals, incidents, runbooks, operational decisions, governance logs, drift and retrieval signals</td>
+                <td>Monitoring signals, incidents, runbooks, operational decisions, governance logs, drift and retrieval signals. Cost per successful task, latency, intervention, rework and escalation.</td>
                 <td>Production oversight, escalation handling, and accountable intervention</td>
                 <td>Live operations must remain observable and governable across technical health and knowledge-driven behavior</td>
               </tr>
               <tr>
                 <td>6. Improve</td>
-                <td>Improvement backlog, lessons learned, policy updates, refinement priorities</td>
+                <td>Improvement backlog, lessons learned, policy updates, refinement priorities. Value review, autonomy reduction or retirement decision.</td>
                 <td>Not a mandatory gate, but accountable prioritization is expected</td>
                 <td>Live evidence must feed the next iteration instead of remaining isolated</td>
               </tr>
               <tr>
                 <td>7. Orchestrate</td>
-                <td>Shared flows, coordination rules, reusable capabilities, policy alignment</td>
+                <td>Shared flows, coordination rules, reusable capabilities, policy alignment. Delegation limits, identities, budgets and shared-state controls.</td>
                 <td>Human oversight depends on scope and impact of orchestration changes</td>
                 <td>Orchestration must preserve traceability from requirement &rarr; knowledge source &rarr; agent behavior &rarr; test evidence &rarr; release</td>
               </tr>
@@ -669,7 +678,7 @@
           </article>
           <article class="paper summary-card">
             <h3>Controlled Release</h3>
-            <p>Every release carries an approved evidence bundle, a complete change inventory, accountable authorization, and rollback for every behavioral input.</p>
+            <p>Every release carries approved evidence, a complete change inventory, accountable authorization, and tested recovery plans for configuration, state, and external effects.</p>
           </article>
           <article class="paper summary-card">
             <h3>Production Feedback</h3>
@@ -685,9 +694,12 @@
             <li>Every behavior-changing input has an owner, version, approval state, and change history.</li>
             <li>Requirements are traceable to implementation, knowledge, expected behavior, test evidence, and release.</li>
             <li>Human approval and escalation are enforced at the checkpoints required by risk and impact.</li>
-            <li>Releases are reproducible, observable, and reversible across code and knowledge-layer changes.</li>
+            <li>Release inputs are versioned and observable; recovery distinguishes rollback, state restoration, and compensation, with preventive controls for irreversible actions.</li>
             <li>Production evidence is reviewed and converted into governed improvement work.</li>
+            <li>Autonomy limits are documented, enforced, tested, and revocable.</li>
+            <li>Risk-based evaluations use versioned datasets, repeated trials, actual outcomes, and human-calibrated graders.</li>
           </ul>
+          <p><a href="https://github.com/ifuschini/adlcmanifesto/blob/main/docs/enterprise-adoption.md" target="_blank" rel="noopener noreferrer">Enterprise adoption guide and worked example</a></p>
         </article>
 
         <div class="section-heading section-subheading">
@@ -709,7 +721,7 @@
               <tr><td data-label="Characteristic">Behavior</td><td data-label="Traditional SDLC">Primarily deterministic and code-driven</td><td data-label="ADLC">Also non-deterministic, adaptive, and influenced by runtime context</td></tr>
               <tr><td data-label="Characteristic">Controlled change surface</td><td data-label="Traditional SDLC">Source code, configuration, infrastructure, and data</td><td data-label="ADLC">Also prompts, knowledge and RAG, skills, model configuration, tools, and orchestration</td></tr>
               <tr><td data-label="Characteristic">Validation</td><td data-label="Traditional SDLC">Code, integration, system, security, and acceptance tests</td><td data-label="ADLC">The same controls plus continuous behavioral, retrieval, and regression evaluation</td></tr>
-              <tr><td data-label="Characteristic">Human role</td><td data-label="Traditional SDLC">Author, reviewer, approver, and operator</td><td data-label="ADLC">Governor, approver, examiner, escalation owner, and accountable decision-maker</td></tr>
+              <tr><td data-label="Characteristic">Human role</td><td data-label="Traditional SDLC">Author, reviewer, approver, and operator</td><td data-label="ADLC">Designer, implementer, operator, reviewer, approver, escalation owner, and accountable decision-maker</td></tr>
               <tr><td data-label="Characteristic">Evidence</td><td data-label="Traditional SDLC">Build, test, approval, and release records</td><td data-label="ADLC">End-to-end traceability from requirement to behavior, evidence, release, and operations</td></tr>
             </tbody>
           </table>
@@ -772,12 +784,15 @@
             <h3>Human in the Loop</h3>
             <p>Human oversight is a mandatory control layer in the ADLC, especially when approving requirements, validating quality, authorizing releases, and governing production behavior.</p>
             <p>Agents accelerate and structure the work, but accountable human decisions remain explicit at the critical checkpoints.</p>
+            <p><strong>Competent oversight, not rubber-stamp approval.</strong></p>
+            <p>Reviewers must be trained in the domain, agent limitations, and decision risks, with risk-proportionate exercises on errors and incidents. They need accessible evidence, sources, uncertainties, and action consequences, plus enough time and a manageable workload to assess them.</p>
+            <p>They must have the authority to challenge, reject, pause, request revision, and escalate. Formal approval without substantive verification is not a governance control.</p>
           </article>
 
           <article class="paper agent-card">
             <span class="agent-label">Entry Control</span>
             <h3>Requirements Quality Gate</h3>
-            <p>The ADLC cannot start without a quality gate that ensures requirements are clear, complete, traceable, and meaningful from a business perspective.</p>
+            <p>No implementation starts without a passed requirements quality gate. The gate approves the next increment, not every future requirement. A quality gate agent may support preparation; accountable humans approve scope, measurable outcomes, risks, and known uncertainties.</p>
             <p>This gate is fundamental because it determines whether implementation should begin at all.</p>
           </article>
 
@@ -786,6 +801,18 @@
             <h3>Knowledge and RAG Governance</h3>
             <p>The ADLC treats the knowledge layer as a governed part of the system. Documents, prompts, RAG sources, shared skills, policies, examples, and tool instructions can influence agent behavior and may introduce silent regressions even when no application code changes.</p>
             <p>Knowledge changes must therefore be reviewed, versioned, traceable, and validated against expected behavior before they are used in production.</p>
+            <p>Runtime context and memory require provenance, permitted writers, retention, user and tenant isolation, deletion, and contradiction handling. Retrieved content cannot grant authority. Compression must preserve permissions, constraints, and decision-critical evidence.</p>
+          </article>
+          <article class="paper agent-card">
+            <span class="agent-label">Governance</span>
+            <h3>Explicit Autonomy Contract</h3>
+            <p>Define an accountable owner, permitted actions and data, delegated authority, budgets, stopping conditions, and escalation. Enforce permissions and approvals outside the prompt, with revocable credentials and a tested stop mechanism.</p>
+          </article>
+          <article class="paper agent-card">
+            <span class="agent-label">Evaluation</span>
+            <h3>Measurable Behavior and Value</h3>
+            <p>Use representative, versioned datasets, repeated trials, isolated state, and risk-based thresholds. Verify actual outcomes and policy compliance; calibrate model-based graders against human judgment and disclose uncertainty and coverage gaps.</p>
+            <p>Measure cost per successful task, latency, intervention, rework, escalation, and business value against a baseline. Evidence may justify reducing autonomy or retiring a system.</p>
           </article>
         </div>
       </section>
@@ -873,12 +900,14 @@
             <p>Defines how human documentation and agent context are produced as connected but separate artifacts.</p>
             <p>Human documentation lives in tools designed for people. Agent documentation is exposed through governed Agent Context Endpoints, such as MCP servers, llms.txt files, retrieval indexes, or versioned context packs.</p>
             <p>Agent-context tools may include Context7, GitMCP, MCPDoc, mcp-documentation-server, custom MCP servers built with open MCP SDKs, or equivalent open-source systems. These endpoints must expose stable URLs, source ownership, versioning, approval status, and retrieval rules.</p>
+            <p>Retrieve only the approved context needed for the task. Reduce token usage without removing permissions, constraints, provenance, or evidence needed for a correct decision.</p>
           </article>
           <article class="paper agent-card">
             <span class="agent-label">Knowledge</span>
             <h3>Knowledge Governance Skill</h3>
             <p>Defines how knowledge sources and agent context are selected, owned, approved, structured, versioned, published, tested, traced, and retired.</p>
             <p>It covers RAG sources, context endpoints, shared knowledge, contradiction handling, freshness, retrieval evaluation, citation expectations, access rules, and behavioral regression testing after knowledge changes.</p>
+            <p>Runtime context and memory require provenance, permitted writers, retention, user and tenant isolation, deletion, and contradiction handling. Retrieved content cannot grant authority. Compression must preserve permissions, constraints, and decision-critical evidence.</p>
           </article>
           <article class="paper agent-card">
             <span class="agent-label">Delivery</span>
@@ -903,6 +932,11 @@
             <h3>CISO Security Skill</h3>
             <p>Security skills should be defined or validated by the CISO organization and aligned with enterprise policies.</p>
             <p>Examples include data handling, identity, secrets, access control, threat modeling, secure prompt/tool usage, and audit evidence.</p>
+          </article>
+          <article class="paper agent-card">
+            <span class="agent-label">Evaluation</span>
+            <h3>Behavioral Evaluation Skill</h3>
+            <p>Defines representative datasets, repeated trials, risk-based acceptance thresholds, outcome and policy checks, human-calibrated graders, and regression evidence after behavior changes. Links quality, cost, latency, and human intervention to release decisions.</p>
           </article>
         </div>
       </section>
