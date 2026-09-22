@@ -4,8 +4,17 @@ const assert = require('node:assert/strict');
 const pages = ['site/index.html', 'site/it/index.html', 'site/es/index.html', 'site/fr/index.html'];
 let reference;
 
+function checkLanguageOrder(html) {
+  const match = html.match(/<div\s+class="language-switcher[^>]*>([\s\S]*?)<\/div>/);
+  assert(match, 'Missing language switcher');
+  const switcher = match[1];
+  assert.deepEqual([...switcher.matchAll(/hreflang="([^"]+)"/g)].map(match => match[1]),
+    ['en', 'es', 'fr', 'it'], 'Language switchers must use the same order');
+}
+
 for (const file of pages) {
   const html = fs.readFileSync(file, 'utf8');
+  checkLanguageOrder(html);
   const main = html.match(/<main>([\s\S]*?)<\/main>/)[1];
   const sections = [...main.matchAll(/<section\b[^>]*\bid="([^"]+)"/g)].map(match => match[1]);
   const nav = html.match(/<ul class="inline nav-links">([\s\S]*?)<\/ul>/)[1];
@@ -34,6 +43,7 @@ const releaseSections = [...changelog.matchAll(/<section id="([^"]+)"/g)].map(ma
 assert.deepEqual([...changelogNav.matchAll(/href="#([^"]+)"/g)].map(match => match[1]), releaseSections);
 for (const locale of ['', 'it/', 'es/', 'fr/']) {
 const guide = fs.readFileSync(`site/${locale}enterprise-adoption/index.html`, 'utf8');
+checkLanguageOrder(guide);
 const guideNav = guide.match(/<ul class="inline nav-links">([\s\S]*?)<\/ul>/)[1];
 const guideHeadings = [...guide.matchAll(/<h2 id="([^"]+)"/g)].map(match => match[1]);
 assert.equal(guideHeadings.length, 8, 'Guide must contain all eight source sections');

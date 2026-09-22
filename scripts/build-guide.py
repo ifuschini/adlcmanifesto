@@ -78,6 +78,9 @@ LOCALES = {
 }
 
 
+LANGUAGE_ORDER = ("en", "es", "fr", "it")
+
+
 def guide_path(lang):
     return ("/" if lang == "en" else f"/{lang}/") + "enterprise-adoption/"
 
@@ -116,7 +119,7 @@ def render(lang, copy):
     head = re.sub(r'(href|src)="\.\./', r'\1="/', head)
     alternates = "\n".join(
         f'<link rel="alternate" hreflang="{other}" href="https://adlcmanifesto.org{guide_path(other)}" />'
-        for other in LOCALES
+        for other in LANGUAGE_ORDER
     )
     alternates += '\n<link rel="alternate" hreflang="x-default" href="https://adlcmanifesto.org/enterprise-adoption/" />'
     head = head.replace("  </head>", f'{alternates}\n<meta property="og:locale" content="{copy["locale"]}" />\n  </head>')
@@ -126,7 +129,7 @@ def render(lang, copy):
     ) + "\n</ul>"
     head = re.sub(r'<ul class="inline nav-links">[\s\S]*?</ul>', lambda _: nav, head)
     switcher = f'<div class="language-switcher paper" aria-label="{copy["languages"]}">'
-    for other in LOCALES:
+    for other in LANGUAGE_ORDER:
         active = ' active' if other == lang else ''
         current = ' aria-current="page"' if other == lang else ''
         switcher += f'<a href="{guide_path(other)}" class="paper-btn language-link{active}" lang="{other}" hreflang="{other}"{current}>{other.upper()}</a>'
