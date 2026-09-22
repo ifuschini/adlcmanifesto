@@ -46,14 +46,14 @@ People receive readable documentation; agents retrieve approved, relevant contex
 ## Knowledge Governance Skill
 
 Purpose:
-Defines how knowledge sources, RAG content, context endpoints, and runtime memory are selected, owned, approved, structured, versioned, tested, traced, and retired.
+Defines how knowledge sources, prompts, shared skills, context endpoints, runtime memory, and RAG content, where used, are selected, owned, approved, structured, versioned, tested, traced, and retired. Knowledge Governance applies independently of the technique used to supply context; RAG is not a required architecture.
 
 Typical scope:
 
 - source ownership
 - document freshness
-- RAG source approval
-- chunking and retrieval evaluation
+- RAG source approval, where RAG is used
+- chunking and retrieval evaluation, where retrieval is used
 - contradiction handling
 - citation expectations
 - prompt and knowledge change history

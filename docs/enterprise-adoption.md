@@ -6,6 +6,13 @@ adoption pattern, not a certification, compliance guarantee, or universal set
 of thresholds. Adapt controls to business impact and the organization's risk
 model. English is the source of truth for this guide.
 
+Knowledge Governance covers documents, prompts, shared skills, policies, memory,
+and runtime context, regardless of how they are supplied. Retrieval-augmented
+generation (RAG) is one optional technique, not a prerequisite for ADLC. Where
+used, govern retrieval quality, source freshness, access permissions, and
+citations, alongside behavioral regression tests. Context engineering composes
+the agent's operational context; it does not replace these governance controls.
+
 ## 1. Approve the Next Increment
 
 **No implementation starts without a passed requirements quality gate.**

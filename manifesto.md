@@ -22,9 +22,11 @@ Human-in-the-loop control is mandatory where requirements are approved, quality 
 
 Competent oversight, not rubber-stamp approval. Reviewers must be trained in the domain, agent limitations, and decision risks. They need accessible evidence, sufficient time, a manageable workload, and authority to challenge, reject, pause, request revision, and escalate. Formal approval without substantive verification is not a governance control.
 
-## Knowledge and RAG Governance
+## Knowledge Governance
 
-The ADLC treats the knowledge layer as a governed part of the system. Documents, prompts, RAG sources, shared skills, policies, examples, and tool instructions can influence agent behavior and may introduce silent regressions even when no application code changes.
+The ADLC treats knowledge and context as governed parts of the system. Documents, prompts, shared skills, memory, policies, examples, tool instructions, and information retrieved through RAG, where used, can influence agent behavior and introduce silent regressions even when no application code changes.
+
+Knowledge Governance applies regardless of how context is supplied. Retrieval-augmented generation (RAG) is one technique, not a required architecture or a synonym for knowledge governance. Where used, it requires specific controls for retrieval quality, source freshness, access permissions, and citations.
 
 Knowledge changes must therefore be reviewed, versioned, traceable, and validated against expected behavior before they are used in production.
 
