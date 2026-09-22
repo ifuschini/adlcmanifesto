@@ -6,7 +6,7 @@
     <title>ADLC Manifesto and Lifecycle | Agentic Development Framework</title>
     <meta
       name="description"
-      content="Explore the ADLC Manifesto and Lifecycle: a governed, tool-agnostic framework for building agentic systems from validated requirements to orchestration and continuous improvement."
+      content="An enterprise framework for agentic development: requirements quality gates, knowledge governance, human oversight, evaluation, and traceable delivery."
     />
     <meta
       name="robots"
@@ -59,7 +59,7 @@
     />
     <meta
       property="og:description"
-      content="A governed, tool-agnostic lifecycle for building agentic systems, from validated requirements to operations and orchestration."
+      content="An enterprise framework for agentic development: requirements quality gates, knowledge governance, human oversight, evaluation, and traceable delivery."
     />
     <meta
       property="og:image"
@@ -115,7 +115,7 @@
     />
     <meta
       name="twitter:description"
-      content="A clear, governed, tool-agnostic framework for agentic system development."
+      content="An enterprise framework for agentic development: requirements quality gates, knowledge governance, human oversight, evaluation, and traceable delivery."
     />
     <meta
       name="twitter:image"
@@ -130,10 +130,10 @@
         "@context": "https://schema.org",
         "@type": "WebPage",
         "name": "ADLC Manifesto and Lifecycle",
-        "description": "A governed, tool-agnostic framework for building agentic systems from validated requirements to orchestration and continuous improvement.",
+        "description": "An enterprise framework for agentic development: requirements quality gates, knowledge governance, human oversight, evaluation, and traceable delivery.",
         "inLanguage": "en",
         "datePublished": "2026-04-13",
-        "dateModified": "2026-09-22T12:02:58+02:00",
+        "dateModified": "2026-09-22",
         "version": "1.5",
         "about": [
           "Agentic Development",
@@ -169,7 +169,7 @@
       href="./styles.css?v=1.5"
     />
     <script src="./theme.js?v=1.5"></script>
-    <link rel="stylesheet" href="./technical.css?v=1.5-theme" />
+    <link rel="stylesheet" href="./technical.css?v=1.5-guide" />
     <script src="./navigation.js?v=1.5" defer></script>
   </head>
   <body>
@@ -198,6 +198,7 @@
           <li><a href="#enterprise-tools">Enterprise Tools</a></li>
           <li><a href="#llm-gateways">LLM Gateways</a></li>
           <li><a href="#useful-links">Useful Links</a></li>
+          <li><a href="#glossary">Glossary and acronyms</a></li>
         </ul>
         </details>
       </nav>
@@ -428,7 +429,7 @@
           <article class="paper principle-card">
             <span class="principle-number">04</span>
             <h3>Choose the simplest effective solution</h3>
-            <p>Use the least autonomy and complexity needed to achieve the validated outcome. Compare deterministic automation, an LLM workflow, a single agent, and multi-agent orchestration against a measurable business baseline.</p>
+            <p>Use the least autonomy and complexity needed to achieve the validated outcome. Compare deterministic automation, an LLM (Large Language Model) workflow, a single agent, and multi-agent orchestration against a measurable business baseline.</p>
           </article>
           <article class="paper principle-card">
             <span class="principle-number">05</span>
@@ -451,7 +452,7 @@
           <article class="paper agent-card">
             <span class="agent-label">Governance</span>
             <h3>Human in the Loop</h3>
-            <p>Human oversight is a mandatory control layer in the ADLC, especially when approving requirements, validating quality, authorizing releases, and governing production behavior.</p>
+            <p>Human oversight is a mandatory control layer in the ADLC (Agentic Development Lifecycle), especially when approving requirements, validating quality, authorizing releases, and governing production behavior.</p>
             <p>Agents accelerate and structure the work, but accountable human decisions remain explicit at the critical checkpoints.</p>
             <p><strong>Competent oversight, not rubber-stamp approval.</strong></p>
             <p>Reviewers must be trained in the domain, agent limitations, and decision risks, with risk-proportionate exercises on errors and incidents. They need accessible evidence, sources, uncertainties, and action consequences, plus enough time and a manageable workload to assess them.</p>
@@ -759,7 +760,7 @@
             <li>Autonomy limits are documented, enforced, tested, and revocable.</li>
             <li>Risk-based evaluations use versioned datasets, repeated trials, actual outcomes, and human-calibrated graders.</li>
           </ul>
-          <p><a href="https://github.com/ifuschini/adlcmanifesto/blob/main/docs/enterprise-adoption.md" target="_blank" rel="noopener noreferrer">Enterprise adoption guide and worked example</a></p>
+          <p><a href="/enterprise-adoption/">Enterprise adoption guide and worked example</a></p>
         </article>
 
         <div class="section-heading section-subheading">
@@ -863,7 +864,7 @@
             <span class="agent-label">Documentation</span>
             <h3>Documentation Skill</h3>
             <p>Defines how human documentation and agent context are produced as connected but separate artifacts.</p>
-            <p>Human documentation lives in tools designed for people. Agent documentation is exposed through governed Agent Context Endpoints, such as MCP servers, llms.txt files, retrieval indexes, or versioned context packs.</p>
+            <p>Human documentation lives in tools designed for people. Agent documentation is exposed through governed Agent Context Endpoints, such as MCP (Model Context Protocol) servers, llms.txt files, retrieval indexes, or versioned context packs.</p>
             <p>Agent-context tools may include Context7, GitMCP, MCPDoc, mcp-documentation-server, custom MCP servers built with open MCP SDKs, or equivalent open-source systems. These endpoints must expose stable URLs, source ownership, versioning, approval status, and retrieval rules.</p>
             <p>Retrieve only the approved context needed for the task. Reduce token usage without removing permissions, constraints, provenance, or evidence needed for a correct decision.</p>
           </article>
@@ -920,7 +921,7 @@
             <span class="agent-label">Knowledge Base</span>
             <h3>Documentation Agent</h3>
             <p>Creates and updates human-facing documentation in the official human knowledge base, such as Confluence, SharePoint, Notion, GitBook, Backstage TechDocs, Read the Docs, or similar platforms.</p>
-            <p>Human documentation is optimized for reading, review, onboarding, governance, and auditability. It is not the default context interface for AI agents.</p>
+            <p>Human documentation is optimized for reading, review, onboarding, governance, and auditability. It is not the default context interface for AI (Artificial Intelligence) agents.</p>
             <p>Owns ADRs, runbooks, onboarding pages, architecture notes, FAQs, and process documentation tied to real delivery events.</p>
           </article>
           <article class="paper agent-card">
@@ -995,7 +996,7 @@
         </div>
         <div class="section-heading section-subheading">
           <h3>Enterprise selection criteria</h3>
-          <p>Verify SSO and roles, tenant isolation, retention and deletion, exportable audit evidence, hosting and data residency, operational support, and integration with existing controls. Open-source licensing alone does not establish suitability.</p>
+          <p>Verify SSO (Single Sign-On) and roles, tenant isolation, retention and deletion, exportable audit evidence, hosting and data residency, operational support, and integration with existing controls. Open-source licensing alone does not establish suitability.</p>
         </div>
       </section>
 
@@ -1137,6 +1138,31 @@
           </div>
         </div>
 
+      </section>
+      <section id="glossary" class="container section-block">
+        <div class="section-heading"><h2>Glossary and acronyms</h2></div>
+        <div class="paper resource-table-wrap">
+          <table class="resource-table glossary-table">
+            <thead><tr><th scope="col">Term</th><th scope="col">Expanded name / concept</th><th scope="col">Meaning in ADLC</th></tr></thead>
+            <tbody>
+              <tr><td data-label="Term">ADLC</td><td data-label="Expanded name / concept">Agentic Development Lifecycle</td><td data-label="Meaning in ADLC">Lifecycle for agentic systems, extending SDLC with governance of behavior, context, and autonomy.</td></tr>
+              <tr><td data-label="Term">SDLC</td><td data-label="Expanded name / concept">Software Development Lifecycle</td><td data-label="Meaning in ADLC">Software lifecycle discipline, from requirements through delivery, operation, and retirement.</td></tr>
+              <tr><td data-label="Term">AI</td><td data-label="Expanded name / concept">Artificial Intelligence</td><td data-label="Meaning in ADLC">Artificial intelligence capabilities used within the system, subject to the same governance controls.</td></tr>
+              <tr><td data-label="Term">LLM</td><td data-label="Expanded name / concept">Large Language Model</td><td data-label="Meaning in ADLC">Language model used by agents; its version and configuration affect behavior and require validation.</td></tr>
+              <tr><td data-label="Term">RAG</td><td data-label="Expanded name / concept">Retrieval-Augmented Generation</td><td data-label="Meaning in ADLC">Retrieval of external information to support generation; optional, with governed sources and retrieval tests.</td></tr>
+              <tr><td data-label="Term">MCP</td><td data-label="Expanded name / concept">Model Context Protocol</td><td data-label="Meaning in ADLC">Protocol for connecting AI applications to tools and context; it does not replace authorization or governance.</td></tr>
+              <tr><td data-label="Term">CI/CD</td><td data-label="Expanded name / concept">Continuous Integration / Continuous Delivery or Deployment</td><td data-label="Meaning in ADLC">Continuous integration and delivery or deployment, with required checks before promotion.</td></tr>
+              <tr><td data-label="Term">IAM</td><td data-label="Expanded name / concept">Identity and Access Management</td><td data-label="Meaning in ADLC">Management of identities and permissions, including service identities and limited delegation.</td></tr>
+              <tr><td data-label="Term">SSO</td><td data-label="Expanded name / concept">Single Sign-On</td><td data-label="Meaning in ADLC">Single authentication across services; it does not by itself grant permission to perform actions.</td></tr>
+              <tr><td data-label="Term">Human in the Loop</td><td data-label="Expanded name / concept">HITL</td><td data-label="Meaning in ADLC">Trained, accountable human review at critical checkpoints, with evidence and authority to intervene.</td></tr>
+              <tr><td data-label="Term">Quality gate</td><td data-label="Expanded name / concept">Quality gate</td><td data-label="Meaning in ADLC">Evidence-based entry or promotion check; a passed requirements gate is mandatory before implementation.</td></tr>
+              <tr><td data-label="Term">Agent context</td><td data-label="Expanded name / concept">Agent context</td><td data-label="Meaning in ADLC">Information available to an agent for a task, including instructions, retrieved sources, tools, and memory.</td></tr>
+              <tr><td data-label="Term">Guardrail</td><td data-label="Expanded name / concept">Guardrail</td><td data-label="Meaning in ADLC">Preventive or detective control limiting unsafe or unauthorized behavior; critical limits require runtime enforcement.</td></tr>
+              <tr><td data-label="Term">Orchestration</td><td data-label="Expanded name / concept">Orchestration</td><td data-label="Meaning in ADLC">Coordination of agents, tools, state, and workflows within approved permissions and budgets.</td></tr>
+              <tr><td data-label="Term">Context engineering</td><td data-label="Expanded name / concept">Context engineering</td><td data-label="Meaning in ADLC">Selection and composition of operational context; it complements, not replaces, knowledge governance.</td></tr>
+            </tbody>
+          </table>
+        </div>
       </section>
     </main>
 

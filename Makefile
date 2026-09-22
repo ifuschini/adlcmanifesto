@@ -1,6 +1,14 @@
 PORT ?= 8000
 
-.PHONY: check link-check publish release-check serve
+.PHONY: check link-check publish release-check serve guide guide-check
+
+guide:
+	docker build -t adlc-docs:1 -f scripts/Dockerfile.docs scripts
+	docker run --rm -v "$(CURDIR):/workspace" adlc-docs:1
+
+guide-check:
+	docker build -t adlc-docs:1 -f scripts/Dockerfile.docs scripts
+	docker run --rm -v "$(CURDIR):/workspace:ro" adlc-docs:1 --check
 
 check:
 	zsh -n scripts/publish.sh
@@ -13,6 +21,7 @@ check:
 	node --check scripts/check-links.js
 	node scripts/check-links.js
 	node scripts/check-navigation.js
+	python3 scripts/check-seo.py
 	zsh scripts/check-footer-release-date.sh
 
 link-check:

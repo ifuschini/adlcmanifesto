@@ -1,0 +1,4 @@
+FROM python:3.13.3-slim-bookworm
+RUN pip install --no-cache-dir Markdown==3.8.2
+WORKDIR /workspace
+ENTRYPOINT ["python3", "scripts/build-guide.py"]

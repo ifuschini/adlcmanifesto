@@ -11,7 +11,6 @@ fi
 
 year="${latest_tag_date[1,4]}"
 month="${latest_tag_date[6,7]}"
-tag_date_modified="${latest_tag_date[1,10]}T${latest_tag_date[12,19]}${latest_tag_date[21,23]}:${latest_tag_date[24,25]}"
 
 case "$month" in
   01) month_en="January"; month_it="gennaio"; month_es="enero"; month_fr="janvier" ;;
@@ -50,19 +49,4 @@ for check in "${checks[@]}"; do
   fi
 done
 
-metadata_files=(
-  "site/index.html"
-  "site/changelog/index.html"
-  "site/it/index.html"
-  "site/es/index.html"
-  "site/fr/index.html"
-)
-
-for file in "${metadata_files[@]}"; do
-  if ! grep -Fq "\"dateModified\": \"${tag_date_modified}\"" "$file"; then
-    echo "JSON-LD dateModified mismatch in ${file}. Expected: ${tag_date_modified}" >&2
-    exit 1
-  fi
-done
-
-echo "Footer release date and JSON-LD dateModified match latest tag ${latest_tag} (${month_en} ${year})."
+echo "Footer release date matches latest tag ${latest_tag} (${month_en} ${year})."

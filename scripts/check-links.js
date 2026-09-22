@@ -135,6 +135,10 @@ function checkSiteStructure() {
     "es/index.html",
     "fr/index.html",
     "changelog/index.html",
+    "enterprise-adoption/index.html",
+    "it/enterprise-adoption/index.html",
+    "es/enterprise-adoption/index.html",
+    "fr/enterprise-adoption/index.html",
   ];
 
   return requiredPages

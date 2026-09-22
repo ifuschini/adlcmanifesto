@@ -198,6 +198,25 @@ main p { margin-top: 0; margin-bottom: 16px; line-height: 1.75; }
 .delivery-human-legend { font-size: 14px; color: var(--muted); margin-top: 16px; }
 
 /* Theme controls share the language toolbar without increasing header height. */
+.changelog-page main { max-width: 860px; }
+.changelog-page .hero { padding-bottom: 0; }
+.changelog-page .hero-card h1 { font-size: 36px; }
+.changelog-page .section-block { margin-top: 40px; padding-top: 28px; }
+.changelog-page .section-heading { display: flex; align-items: baseline; flex-wrap: wrap; gap: 12px 24px; margin-bottom: 20px; }
+.changelog-page .section-heading h2 { order: -1; margin: 0; }
+.changelog-page .section-heading .section-tag { margin: 0; }
+.changelog-page .row { display: block; margin: 0; }
+.changelog-page .row > .col { width: 100%; max-width: none; padding: 0; margin: 0; }
+.changelog-page .info-card, .changelog-page .summary-card { padding: 0 0 20px; border: 0; }
+.changelog-page .info-card h3 { font-size: 19px; margin-bottom: 8px; }
+.changelog-page main ul { padding-left: 24px; margin-top: 8px; }
+.changelog-page main li { margin-bottom: 8px; line-height: 1.65; }
+.changelog-page main li::before { display: none; }
+.changelog-page main li { list-style: disc; }
+.guide-content > h2 { margin-top: 48px; padding-top: 28px; border-top: 1px solid var(--line); font-size: 26px; line-height: 1.35; }
+.guide-content > h3 { margin-top: 28px; font-size: 21px; }
+.guide-content .resource-table-wrap { margin-block: 24px; }
+.guide-page .nav-links a { font-size: 13px !important; }
 .theme-toggle {
   display: inline-flex; align-items: center; justify-content: center;
   flex: 0 0 32px; width: 32px; height: 36px; padding: 0; margin: 0 0 0 4px;

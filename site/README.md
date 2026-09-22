@@ -74,6 +74,32 @@ make serve PORT=8001
 
 ## Publishing
 
+### Enterprise Guide
+
+[The enterprise guide](../docs/enterprise-adoption.md) is the English source of
+truth for the [generated English page](enterprise-adoption/index.html).
+The [Italian](../docs/enterprise-adoption.it.md),
+[Spanish](../docs/enterprise-adoption.es.md), and
+[French](../docs/enterprise-adoption.fr.md) sources preserve the same controls,
+examples, and thresholds. Run
+`make guide` after editing the source or the shared changelog template.
+`make guide-check` detects stale output in CI. Both commands use the pinned
+Docker runtime in [Dockerfile.docs](../scripts/Dockerfile.docs); no host Python
+packages are required. Each homepage links to its localized guide; the guide
+language switcher preserves the document, and reciprocal hreflang links appear
+in both page metadata and the sitemap. Update all four Markdown sources when
+the English guide changes, then regenerate and verify every edition.
+
+Before publishing, run `make check` and `make guide-check`. Hosting-only
+redirect and performance recommendations are in the
+[hosting SEO checklist](../docs/hosting-seo.md).
+
+Keep the footer month and year aligned with the latest release tag. Separately,
+update each changed page's JSON-LD `dateModified` and matching sitemap `lastmod`
+to the date of its last significant content update (YYYY-MM-DD). Do not change
+these dates for every upload or for a theme-only adjustment. Do not use a future
+date. Run `python3 scripts/check-seo.py` to verify metadata consistency.
+
 Publishing is handled from the repository root:
 
 ```sh

@@ -6,7 +6,7 @@
     <title>Manifesto e Lifecycle ADLC | Framework per lo Sviluppo Agentico</title>
     <meta
       name="description"
-      content="Esplora il Manifesto e il Lifecycle ADLC: un framework governato e tool-agnostic per costruire sistemi agentici, dai requisiti validati fino all’orchestrazione e al miglioramento continuo."
+      content="Un framework enterprise per lo sviluppo agentico: qualità dei requisiti, governance della conoscenza, supervisione umana, valutazione e delivery tracciabile."
     />
     <meta
       name="robots"
@@ -22,7 +22,7 @@
     <meta property="og:title" content="Manifesto e Lifecycle ADLC" />
     <meta property="og:site_name" content="ADLC Manifesto" />
     <meta property="og:url" content="https://adlcmanifesto.org/it/" />
-    <meta property="og:description" content="Un framework governato e tool-agnostic per lo sviluppo di sistemi agentici." />
+    <meta property="og:description" content="Un framework enterprise per lo sviluppo agentico: qualità dei requisiti, governance della conoscenza, supervisione umana, valutazione e delivery tracciabile." />
     <meta property="og:image" content="https://adlcmanifesto.org/og-image.png" />
     <meta property="og:image:secure_url" content="https://adlcmanifesto.org/og-image.png" />
     <meta property="og:image:type" content="image/png" />
@@ -33,7 +33,7 @@
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Manifesto e Lifecycle ADLC" />
     <meta name="twitter:url" content="https://adlcmanifesto.org/it/" />
-    <meta name="twitter:description" content="Framework chiaro e governato per lo sviluppo di sistemi agentici." />
+    <meta name="twitter:description" content="Un framework enterprise per lo sviluppo agentico: qualità dei requisiti, governance della conoscenza, supervisione umana, valutazione e delivery tracciabile." />
     <meta name="twitter:image" content="https://adlcmanifesto.org/og-image.png" />
     <meta name="twitter:image:alt" content="ADLC Manifesto open graph card" />
     <script type="application/ld+json">
@@ -41,10 +41,10 @@
         "@context": "https://schema.org",
         "@type": "WebPage",
         "name": "Manifesto e Lifecycle ADLC",
-        "description": "Framework governato e tool-agnostic per costruire sistemi agentici.",
+        "description": "Un framework enterprise per lo sviluppo agentico: qualità dei requisiti, governance della conoscenza, supervisione umana, valutazione e delivery tracciabile.",
         "inLanguage": "it",
         "datePublished": "2026-04-13",
-        "dateModified": "2026-09-22T12:02:58+02:00",
+        "dateModified": "2026-09-22",
         "version": "1.5",
         "about": ["Sviluppo Agentico", "ADLC Manifesto", "ADLC Lifecycle", "Requirements Quality Gate"]
       }
@@ -56,7 +56,7 @@
     <link rel="stylesheet" href="https://unpkg.com/@xyflow/react@12/dist/style.css" />
     <link rel="stylesheet" href="../styles.css?v=1.5" />
     <script src="../theme.js?v=1.5"></script>
-    <link rel="stylesheet" href="../technical.css?v=1.5-theme" />
+    <link rel="stylesheet" href="../technical.css?v=1.5-guide" />
     <script src="../navigation.js?v=1.5" defer></script>
   </head>
   <body>
@@ -84,6 +84,7 @@
           <li><a href="#enterprise-tools">Strumenti enterprise</a></li>
           <li><a href="#llm-gateways">LLM Gateway</a></li>
           <li><a href="#useful-links">Link utili</a></li>
+          <li><a href="#glossary">Glossario e acronimi</a></li>
         </ul>
         </details>
       </nav>
@@ -102,7 +103,7 @@
               <p class="section-tag">Manifesto</p>
               <h1>ADLC Manifesto</h1>
               <p class="hero-subtitle">Costruire sistemi agentici con metodo, governo e chiarezza.</p>
-              <p class="hero-text">Il manifesto ADLC definisce principi condivisi per progettare sistemi agentici governati, tool-agnostic e guidati da un lifecycle esplicito.</p>
+              <p class="hero-text">Il manifesto ADLC (Agentic Development Lifecycle) definisce principi condivisi per progettare sistemi agentici governati, tool-agnostic e guidati da un lifecycle esplicito.</p>
               <div class="hero-actions">
                 <a href="#manifesto" class="paper-btn btn-secondary-outline">Leggi il manifesto</a>
                 <a href="#lifecycle" class="paper-btn">Esplora il lifecycle</a>
@@ -131,8 +132,8 @@
           <div class="sm-12 md-4 col"><article class="paper info-card"><h3>Scopo</h3><p>Definire principi comuni per costruire agenti e sistemi agentici in modo consistente e scalabile.</p></article></div>
           <div class="sm-12 md-4 col"><article class="paper info-card"><h3>Guardrail</h3><p>Il lifecycle funziona solo quando i requisiti superano un quality gate chiaro e condiviso.</p></article></div>
           <div class="sm-12 md-4 col"><article class="paper info-card accent-card"><h3>Focus</h3><p>Riuso, orchestrazione, indipendenza dagli strumenti e governo del cambiamento.</p></article></div>
-          <div class="sm-12 md-12 col"><article class="paper info-card"><h3>Estensione dell'SDLC</h3><p>L'ADLC è pensato come estensione dell'SDLC. Ne preserva la disciplina del ciclo di vita del software, ma la amplia per coprire le esigenze specifiche dei sistemi agentici, inclusi governance, orchestrazione, controllo human-in-the-loop e miglioramento operativo continuo.</p></article></div>
-          <div class="sm-12 md-12 col"><article class="paper info-card"><h3>Posizionamento</h3><p>Affermiamo che la delivery agentica debba essere governata end-to-end. Sicurezza, monitoraggio runtime e controllo operativo sono necessari, ma da soli non bastano. L'ADLC inizia dalla qualità dei requisiti e si estende attraverso orchestrazione, checkpoint umani, tracciabilità e miglioramento operativo continuo.</p><p>L'ADLC governa l'intero ciclo di vita del comportamento di un sistema agentico: requisiti, codice, prompt, conoscenza, tool, configurazione del modello, orchestrazione, evidenze, release e operatività. Non è sinonimo di sicurezza del codice AI o di coding autonomo.</p></article></div>
+          <div class="sm-12 md-12 col"><article class="paper info-card"><h3>Estensione dell'SDLC</h3><p>L'ADLC è pensato come estensione dell'SDLC (Software Development Lifecycle). Ne preserva la disciplina del ciclo di vita del software, ma la amplia per coprire le esigenze specifiche dei sistemi agentici, inclusi governance, orchestrazione, controllo human-in-the-loop e miglioramento operativo continuo.</p></article></div>
+          <div class="sm-12 md-12 col"><article class="paper info-card"><h3>Posizionamento</h3><p>Affermiamo che la delivery agentica debba essere governata end-to-end. Sicurezza, monitoraggio runtime e controllo operativo sono necessari, ma da soli non bastano. L'ADLC inizia dalla qualità dei requisiti e si estende attraverso orchestrazione, checkpoint umani, tracciabilità e miglioramento operativo continuo.</p><p>L'ADLC governa l'intero ciclo di vita del comportamento di un sistema agentico: requisiti, codice, prompt, conoscenza, tool, configurazione del modello, orchestrazione, evidenze, release e operatività. Non è sinonimo di sicurezza del codice AI (Artificial Intelligence) o di coding autonomo.</p></article></div>
           <div class="sm-12 md-12 col">
             <article class="paper info-card">
               <h3>Repository open source</h3>
@@ -165,7 +166,7 @@
           <article class="paper principle-card"><span class="principle-number">01</span><h3>Partire da requisiti validati</h3><p>Ogni iniziativa parte da requisiti verificati, comprensibili e abbastanza maturi da ridurre ambiguità e rilavorazioni.</p></article>
           <article class="paper principle-card"><span class="principle-number">02</span><h3>Garantire riuso e orchestrazione</h3><p>Componenti, agenti e capability devono essere pensati per essere riusati, collegati e orchestrati nel tempo.</p></article>
           <article class="paper principle-card"><span class="principle-number">03</span><h3>Rimanere indipendenti dai tool</h3><p>Gli strumenti aiutano, ma non devono dettare l’architettura: processo e governance vengono prima del tool.</p></article>
-          <article class="paper principle-card"><span class="principle-number">04</span><h3>Scegliere la soluzione efficace più semplice</h3><p>Usare il minimo livello di autonomia e complessità necessario per ottenere il risultato validato. Confrontare automazione deterministica, workflow LLM, singolo agent e orchestrazione multi-agent rispetto a una baseline di business misurabile.</p></article>
+          <article class="paper principle-card"><span class="principle-number">04</span><h3>Scegliere la soluzione efficace più semplice</h3><p>Usare il minimo livello di autonomia e complessità necessario per ottenere il risultato validato. Confrontare automazione deterministica, workflow LLM (Large Language Model), singolo agent e orchestrazione multi-agent rispetto a una baseline di business misurabile.</p></article>
           <article class="paper principle-card"><span class="principle-number">05</span><h3>Concedere autonomia sulla base di evidenze</h3><p>Permessi, approvazioni, budget e controlli di arresto sono applicati a runtime, non soltanto descritti nei prompt.</p></article>
         </div>
       </section>
@@ -265,7 +266,7 @@
             <li>I limiti di autonomia sono documentati, applicati, testati e revocabili.</li>
             <li>Le valutazioni basate sul rischio usano dataset versionati, prove ripetute, risultati effettivi e valutatori calibrati da persone.</li>
           </ul>
-        <p><a href="https://github.com/ifuschini/adlcmanifesto/blob/main/docs/enterprise-adoption.md" target="_blank" rel="noopener noreferrer">Guida all'adozione enterprise con esempio completo (in inglese)</a></p></article>
+        <p><a href="/it/enterprise-adoption/">Guida all'adozione enterprise con esempio completo</a></p></article>
 
         <div class="section-heading section-subheading">
           <p class="section-tag">SDLC e ADLC</p>
@@ -315,7 +316,7 @@
         </div>
         <div class="agents-grid">
           <article class="paper agent-card"><span class="agent-label">Principio</span><h3>Adattate all'azienda</h3><p>Le shared skill possono partire da framework consolidati, ma devono essere adattate all'architettura, alle policy, al linguaggio, al modello di rischio e alla cultura di delivery dell'azienda.</p><p>Trasformano il know-how riusabile in pattern di esecuzione governati, applicabili in modo coerente da agent e team.</p></article>
-          <article class="paper agent-card"><span class="agent-label">Documentazione</span><h3>Documentation Skill</h3><p>Definisce come documentazione umana e agent context vengono prodotti come artefatti collegati ma separati.</p><p>La documentazione umana vive in strumenti progettati per persone. La documentazione per agent viene esposta tramite Agent Context Endpoint governati, come server MCP, file llms.txt, indici di retrieval o context pack versionati.</p><p>Gli strumenti per il contesto agentico possono includere Context7, GitMCP, MCPDoc, mcp-documentation-server, server MCP custom basati su SDK MCP open source o sistemi equivalenti. Questi endpoint devono esporre URL stabili, ownership delle fonti, versioning, stato di approvazione e regole di retrieval.</p><p>Recuperare solo il contesto approvato necessario al task. Ridurre i token senza eliminare permessi, vincoli, provenienza o evidenze necessarie per una decisione corretta.</p></article>
+          <article class="paper agent-card"><span class="agent-label">Documentazione</span><h3>Documentation Skill</h3><p>Definisce come documentazione umana e agent context vengono prodotti come artefatti collegati ma separati.</p><p>La documentazione umana vive in strumenti progettati per persone. La documentazione per agent viene esposta tramite Agent Context Endpoint governati, come server MCP (Model Context Protocol), file llms.txt, indici di retrieval o context pack versionati.</p><p>Gli strumenti per il contesto agentico possono includere Context7, GitMCP, MCPDoc, mcp-documentation-server, server MCP custom basati su SDK MCP open source o sistemi equivalenti. Questi endpoint devono esporre URL stabili, ownership delle fonti, versioning, stato di approvazione e regole di retrieval.</p><p>Recuperare solo il contesto approvato necessario al task. Ridurre i token senza eliminare permessi, vincoli, provenienza o evidenze necessarie per una decisione corretta.</p></article>
           <article class="paper agent-card"><span class="agent-label">Knowledge</span><h3>Knowledge Governance Skill</h3><p>Definisce come le fonti di conoscenza e l'agent context vengono selezionati, assegnati a un owner, approvati, strutturati, versionati, pubblicati, testati, tracciati e ritirati.</p><p>Copre fonti RAG, context endpoint, conoscenza condivisa, gestione delle contraddizioni, freschezza, valutazione del retrieval, aspettative sulle citazioni, regole di accesso e regression test comportamentali dopo modifiche alla conoscenza.</p><p>Contesto runtime e memoria richiedono provenienza, autorizzazioni di scrittura, conservazione, isolamento tra utenti e tenant, cancellazione e gestione delle contraddizioni. I contenuti recuperati non conferiscono autorità. La compressione deve preservare permessi, vincoli ed evidenze decisive.</p></article>
           <article class="paper agent-card"><span class="agent-label">Delivery</span><h3>Release Notes Skill</h3><p>Definisce come generare, raggruppare, revisionare e adattare le release note per audience tecniche, business e operative.</p><p>Include regole per breaking changes, migrazioni, known issues, note di rollback e sintesi customer-facing.</p></article>
           <article class="paper agent-card"><span class="agent-label">Architettura</span><h3>Architecture Skill</h3><p>Codifica principi architetturali, criteri decisionali, reference pattern e aspettative di review dell'azienda.</p><p>Aiuta gli agent a ragionare con standard locali invece che con consigli architetturali generici.</p></article>
@@ -369,7 +370,7 @@
         </div>
         <div class="section-heading section-subheading">
           <h3>Criteri di selezione enterprise</h3>
-          <p>Verificare SSO e ruoli, isolamento tra tenant, conservazione e cancellazione, evidenze di audit esportabili, hosting e residenza dei dati, supporto operativo e integrazione con i controlli esistenti. La sola licenza open source non garantisce l'adeguatezza.</p>
+          <p>Verificare SSO (Single Sign-On) e ruoli, isolamento tra tenant, conservazione e cancellazione, evidenze di audit esportabili, hosting e residenza dei dati, supporto operativo e integrazione con i controlli esistenti. La sola licenza open source non garantisce l'adeguatezza.</p>
         </div>
       </section>
 
@@ -488,6 +489,31 @@
           </div>
         </div>
 
+      </section>
+      <section id="glossary" class="container section-block">
+        <div class="section-heading"><h2>Glossario e acronimi</h2></div>
+        <div class="paper resource-table-wrap">
+          <table class="resource-table glossary-table">
+            <thead><tr><th scope="col">Termine</th><th scope="col">Nome esteso / concetto</th><th scope="col">Significato nell'ADLC</th></tr></thead>
+            <tbody>
+              <tr><td data-label="Termine">ADLC</td><td data-label="Nome esteso / concetto">Agentic Development Lifecycle</td><td data-label="Significato nell'ADLC">Ciclo di vita dei sistemi agentici che estende l'SDLC con la governance di comportamento, contesto e autonomia.</td></tr>
+              <tr><td data-label="Termine">SDLC</td><td data-label="Nome esteso / concetto">Software Development Lifecycle</td><td data-label="Significato nell'ADLC">Disciplina del ciclo di vita del software, dai requisiti al rilascio, all'operatività e alla dismissione.</td></tr>
+              <tr><td data-label="Termine">AI</td><td data-label="Nome esteso / concetto">Artificial Intelligence</td><td data-label="Significato nell'ADLC">Capacità di intelligenza artificiale utilizzate nel sistema e soggette agli stessi controlli di governance.</td></tr>
+              <tr><td data-label="Termine">LLM</td><td data-label="Nome esteso / concetto">Large Language Model</td><td data-label="Significato nell'ADLC">Modello linguistico usato dagli agent; versione e configurazione influenzano il comportamento e richiedono validazione.</td></tr>
+              <tr><td data-label="Termine">RAG</td><td data-label="Nome esteso / concetto">Retrieval-Augmented Generation</td><td data-label="Significato nell'ADLC">Recupero di informazioni esterne a supporto della generazione; opzionale, con fonti governate e test del retrieval.</td></tr>
+              <tr><td data-label="Termine">MCP</td><td data-label="Nome esteso / concetto">Model Context Protocol</td><td data-label="Significato nell'ADLC">Protocollo per collegare applicazioni AI a strumenti e contesto; non sostituisce autorizzazione o governance.</td></tr>
+              <tr><td data-label="Termine">CI/CD</td><td data-label="Nome esteso / concetto">Continuous Integration / Continuous Delivery or Deployment</td><td data-label="Significato nell'ADLC">Integrazione continua e delivery o deployment continuo, con controlli obbligatori prima della promozione.</td></tr>
+              <tr><td data-label="Termine">IAM</td><td data-label="Nome esteso / concetto">Identity and Access Management</td><td data-label="Significato nell'ADLC">Gestione di identità e permessi, incluse identità di servizio e deleghe limitate.</td></tr>
+              <tr><td data-label="Termine">SSO</td><td data-label="Nome esteso / concetto">Single Sign-On</td><td data-label="Significato nell'ADLC">Autenticazione unica tra servizi; da sola non autorizza l'esecuzione di azioni.</td></tr>
+              <tr><td data-label="Termine">Human in the Loop</td><td data-label="Nome esteso / concetto">HITL</td><td data-label="Significato nell'ADLC">Revisione umana competente e responsabile nei checkpoint critici, con evidenze e autorità di intervento.</td></tr>
+              <tr><td data-label="Termine">Quality gate</td><td data-label="Nome esteso / concetto">Quality gate</td><td data-label="Significato nell'ADLC">Controllo di ingresso o promozione basato su evidenze; il gate dei requisiti deve essere superato prima dell'implementazione.</td></tr>
+              <tr><td data-label="Termine">Agent context</td><td data-label="Nome esteso / concetto">Agent context</td><td data-label="Significato nell'ADLC">Informazioni disponibili all'agent per un task: istruzioni, fonti recuperate, strumenti e memoria.</td></tr>
+              <tr><td data-label="Termine">Guardrail</td><td data-label="Nome esteso / concetto">Guardrail</td><td data-label="Significato nell'ADLC">Controllo preventivo o di rilevamento che limita comportamenti non sicuri o non autorizzati; i limiti critici richiedono enforcement runtime.</td></tr>
+              <tr><td data-label="Termine">Orchestration</td><td data-label="Nome esteso / concetto">Orchestration</td><td data-label="Significato nell'ADLC">Coordinamento di agent, strumenti, stato e workflow entro permessi e budget approvati.</td></tr>
+              <tr><td data-label="Termine">Context engineering</td><td data-label="Nome esteso / concetto">Context engineering</td><td data-label="Significato nell'ADLC">Selezione e composizione del contesto operativo; integra, senza sostituirla, la governance della conoscenza.</td></tr>
+            </tbody>
+          </table>
+        </div>
       </section>
     </main>
     <footer class="site-footer container">
