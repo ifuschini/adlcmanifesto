@@ -3,10 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ADLC Manifesto and Lifecycle | Agentic Development Framework</title>
+    <title>ADLC Manifesto | SDLC vs ADLC: evolution, not replacement</title>
     <meta
       name="description"
-      content="An enterprise framework for agentic development: requirements quality gates, knowledge governance, human oversight, evaluation, and traceable delivery."
+      content="From SDLC to ADLC: the software lifecycle evolves to govern AI-assisted development, autonomy, and knowledge while retaining testing and human accountability."
     />
     <meta
       name="robots"
@@ -47,7 +47,7 @@
     />
     <meta
       property="og:title"
-      content="ADLC Manifesto and Lifecycle | Agentic Development Framework"
+      content="ADLC Manifesto | SDLC vs ADLC: evolution, not replacement"
     />
     <meta
       property="og:site_name"
@@ -59,7 +59,7 @@
     />
     <meta
       property="og:description"
-      content="An enterprise framework for agentic development: requirements quality gates, knowledge governance, human oversight, evaluation, and traceable delivery."
+      content="From SDLC to ADLC: the software lifecycle evolves to govern AI-assisted development, autonomy, and knowledge while retaining testing and human accountability."
     />
     <meta
       property="og:image"
@@ -107,7 +107,7 @@
     />
     <meta
       name="twitter:title"
-      content="ADLC Manifesto and Lifecycle"
+      content="ADLC Manifesto | SDLC vs ADLC: evolution, not replacement"
     />
     <meta
       name="twitter:url"
@@ -115,7 +115,7 @@
     />
     <meta
       name="twitter:description"
-      content="An enterprise framework for agentic development: requirements quality gates, knowledge governance, human oversight, evaluation, and traceable delivery."
+      content="From SDLC to ADLC: the software lifecycle evolves to govern AI-assisted development, autonomy, and knowledge while retaining testing and human accountability."
     />
     <meta
       name="twitter:image"
@@ -129,8 +129,8 @@
       {
         "@context": "https://schema.org",
         "@type": "WebPage",
-        "name": "ADLC Manifesto and Lifecycle",
-        "description": "An enterprise framework for agentic development: requirements quality gates, knowledge governance, human oversight, evaluation, and traceable delivery.",
+        "name": "ADLC Manifesto | SDLC vs ADLC: evolution, not replacement",
+        "description": "From SDLC to ADLC: the software lifecycle evolves to govern AI-assisted development, autonomy, and knowledge while retaining testing and human accountability.",
         "inLanguage": "en",
         "datePublished": "2026-04-13",
         "dateModified": "2026-09-22",
@@ -312,15 +312,7 @@
         <div class="row flex-spaces">
           <div class="sm-12 md-12 col">
             <article class="paper info-card">
-              <h3>SDLC Extension</h3>
-              <p>
-                ADLC is designed as an extension of the SDLC. It preserves the
-                discipline of the software lifecycle while expanding it to cover
-                the specific needs of agentic systems, including governance,
-                orchestration, human-in-the-loop control, and continuous
-                operational improvement.
-              </p>
-            </article>
+              <h3>SDLC and ADLC: continuity and evolution</h3><p>ADLC does not replace SDLC: it preserves its engineering practices and extends them to govern software developed with agents and agentic systems in production.</p></article>
           </div>
           <div class="sm-12 md-12 col">
             <article class="paper info-card">
@@ -430,7 +422,7 @@
             <p>The ADLC treats knowledge and context as governed parts of the system. Documents, prompts, shared skills, memory, policies, examples, tool instructions, and information retrieved through RAG, where used, can influence agent behavior and introduce silent regressions even when no application code changes.</p><p>Knowledge Governance applies regardless of how context is supplied. Retrieval-augmented generation (RAG) is one technique, not a required architecture or a synonym for knowledge governance. Where used, it requires specific controls for retrieval quality, source freshness, access permissions, and citations.</p>
             <p>Knowledge changes must therefore be reviewed, versioned, traceable, and validated against expected behavior before they are used in production.</p>
             <p>Runtime context and memory require provenance, permitted writers, retention, user and tenant isolation, deletion, and contradiction handling. Retrieved content cannot grant authority. Compression must preserve permissions, constraints, and decision-critical evidence.</p>
-          </article>
+          <p><strong>Distributed enterprise context, governed access.</strong> Agents must be able to discover and use relevant information through interoperable interfaces, such as APIs, MCP, or equivalent mechanisms. Sources retain ownership, versions, provenance, and access permissions. Context must be selected for the task, and its contribution to output quality must be evaluated.</p><p><a href="https://www.gofair.foundation/fair-principles" target="_blank" rel="noopener noreferrer">FAIR</a> · <a href="https://www.w3.org/TR/vocab-dcat-3/" target="_blank" rel="noopener noreferrer">W3C DCAT 3</a> · <a href="https://www.w3.org/TR/prov-dm/" target="_blank" rel="noopener noreferrer">W3C PROV-DM</a>. These references support discoverability, interoperability, and provenance; they do not by themselves guarantee better agent outputs.</p></article>
           <article class="paper agent-card">
             <span class="agent-label">Governance</span>
             <h3>Explicit Autonomy Contract</h3>
@@ -776,7 +768,7 @@
             <p>Human documentation lives in tools designed for people. Agent documentation is exposed through governed Agent Context Endpoints, such as MCP (Model Context Protocol) servers, llms.txt files, retrieval indexes, or versioned context packs.</p>
             <p>Agent-context tools may include Context7, GitMCP, MCPDoc, mcp-documentation-server, custom MCP servers built with open MCP SDKs, or equivalent open-source systems. These endpoints must expose stable URLs, source ownership, versioning, approval status, and retrieval rules.</p>
             <p>Retrieve only the approved context needed for the task. Reduce token usage without removing permissions, constraints, provenance, or evidence needed for a correct decision.</p>
-          </article>
+          <p>Publish context reusable across projects and teams, avoiding divergent manual copies and preserving links to authoritative sources.</p></article>
           <article class="paper agent-card">
             <span class="agent-label">Knowledge</span>
             <h3>Knowledge Governance Skill</h3>

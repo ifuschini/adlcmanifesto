@@ -22,6 +22,17 @@ espliciti, agenti e skill riutilizzabili, governance della conoscenza e del
 RAG, orchestrazione tra tool e team, tracciabilità, governance delle release e
 miglioramento operativo continuo.
 
+L'ADLC si applica sia al software sviluppato con agent sia ai sistemi che li
+impiegano in produzione. Persone competenti approvano i criteri di accettazione,
+revisionano l'adeguatezza dei test e valutano le evidenze prima di autorizzare
+il rilascio.
+
+Gli agent accedono al contesto aziendale pertinente tramite interfacce
+interoperabili. Le fonti distribuite mantengono responsabilità, versioni,
+provenienza e autorizzazioni; l'effetto sulla qualità degli output va verificato.
+Il RAG è opzionale. La [guida enterprise](docs/enterprise-adoption.it.md)
+descrive i controlli e i riferimenti FAIR, W3C DCAT e PROV.
+
 Il manifesto è pensato per organizzazioni che devono passare da esperimenti
 isolati con agenti a capability agentiche governate, riutilizzabili e scalabili.
 

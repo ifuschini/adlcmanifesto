@@ -22,6 +22,17 @@ explicites, agents et skills réutilisables, gouvernance de la connaissance et
 du RAG, orchestration entre outils et équipes, traçabilité, gouvernance des
 releases et amélioration opérationnelle continue.
 
+L'ADLC s'applique aux logiciels développés avec des agents comme aux systèmes
+qui les emploient en production. Des personnes compétentes approuvent les
+critères d'acceptation, examinent la pertinence des tests et évaluent les preuves
+avant d'autoriser la release.
+
+Les agents accèdent au contexte d'entreprise pertinent via des interfaces
+interopérables. Les sources distribuées conservent responsables, versions,
+provenance et autorisations ; l'effet sur la qualité des résultats doit être
+évalué. Le RAG est optionnel. Le [guide enterprise](docs/enterprise-adoption.fr.md)
+décrit les contrôles et les références FAIR, W3C DCAT et PROV.
+
 Le manifeste est conçu pour les organisations qui doivent passer
 d'expérimentations isolées avec des agents à des capacités agentiques
 gouvernées, réutilisables et scalables.

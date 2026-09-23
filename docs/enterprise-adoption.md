@@ -67,6 +67,10 @@ Formal approval without substantive verification is not a governance control.
 
 ## 3. Govern Knowledge, Context, and Memory
 
+**Distributed enterprise context, governed access.** Agents must be able to discover and use relevant information through interoperable interfaces, such as APIs, MCP, or equivalent mechanisms. Sources retain ownership, versions, provenance, and access permissions. Context must be selected for the task, and its contribution to output quality must be evaluated.
+
+[FAIR](https://www.gofair.foundation/fair-principles), [W3C DCAT 3](https://www.w3.org/TR/vocab-dcat-3/), [W3C PROV-DM](https://www.w3.org/TR/prov-dm/). These references support discoverability, interoperability, and provenance; they do not by themselves guarantee better agent outputs.
+
 Keep human documentation and agent context connected but separate. Human
 documentation supports reading, review, and audit. Agent-facing endpoints expose
 approved, task-relevant context with stable URLs, authenticated access where

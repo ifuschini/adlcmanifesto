@@ -22,6 +22,16 @@ reusable agents and skills, knowledge and RAG governance, orchestration across
 tools and teams, traceability, release governance, and continuous operational
 improvement.
 
+ADLC applies both to software developed with agent assistance and to systems
+using agents in production. Competent people approve acceptance criteria,
+review test adequacy, and assess evidence before authorizing release.
+
+Agents access task-relevant enterprise context through interoperable interfaces.
+Distributed sources retain ownership, versions, provenance, and permissions;
+the effect on output quality must be evaluated. RAG is optional. See the
+[enterprise adoption guide](docs/enterprise-adoption.md) for controls and the
+FAIR, W3C DCAT, and PROV references.
+
 The manifesto is designed for organizations that need to move from isolated
 agent experiments to governed, reusable, and scalable agentic capabilities.
 

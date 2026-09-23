@@ -44,6 +44,10 @@ Une approbation formelle sans vérification substantielle n'est pas un contrôle
 
 ## 3. Gouverner connaissance, contexte et mémoire
 
+**Contexte d'entreprise distribué, accès gouverné.** Les agents doivent pouvoir découvrir et utiliser les informations pertinentes via des interfaces interopérables, telles que des API, MCP ou des mécanismes équivalents. Les sources conservent responsables, versions, provenance et autorisations. Le contexte doit être sélectionné pour la tâche et sa contribution à la qualité des résultats doit être évaluée.
+
+[FAIR](https://www.gofair.foundation/fair-principles), [W3C DCAT 3](https://www.w3.org/TR/vocab-dcat-3/), [W3C PROV-DM](https://www.w3.org/TR/prov-dm/). Ces références soutiennent la découvrabilité, l'interopérabilité et la provenance ; elles ne garantissent pas à elles seules de meilleurs résultats des agents.
+
 Garder documentation humaine et contexte des agents liés mais séparés. La documentation humaine sert la lecture, la revue et l'audit. Les endpoints pour agents exposent un contexte approuvé et pertinent pour la tâche, avec URL stables, accès authentifié si nécessaire, responsables des sources, versions, statut d'approbation et règles de retrieval.
 
 Les instantanés versionnés des sources et la configuration du retrieval font partie des preuves de release. La mémoire mutable exige un historique d'événements gouverné : origine, auteur autorisé, périmètre, horodatage, rétention, correction et suppression. Isoler utilisateurs et tenants ; définir le traitement des faits contradictoires ou obsolètes. Ne pas transformer automatiquement une inférence de l'agent en connaissance faisant autorité.

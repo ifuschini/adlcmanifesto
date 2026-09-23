@@ -44,6 +44,10 @@ Un'approvazione formale senza verifica sostanziale non è un controllo di govern
 
 ## 3. Governare conoscenza, contesto e memoria
 
+**Contesto aziendale distribuito, accesso governato.** Gli agent devono poter individuare e utilizzare le informazioni pertinenti attraverso interfacce interoperabili, come API, MCP o meccanismi equivalenti. Le fonti mantengono responsabilità, versioni, provenienza e autorizzazioni. Il contesto fornito deve essere selezionato per il task e il suo contributo alla qualità dei risultati deve essere verificato.
+
+[FAIR](https://www.gofair.foundation/fair-principles), [W3C DCAT 3](https://www.w3.org/TR/vocab-dcat-3/), [W3C PROV-DM](https://www.w3.org/TR/prov-dm/). Questi riferimenti supportano reperibilità, interoperabilità e provenienza; non garantiscono da soli output migliori degli agent.
+
 Mantenere documentazione umana e contesto degli agent collegati ma separati. La documentazione umana supporta lettura, revisione e audit. Gli endpoint per agent espongono contesto approvato e pertinente al task, con URL stabili, accesso autenticato dove necessario, ownership delle fonti, versioni, stato di approvazione e regole di retrieval.
 
 Snapshot versionati delle fonti e configurazione del retrieval fanno parte delle evidenze di rilascio. La memoria modificabile richiede invece una cronologia governata degli eventi: origine, autore autorizzato, ambito, timestamp, conservazione, correzione e cancellazione. Isolare utenti e tenant; definire come risolvere fatti contraddittori o obsoleti. Non promuovere automaticamente un'inferenza dell'agent a conoscenza autorevole.

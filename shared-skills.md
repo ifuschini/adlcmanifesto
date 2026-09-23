@@ -26,6 +26,8 @@ They should:
 Purpose:
 Defines how human documentation and agent context are produced as connected but separate artifacts, with shared provenance and approval.
 
+Publish context reusable across projects and teams, avoiding divergent manual copies and preserving links to authoritative sources.
+
 Typical scope:
 
 - ADR format

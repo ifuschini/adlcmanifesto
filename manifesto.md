@@ -24,6 +24,10 @@ Competent oversight, not rubber-stamp approval. Reviewers must be trained in the
 
 ## Knowledge Governance
 
+**Distributed enterprise context, governed access.** Agents must be able to discover and use relevant information through interoperable interfaces, such as APIs, MCP, or equivalent mechanisms. Sources retain ownership, versions, provenance, and access permissions. Context must be selected for the task, and its contribution to output quality must be evaluated.
+
+[FAIR](https://www.gofair.foundation/fair-principles), [W3C DCAT 3](https://www.w3.org/TR/vocab-dcat-3/), [W3C PROV-DM](https://www.w3.org/TR/prov-dm/). These references support discoverability, interoperability, and provenance; they do not by themselves guarantee better agent outputs.
+
 The ADLC treats knowledge and context as governed parts of the system. Documents, prompts, shared skills, memory, policies, examples, tool instructions, and information retrieved through RAG, where used, can influence agent behavior and introduce silent regressions even when no application code changes.
 
 Knowledge Governance applies regardless of how context is supplied. Retrieval-augmented generation (RAG) is one technique, not a required architecture or a synonym for knowledge governance. Where used, it requires specific controls for retrieval quality, source freshness, access permissions, and citations.

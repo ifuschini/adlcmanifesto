@@ -44,6 +44,10 @@ Una aprobación formal sin verificación sustantiva no es un control de gobernan
 
 ## 3. Gobernar conocimiento, contexto y memoria
 
+**Contexto empresarial distribuido, acceso gobernado.** Los agentes deben poder descubrir y utilizar información pertinente mediante interfaces interoperables, como API, MCP o mecanismos equivalentes. Las fuentes conservan responsables, versiones, procedencia y permisos de acceso. El contexto debe seleccionarse para la tarea y debe evaluarse su contribución a la calidad de los resultados.
+
+[FAIR](https://www.gofair.foundation/fair-principles), [W3C DCAT 3](https://www.w3.org/TR/vocab-dcat-3/), [W3C PROV-DM](https://www.w3.org/TR/prov-dm/). Estas referencias respaldan descubribilidad, interoperabilidad y procedencia; no garantizan por sí solas mejores resultados de los agentes.
+
 Mantener documentación humana y contexto del agente conectados pero separados. La documentación humana facilita lectura, revisión y auditoría. Los endpoints para agentes exponen contexto aprobado y pertinente para la tarea, con URL estables, acceso autenticado cuando proceda, responsables de fuentes, versiones, estado de aprobación y reglas de retrieval.
 
 Las instantáneas versionadas de las fuentes y la configuración del retrieval forman parte de las evidencias de release. La memoria mutable requiere un historial de eventos gobernado: origen, escritor autorizado, ámbito, marcas temporales, retención, corrección y eliminación. Aislar usuarios y tenants; definir cómo resolver hechos contradictorios u obsoletos. No convertir automáticamente una inferencia del agente en conocimiento autorizado.
