@@ -1,0 +1,140 @@
+@page {
+  size: A4;
+  margin: 16mm 14mm;
+}
+
+@media print {
+  :root, :root[data-theme] {
+    color-scheme: light;
+    --paper-bg: #fff;
+    --paper-panel: #fff;
+    --ink: #111;
+    --muted: #333;
+    --line: #aaa;
+    --accent: #111;
+    --accent-soft: #fff;
+  }
+
+  html, body {
+    margin: 0 !important;
+    padding: 0 !important;
+    background: #fff !important;
+    font-size: 10pt;
+  }
+
+  body * {
+    color: #111 !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+    animation: none !important;
+    transition: none !important;
+  }
+
+  .site-header, .hero-actions, .language-switcher,
+  .theme-toggle, .section-navigation, .practice-flow,
+  .loop-card, button {
+    display: none !important;
+  }
+
+  main, .site-footer, main > .container, .guide-content {
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 100% !important;
+    max-width: none !important;
+  }
+
+  .row, .col, .agents-grid, .principles-grid, .practice-grid,
+  .timeline, .stage-card, .hero, .paper {
+    display: block !important;
+    min-height: 0 !important;
+    height: auto !important;
+    max-width: none !important;
+    width: auto !important;
+    transform: none !important;
+  }
+
+  .section-block {
+    margin-top: 7mm !important;
+    padding-top: 4mm !important;
+  }
+
+  .paper { padding: 3mm 0 !important; }
+  .section-heading { margin-bottom: 3mm !important; }
+  h1 { font-size: 23pt !important; }
+  h2 { font-size: 16pt !important; }
+  h3, h4 { font-size: 12pt !important; }
+  h1, h2, h3, h4, .section-tag, .agent-label, .principle-number {
+    break-after: avoid;
+    page-break-after: avoid;
+    max-width: none !important;
+  }
+
+  p, li, a, .hero-text, .hero-subtitle, blockquote {
+    font-size: 10pt !important;
+    line-height: 1.45 !important;
+    max-width: none !important;
+    overflow-wrap: anywhere;
+    orphans: 3;
+    widows: 3;
+  }
+
+  p { margin-bottom: 2.5mm !important; }
+  a { text-decoration: underline !important; }
+  .stage-index { display: inline-block; margin-bottom: 2mm; }
+  .human-loop-inline, .gate-banner, .note-card { padding: 2mm !important; }
+
+  .operating-table-wrap, .resource-table-wrap {
+    overflow: visible !important;
+    border: 0 !important;
+    padding: 0 !important;
+  }
+
+  table {
+    display: table !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    table-layout: fixed;
+    border-collapse: collapse !important;
+    font-size: 8pt !important;
+  }
+
+  thead {
+    display: table-header-group !important;
+    position: static !important;
+    width: auto !important;
+    height: auto !important;
+    clip: auto !important;
+    clip-path: none !important;
+    overflow: visible !important;
+  }
+
+  tbody { display: table-row-group !important; }
+  tr {
+    display: table-row !important;
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  th, td {
+    display: table-cell !important;
+    position: static !important;
+    width: auto !important;
+    min-width: 0 !important;
+    height: auto !important;
+    clip: auto !important;
+    clip-path: none !important;
+    padding: 2mm !important;
+    border: 0.2mm solid #aaa !important;
+    font-size: 8pt !important;
+    line-height: 1.35 !important;
+    white-space: normal !important;
+    overflow-wrap: anywhere;
+    vertical-align: top;
+  }
+
+  th { font-weight: 700 !important; }
+  td a, td small { font-size: inherit !important; }
+  td::before { display: none !important; }
+  .site-footer { margin-top: 6mm !important; border-top: 0.2mm solid #aaa; }
+}
