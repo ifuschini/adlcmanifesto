@@ -85,6 +85,19 @@ llms.txt file alone does not establish trust or authorization.
 
 ## 4. Evaluate Behavior Before Promotion
 
+### Verify Software Produced by Agents
+
+Validation of agent-produced software requires competent human oversight. Accountable people approve acceptance criteria, review test adequacy, and assess evidence and residual risk to authorize release. Agents may generate and execute tests, but cannot approve their own work or unilaterally weaken its acceptance conditions. A second agent does not replace human accountability; review depth is proportionate to risk, not a requirement to execute every test manually.
+
+- Derive expected outcomes from approved requirements, not from the generated implementation; have competent people review those outcomes independently of the implementation.
+- Protect acceptance tests and CI rules. Removing tests, weakening assertions, or changing acceptance thresholds requires explicit human review.
+- For a bug fix, demonstrate failure before the fix and success afterward. Use controlled faults or mutation testing where appropriate to check that assertions detect relevant defects.
+- Check observable effects, persisted data, and authorization boundaries, not only success messages or mocks. Include integration checks against representative services.
+- Cover existing behavior, boundary cases, denied actions, and unavailable dependencies. Preserve traditional unit, integration, end-to-end, security, and non-functional tests.
+- Run checks in a defined CI environment and retain actual results linked to requirements and the reviewed change. Agent reports alone are not execution evidence.
+
+Example: if a refund requires approval, verify that no payment is executed without it, not merely that the interface displays an approval request.
+
 Build a representative, versioned dataset linked to requirements and risk cases.
 Include normal outcomes, ambiguous requests, unauthorized actions, injection,
 poisoned or stale knowledge, retrieval failures, cross-tenant access, tool

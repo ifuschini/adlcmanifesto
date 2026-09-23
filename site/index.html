@@ -166,11 +166,11 @@
     />
     <link
       rel="stylesheet"
-      href="./styles.css?v=1.5"
+      href="./styles.css?v=1.5-evidence"
     />
     <script src="./theme.js?v=1.5"></script>
-    <link rel="stylesheet" href="./technical.css?v=1.5-guide" />
-    <script src="./navigation.js?v=1.5" defer></script>
+    <link rel="stylesheet" href="./technical.css?v=1.5-principle-font" />
+    <script src="./navigation.js?v=1.5-language-position-2" defer></script>
   </head>
   <body>
     <div class="paper-band paper-band-top"></div>
@@ -310,32 +310,6 @@
         </div>
 
         <div class="row flex-spaces">
-          <div class="sm-12 md-4 col">
-            <article class="paper info-card">
-              <h3>Purpose</h3>
-              <p>
-                Define common principles for building agents and agentic systems
-                in a consistent and scalable way.
-              </p>
-            </article>
-          </div>
-          <div class="sm-12 md-4 col">
-            <article class="paper info-card">
-              <h3>Guardrail</h3>
-              <p>
-                The lifecycle works only when requirements pass a clear and
-                shared quality gate.
-              </p>
-            </article>
-          </div>
-          <div class="sm-12 md-4 col">
-            <article class="paper info-card accent-card">
-              <h3>Focus</h3>
-              <p>
-                Reuse, orchestration, tool independence, and governed change.
-              </p>
-            </article>
-          </div>
           <div class="sm-12 md-12 col">
             <article class="paper info-card">
               <h3>SDLC Extension</h3>
@@ -350,23 +324,7 @@
           </div>
           <div class="sm-12 md-12 col">
             <article class="paper info-card">
-              <h3>Positioning</h3>
-              <p>
-                We affirm that agentic delivery must be governed end to end.
-                Security, runtime monitoring, and operational control are
-                necessary, but they are not sufficient on their own. ADLC
-                begins with requirements quality and extends through
-                orchestration, human checkpoints, traceability, and continuous
-                operational improvement.
-              </p>
-              <p>
-                ADLC governs the complete behavior lifecycle of an agentic
-                system: requirements, code, prompts, knowledge, tools, model
-                configuration, orchestration, evidence, release, and
-                operations. It is not a synonym for AI code security or
-                autonomous coding.
-              </p>
-            </article>
+              <h3>Scope of Application</h3><p>ADLC applies both to software developed with agent assistance and to systems that use agents in production.</p><p>In the first case, it governs generated changes, verification against requirements, and human accountability for acceptance. In the second, it extends these controls to runtime behavior, knowledge, tools, and agent autonomy.</p><p>It is not synonymous with autonomous coding or merely securing AI-generated code: it requires verifiable evidence and explicit accountability throughout the lifecycle.</p></article>
           </div>
           <div class="sm-12 md-12 col">
             <article class="paper info-card">
@@ -550,6 +508,7 @@
             <span class="stage-index">3</span>
             <div>
               <h3>Test</h3>
+              <p class="human-loop-inline">Validation of agent-produced software requires competent human oversight. Accountable people approve acceptance criteria, review test adequacy, and assess evidence and residual risk to authorize release. Agents may generate and execute tests, but cannot approve their own work or unilaterally weaken its acceptance conditions. A second agent does not replace human accountability; review depth is proportionate to risk, not a requirement to execute every test manually.</p>
               <p>
                 Validate expected behavior, edge cases, failure modes,
                 reliability, and operational readiness through structured test
@@ -641,71 +600,21 @@
             <h3>Entry Conditions</h3>
             <p>Validated requirements, explicit business intent, named ownership, and a passed quality gate before any build activity starts.</p>
           </article>
-          <article class="paper summary-card">
-            <h3>Evidence Model</h3>
-            <p>Each phase must leave traceable outputs: decisions, versioned knowledge sources, prompt history, test evidence, approvals, release notes, operational signals, and improvement actions.</p>
-          </article>
+          <article class="paper summary-card"><h3>Evidence and Progression Criteria</h3><p>Use this checklist to validate evidence, not to repeat lifecycle activities. Assign named human owners; review depth is risk-based and execution may be automated. Failed mandatory controls block promotion. Operation and orchestration use ongoing controls, not a one-time exit gate.</p></article>
         </div>
 
         <div class="paper operating-table-wrap">
           <table class="operating-table">
-            <thead>
-              <tr>
-                <th>Stage</th>
-                <th>Primary Output</th>
-                <th>Human Checkpoint</th>
-                <th>Evidence or Governance Need</th>
-              </tr>
-            </thead>
+            <thead><tr><th scope="col">Stage</th><th scope="col">Required Evidence</th><th scope="col">Validation Owner</th><th scope="col">Progression Criterion</th></tr></thead>
             <tbody>
-              <tr>
-                <td>0. Requirements Quality Gate</td>
-                <td>Clarified requirements, acceptance criteria, business intent, traceability links, approved RAG and knowledge sources. Approved increment, suitability decision, business baseline, experiment constraints.</td>
-                <td>Explicit approval that requirements are clear enough to enter the ADLC</td>
-                <td>Requirements must be complete, coherent, ready for execution, and traceable to approved RAG and knowledge sources</td>
-              </tr>
-              <tr>
-                <td>1. Implement</td>
-                <td>Services, prompts, agents, workflows, integrations, reusable components, prompt and change history. Autonomy contract, runtime enforcement and memory policy.</td>
-                <td>Not mandatory as a formal gate in this phase</td>
-                <td>Architecture and knowledge changes remain reviewable, testable, and ready for controlled evolution</td>
-              </tr>
-              <tr>
-                <td>2. Review</td>
-                <td>Review evidence, risk assessment, design corrections, readiness decision. Authority and recovery review, evaluator calibration.</td>
-                <td>Accountable judgment on quality, security, and fitness to proceed</td>
-                <td>Quality and risk must be evaluated before moving forward</td>
-              </tr>
-              <tr>
-                <td>3. Test</td>
-                <td>Test evidence, acceptance validation, reliability checks, behavioral regression evidence, known issues. Versioned datasets, repeated trials, risk thresholds and coverage gaps.</td>
-                <td>Optional depending on context, but escalation remains available</td>
-                <td>Behavior, including regressions from prompts, RAG content, skills, model configuration, tools, and orchestration, must be measured before deployment</td>
-              </tr>
-              <tr>
-                <td>4. Deploy</td>
-                <td>Release notes, deployment evidence, knowledge-layer change record, rollback plan, ownership, go-live record. Configuration rollback, state restoration and compensation evidence.</td>
-                <td>Formal release authorization and responsibility for production entry</td>
-                <td>Release evidence must identify code, prompt, RAG or documentation, tool, model configuration, and orchestration changes</td>
-              </tr>
-              <tr>
-                <td>5. Operate</td>
-                <td>Monitoring signals, incidents, runbooks, operational decisions, governance logs, drift and retrieval signals. Cost per successful task, latency, intervention, rework and escalation.</td>
-                <td>Production oversight, escalation handling, and accountable intervention</td>
-                <td>Live operations must remain observable and governable across technical health and knowledge-driven behavior</td>
-              </tr>
-              <tr>
-                <td>6. Improve</td>
-                <td>Improvement backlog, lessons learned, policy updates, refinement priorities. Value review, autonomy reduction or retirement decision.</td>
-                <td>Not a mandatory gate, but accountable prioritization is expected</td>
-                <td>Live evidence must feed the next iteration instead of remaining isolated</td>
-              </tr>
-              <tr>
-                <td>7. Orchestrate</td>
-                <td>Shared flows, coordination rules, reusable capabilities, policy alignment. Delegation limits, identities, budgets and shared-state controls.</td>
-                <td>Human oversight depends on scope and impact of orchestration changes</td>
-                <td>Orchestration must preserve traceability from requirement &rarr; knowledge source &rarr; agent behavior &rarr; test evidence &rarr; release</td>
-              </tr>
+              <tr><td data-label="Stage">0. Requirements Quality Gate</td><td data-label="Required Evidence">Approved increment, acceptance criteria, business baseline, risks, autonomy limits and approval of versioned knowledge or RAG sources where used.</td><td data-label="Validation Owner">Business owner and technical lead; risk owner where applicable.</td><td data-label="Progression Criterion">Scope and criteria explicitly approved before implementation; experiments have approved limits.</td></tr>
+              <tr><td data-label="Stage">1. Implement</td><td data-label="Required Evidence">Versioned change linked to requirements; prompt/change history, autonomy contract and implemented runtime controls.</td><td data-label="Validation Owner">Technical lead.</td><td data-label="Progression Criterion">Change is reproducible and ready for review; no release authorization implied.</td></tr>
+              <tr><td data-label="Stage">2. Review</td><td data-label="Required Evidence">Review record, risk assessment, findings and corrective changes.</td><td data-label="Validation Owner">Competent human reviewer; security or domain specialists as needed.</td><td data-label="Progression Criterion">Blocking findings resolved; residual risks documented for release approval.</td></tr>
+              <tr><td data-label="Stage">3. Test</td><td data-label="Required Evidence">CI results, approved acceptance tests, regression evidence, versioned datasets and evaluators, repeated trials where relevant, coverage gaps.</td><td data-label="Validation Owner">Competent human test reviewer.</td><td data-label="Progression Criterion">Mandatory checks pass; test adequacy and evidence reviewed; acceptance criteria not weakened unilaterally.</td></tr>
+              <tr><td data-label="Stage">4. Deploy</td><td data-label="Required Evidence">Release ID; inventory of code, prompts, knowledge/RAG, tools, model and orchestration changes; approvals and recovery exercise results.</td><td data-label="Validation Owner">Authorized release owner and business/risk owners for residual risk.</td><td data-label="Progression Criterion">Release explicitly authorized; required evidence complete; recovery and stop conditions verified.</td></tr>
+              <tr><td data-label="Stage">5. Operate</td><td data-label="Required Evidence">Monitoring, incidents, drift, cost per successful task, human rework and recovery records.</td><td data-label="Validation Owner">Service owner and incident lead.</td><td data-label="Progression Criterion">Continue only within approved limits; violations trigger defined stop or escalation actions.</td></tr>
+              <tr><td data-label="Stage">6. Improve</td><td data-label="Required Evidence">Prioritized findings linked to production evidence, baseline comparison and decisions on autonomy or retirement.</td><td data-label="Validation Owner">Business owner and technical lead.</td><td data-label="Progression Criterion">Next increment returns to the requirements gate; retirement includes access revocation and data disposition.</td></tr>
+              <tr><td data-label="Stage">7. Orchestrate (cross-cutting)</td><td data-label="Required Evidence">Versioned delegation and workflow rules; permission/budget tests; requirement → knowledge source → behavior → test → release links.</td><td data-label="Validation Owner">System owner and relevant control owners.</td><td data-label="Progression Criterion">Throughout execution, delegation respects approved authority and traceability; material changes repeat relevant gates.</td></tr>
             </tbody>
           </table>
         </div>

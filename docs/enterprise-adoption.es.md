@@ -52,6 +52,19 @@ La compresión del contexto debe ahorrar tokens sin eliminar permisos, restricci
 
 ## 4. Evaluar el comportamiento antes de la promoción
 
+### Verificar el software producido por agentes
+
+La validación del software producido por agentes requiere supervisión humana competente. Las personas responsables aprueban los criterios de aceptación, revisan la adecuación de las pruebas y evalúan evidencias y riesgo residual para autorizar la release. Los agentes pueden generar y ejecutar pruebas, pero no aprobar su propio trabajo ni debilitar unilateralmente sus condiciones de aceptación. Un segundo agente no sustituye la responsabilidad humana; la profundidad de la revisión es proporcional al riesgo, sin exigir ejecutar manualmente cada prueba.
+
+- Derivar los resultados esperados de requisitos aprobados, no de la implementación generada; someterlos a revisión humana competente independiente de la implementación.
+- Proteger las pruebas de aceptación y las reglas CI. Eliminar pruebas, debilitar aserciones o cambiar umbrales de aceptación requiere revisión humana explícita.
+- Para corregir un defecto, demostrar que la prueba falla antes y pasa después. Usar fallos controlados o pruebas de mutación cuando corresponda para comprobar que las aserciones detectan defectos pertinentes.
+- Verificar efectos observables, datos persistidos y límites de autorización, no solo mensajes de éxito o mocks. Incluir pruebas de integración con servicios representativos.
+- Cubrir comportamientos existentes, casos límite, acciones prohibidas y dependencias no disponibles. Mantener pruebas unitarias, de integración, end-to-end, de seguridad y no funcionales.
+- Ejecutar controles en un entorno CI definido y conservar resultados reales vinculados a requisitos y al cambio revisado. El informe del agente no demuestra la ejecución.
+
+Ejemplo: si un reembolso requiere aprobación, verificar que no se ejecute ningún pago sin ella, no solo que la interfaz muestre una solicitud de aprobación.
+
 Crear un dataset representativo y versionado, vinculado a requisitos y casos de riesgo. Incluir resultados normales, solicitudes ambiguas, acciones no autorizadas, injection, conocimiento manipulado u obsoleto, fallos de retrieval, acceso entre tenants, timeouts de herramientas, solicitudes duplicadas, escalado y comportamiento de parada.
 
 Repetir ensayos con estado aislado. Registrar dataset, configuración del modelo, prompts, herramientas, versiones de conocimiento y evaluadores, tamaño de muestra, variabilidad y lagunas de cobertura. Inspeccionar cambios reales de estado y cumplimiento de políticas, no solo una respuesta final plausible o una secuencia exacta de llamadas. Calibrar evaluadores basados en modelos con juicios de expertos del dominio y revisar desacuerdos.

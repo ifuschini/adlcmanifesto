@@ -48,6 +48,8 @@ Humans continue to design, implement, review, approve, and operate systems. Agen
 
 ## Evidence, Recovery, and Value
 
+Validation of agent-produced software requires competent human oversight. Accountable people approve acceptance criteria, review test adequacy, and assess evidence and residual risk to authorize release. Agents may generate and execute tests, but cannot approve their own work or unilaterally weaken its acceptance conditions. A second agent does not replace human accountability; review depth is proportionate to risk, not a requirement to execute every test manually.
+
 Release decisions require representative evaluations, risk-based thresholds, repeated trials, actual outcome verification, and policy checks. Model-based evaluators must be calibrated against human judgment.
 
 Recovery must address configuration rollback, state restoration, and compensation for external effects. Irreversible actions require preventive controls and risk-appropriate approval; reverting a model cannot undo a completed external action.
@@ -56,13 +58,13 @@ Operational success includes quality, safety, cost per successfully completed ta
 
 See the [enterprise adoption guide](docs/enterprise-adoption.md) for controls, evidence, and a worked example.
 
-## Positioning
+## Scope of Application
 
-We affirm that agentic delivery must be governed end-to-end.
+ADLC applies both to software developed with agent assistance and to systems that use agents in production.
 
-Security, runtime monitoring, and operational control are necessary, but they are not enough on their own.
+In the first case, it governs generated changes, verification against requirements, and human accountability for acceptance. In the second, it extends these controls to runtime behavior, knowledge, tools, and agent autonomy.
 
-ADLC starts from requirements quality and extends through orchestration, human checkpoints, traceability, governed knowledge, shared enterprise skills, and continuous operational improvement.
+It is not synonymous with autonomous coding or merely securing AI-generated code: it requires verifiable evidence and explicit accountability throughout the lifecycle.
 
 ## Links
 

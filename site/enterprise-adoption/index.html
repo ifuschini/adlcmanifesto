@@ -62,10 +62,10 @@
       rel="stylesheet"
       href="https://unpkg.com/papercss@1.9.2/dist/paper.min.css"
     />
-    <link rel="stylesheet" href="/styles.css?v=1.5" />
+    <link rel="stylesheet" href="/styles.css?v=1.5-evidence" />
     <script src="/theme.js?v=1.5"></script>
-    <link rel="stylesheet" href="/technical.css?v=1.5-guide" />
-    <script src="/navigation.js?v=1.5" defer></script>
+    <link rel="stylesheet" href="/technical.css?v=1.5-principle-font" />
+    <script src="/navigation.js?v=1.5-language-position-2" defer></script>
 <link rel="alternate" hreflang="en" href="https://adlcmanifesto.org/enterprise-adoption/" />
 <link rel="alternate" hreflang="es" href="https://adlcmanifesto.org/es/enterprise-adoption/" />
 <link rel="alternate" hreflang="fr" href="https://adlcmanifesto.org/fr/enterprise-adoption/" />
@@ -97,7 +97,7 @@
 </ul>
         </details>
       </nav>
-<div class="language-switcher paper" aria-label="Guide language"><a href="/enterprise-adoption/" class="paper-btn language-link active" lang="en" hreflang="en" aria-current="page">EN</a><a href="/es/enterprise-adoption/" class="paper-btn language-link" lang="es" hreflang="es">ES</a><a href="/fr/enterprise-adoption/" class="paper-btn language-link" lang="fr" hreflang="fr">FR</a><a href="/it/enterprise-adoption/" class="paper-btn language-link" lang="it" hreflang="it">IT</a></div>
+<div class="language-switcher paper" aria-label="Guide language"><a href="/enterprise-adoption/" data-section-anchors="[&quot;1-approve-the-next-increment&quot;, &quot;2-define-an-autonomy-contract&quot;, &quot;make-human-oversight-effective&quot;, &quot;3-govern-knowledge-context-and-memory&quot;, &quot;4-evaluate-behavior-before-promotion&quot;, &quot;verify-software-produced-by-agents&quot;, &quot;5-release-operate-and-recover&quot;, &quot;worked-example-refund-assistance&quot;, &quot;reusable-evidence-record&quot;, &quot;specialist-references&quot;]" class="paper-btn language-link active" lang="en" hreflang="en" aria-current="page">EN</a><a href="/es/enterprise-adoption/" data-section-anchors="[&quot;1-aprobar-el-siguiente-incremento&quot;, &quot;2-definir-un-contrato-de-autonomia&quot;, &quot;hacer-efectiva-la-supervision-humana&quot;, &quot;3-gobernar-conocimiento-contexto-y-memoria&quot;, &quot;4-evaluar-el-comportamiento-antes-de-la-promocion&quot;, &quot;verificar-el-software-producido-por-agentes&quot;, &quot;5-liberar-operar-y-recuperar&quot;, &quot;ejemplo-completo-asistencia-con-reembolsos&quot;, &quot;registro-de-evidencias-reutilizable&quot;, &quot;referencias-especializadas&quot;]" class="paper-btn language-link" lang="es" hreflang="es">ES</a><a href="/fr/enterprise-adoption/" data-section-anchors="[&quot;1-approuver-le-prochain-increment&quot;, &quot;2-definir-un-contrat-dautonomie&quot;, &quot;rendre-la-supervision-humaine-effective&quot;, &quot;3-gouverner-connaissance-contexte-et-memoire&quot;, &quot;4-evaluer-le-comportement-avant-promotion&quot;, &quot;verifier-le-logiciel-produit-par-des-agents&quot;, &quot;5-livrer-exploiter-et-recuperer&quot;, &quot;exemple-complet-assistance-aux-remboursements&quot;, &quot;registre-de-preuves-reutilisable&quot;, &quot;references-specialisees&quot;]" class="paper-btn language-link" lang="fr" hreflang="fr">FR</a><a href="/it/enterprise-adoption/" data-section-anchors="[&quot;1-approvare-il-prossimo-incremento&quot;, &quot;2-definire-un-contratto-di-autonomia&quot;, &quot;rendere-efficace-la-supervisione-umana&quot;, &quot;3-governare-conoscenza-contesto-e-memoria&quot;, &quot;4-valutare-il-comportamento-prima-della-promozione&quot;, &quot;verificare-il-software-prodotto-da-agent&quot;, &quot;5-rilasciare-operare-e-recuperare&quot;, &quot;esempio-completo-assistenza-ai-rimborsi&quot;, &quot;registro-delle-evidenze-riutilizzabile&quot;, &quot;riferimenti-specialistici&quot;]" class="paper-btn language-link" lang="it" hreflang="it">IT</a></div>
     </header>
 
     <main>
@@ -211,6 +211,17 @@ source provenance, or evidence needed for a correct decision. Evaluate compresse
 context against the same behavioral requirements. A URL, MCP connection, or
 llms.txt file alone does not establish trust or authorization.</p>
 <h2 id="4-evaluate-behavior-before-promotion">4. Evaluate Behavior Before Promotion</h2>
+<h3 id="verify-software-produced-by-agents">Verify Software Produced by Agents</h3>
+<p>Validation of agent-produced software requires competent human oversight. Accountable people approve acceptance criteria, review test adequacy, and assess evidence and residual risk to authorize release. Agents may generate and execute tests, but cannot approve their own work or unilaterally weaken its acceptance conditions. A second agent does not replace human accountability; review depth is proportionate to risk, not a requirement to execute every test manually.</p>
+<ul>
+<li>Derive expected outcomes from approved requirements, not from the generated implementation; have competent people review those outcomes independently of the implementation.</li>
+<li>Protect acceptance tests and CI rules. Removing tests, weakening assertions, or changing acceptance thresholds requires explicit human review.</li>
+<li>For a bug fix, demonstrate failure before the fix and success afterward. Use controlled faults or mutation testing where appropriate to check that assertions detect relevant defects.</li>
+<li>Check observable effects, persisted data, and authorization boundaries, not only success messages or mocks. Include integration checks against representative services.</li>
+<li>Cover existing behavior, boundary cases, denied actions, and unavailable dependencies. Preserve traditional unit, integration, end-to-end, security, and non-functional tests.</li>
+<li>Run checks in a defined CI environment and retain actual results linked to requirements and the reviewed change. Agent reports alone are not execution evidence.</li>
+</ul>
+<p>Example: if a refund requires approval, verify that no payment is executed without it, not merely that the interface displays an approval request.</p>
 <p>Build a representative, versioned dataset linked to requirements and risk cases.
 Include normal outcomes, ambiguous requests, unauthorized actions, injection,
 poisoned or stale knowledge, retrieval failures, cross-tenant access, tool

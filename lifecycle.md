@@ -42,6 +42,10 @@ Testing also covers behavioral regression caused by changes to prompts, RAG cont
 
 Use representative versioned datasets, risk-based acceptance thresholds, repeated trials, and isolated test state. Check actual task outcomes and prohibited actions, not just convincing responses. Calibrate model-based evaluators with domain experts and preserve uncertainty in reported results. Test escalation, stop controls, prompt injection, memory poisoning, and permission boundaries.
 
+Validation of agent-produced software requires competent human oversight. Accountable people approve acceptance criteria, review test adequacy, and assess evidence and residual risk to authorize release. Agents may generate and execute tests, but cannot approve their own work or unilaterally weaken its acceptance conditions. A second agent does not replace human accountability; review depth is proportionate to risk, not a requirement to execute every test manually.
+
+Derive expected outcomes from approved requirements, protect acceptance tests from unilateral changes, demonstrate detection of relevant defects, and verify observable effects and regressions in CI. See the [enterprise adoption guide](docs/enterprise-adoption.md#verify-software-produced-by-agents) for verification criteria.
+
 ## Step 4: Deploy
 
 Deployment moves validated changes into controlled environments with release evidence, rollback guidance, ownership, and traceability.

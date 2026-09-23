@@ -62,10 +62,10 @@
       rel="stylesheet"
       href="https://unpkg.com/papercss@1.9.2/dist/paper.min.css"
     />
-    <link rel="stylesheet" href="/styles.css?v=1.5" />
+    <link rel="stylesheet" href="/styles.css?v=1.5-evidence" />
     <script src="/theme.js?v=1.5"></script>
-    <link rel="stylesheet" href="/technical.css?v=1.5-guide" />
-    <script src="/navigation.js?v=1.5" defer></script>
+    <link rel="stylesheet" href="/technical.css?v=1.5-principle-font" />
+    <script src="/navigation.js?v=1.5-language-position-2" defer></script>
 <link rel="alternate" hreflang="en" href="https://adlcmanifesto.org/enterprise-adoption/" />
 <link rel="alternate" hreflang="es" href="https://adlcmanifesto.org/es/enterprise-adoption/" />
 <link rel="alternate" hreflang="fr" href="https://adlcmanifesto.org/fr/enterprise-adoption/" />
@@ -97,7 +97,7 @@
 </ul>
         </details>
       </nav>
-<div class="language-switcher paper" aria-label="Lingua della guida"><a href="/enterprise-adoption/" class="paper-btn language-link" lang="en" hreflang="en">EN</a><a href="/es/enterprise-adoption/" class="paper-btn language-link" lang="es" hreflang="es">ES</a><a href="/fr/enterprise-adoption/" class="paper-btn language-link" lang="fr" hreflang="fr">FR</a><a href="/it/enterprise-adoption/" class="paper-btn language-link active" lang="it" hreflang="it" aria-current="page">IT</a></div>
+<div class="language-switcher paper" aria-label="Lingua della guida"><a href="/enterprise-adoption/" data-section-anchors="[&quot;1-approve-the-next-increment&quot;, &quot;2-define-an-autonomy-contract&quot;, &quot;make-human-oversight-effective&quot;, &quot;3-govern-knowledge-context-and-memory&quot;, &quot;4-evaluate-behavior-before-promotion&quot;, &quot;verify-software-produced-by-agents&quot;, &quot;5-release-operate-and-recover&quot;, &quot;worked-example-refund-assistance&quot;, &quot;reusable-evidence-record&quot;, &quot;specialist-references&quot;]" class="paper-btn language-link" lang="en" hreflang="en">EN</a><a href="/es/enterprise-adoption/" data-section-anchors="[&quot;1-aprobar-el-siguiente-incremento&quot;, &quot;2-definir-un-contrato-de-autonomia&quot;, &quot;hacer-efectiva-la-supervision-humana&quot;, &quot;3-gobernar-conocimiento-contexto-y-memoria&quot;, &quot;4-evaluar-el-comportamiento-antes-de-la-promocion&quot;, &quot;verificar-el-software-producido-por-agentes&quot;, &quot;5-liberar-operar-y-recuperar&quot;, &quot;ejemplo-completo-asistencia-con-reembolsos&quot;, &quot;registro-de-evidencias-reutilizable&quot;, &quot;referencias-especializadas&quot;]" class="paper-btn language-link" lang="es" hreflang="es">ES</a><a href="/fr/enterprise-adoption/" data-section-anchors="[&quot;1-approuver-le-prochain-increment&quot;, &quot;2-definir-un-contrat-dautonomie&quot;, &quot;rendre-la-supervision-humaine-effective&quot;, &quot;3-gouverner-connaissance-contexte-et-memoire&quot;, &quot;4-evaluer-le-comportement-avant-promotion&quot;, &quot;verifier-le-logiciel-produit-par-des-agents&quot;, &quot;5-livrer-exploiter-et-recuperer&quot;, &quot;exemple-complet-assistance-aux-remboursements&quot;, &quot;registre-de-preuves-reutilisable&quot;, &quot;references-specialisees&quot;]" class="paper-btn language-link" lang="fr" hreflang="fr">FR</a><a href="/it/enterprise-adoption/" data-section-anchors="[&quot;1-approvare-il-prossimo-incremento&quot;, &quot;2-definire-un-contratto-di-autonomia&quot;, &quot;rendere-efficace-la-supervisione-umana&quot;, &quot;3-governare-conoscenza-contesto-e-memoria&quot;, &quot;4-valutare-il-comportamento-prima-della-promozione&quot;, &quot;verificare-il-software-prodotto-da-agent&quot;, &quot;5-rilasciare-operare-e-recuperare&quot;, &quot;esempio-completo-assistenza-ai-rimborsi&quot;, &quot;registro-delle-evidenze-riutilizzabile&quot;, &quot;riferimenti-specialistici&quot;]" class="paper-btn language-link active" lang="it" hreflang="it" aria-current="page">IT</a></div>
     </header>
 
     <main>
@@ -178,6 +178,17 @@
 <p>Snapshot versionati delle fonti e configurazione del retrieval fanno parte delle evidenze di rilascio. La memoria modificabile richiede invece una cronologia governata degli eventi: origine, autore autorizzato, ambito, timestamp, conservazione, correzione e cancellazione. Isolare utenti e tenant; definire come risolvere fatti contraddittori o obsoleti. Non promuovere automaticamente un'inferenza dell'agent a conoscenza autorevole.</p>
 <p>La compressione del contesto deve risparmiare token senza rimuovere permessi, vincoli, provenienza delle fonti o evidenze necessarie a una decisione corretta. Valutare il contesto compresso rispetto agli stessi requisiti comportamentali. Un URL, una connessione MCP o un file llms.txt da soli non stabiliscono fiducia o autorizzazione.</p>
 <h2 id="4-valutare-il-comportamento-prima-della-promozione">4. Valutare il comportamento prima della promozione</h2>
+<h3 id="verificare-il-software-prodotto-da-agent">Verificare il software prodotto da agent</h3>
+<p>La validazione del software prodotto da agent richiede supervisione umana competente. Le persone responsabili approvano i criteri di accettazione, revisionano l'adeguatezza dei test e valutano evidenze e rischio residuo per autorizzare il rilascio. Gli agent possono generare ed eseguire test, ma non approvare il proprio lavoro né indebolirne unilateralmente le condizioni di accettazione. Un secondo agent non sostituisce la responsabilità umana; la profondità della revisione è proporzionata al rischio, senza richiedere l'esecuzione manuale di ogni test.</p>
+<ul>
+<li>Derivare gli esiti attesi dai requisiti approvati, non dall'implementazione generata; farli revisionare da persone competenti indipendentemente dall'implementazione.</li>
+<li>Proteggere i test di accettazione e le regole CI. Eliminare test, indebolire asserzioni o modificare soglie di accettazione richiede una revisione umana esplicita.</li>
+<li>Per una correzione, dimostrare che il test fallisce prima e passa dopo. Usare difetti controllati o mutation testing, ove opportuno, per verificare che le asserzioni rilevino i difetti pertinenti.</li>
+<li>Verificare effetti osservabili, dati persistiti e confini delle autorizzazioni, non soltanto messaggi di successo o mock. Includere verifiche di integrazione con servizi rappresentativi.</li>
+<li>Coprire comportamenti esistenti, casi limite, azioni vietate e dipendenze indisponibili. Mantenere i test tradizionali unitari, di integrazione, end-to-end, di sicurezza e non funzionali.</li>
+<li>Eseguire i controlli in un ambiente CI definito e conservare i risultati effettivi collegati ai requisiti e alla modifica revisionata. Il resoconto dell'agent non è una prova di esecuzione.</li>
+</ul>
+<p>Esempio: se un rimborso richiede approvazione, verificare che nessun pagamento sia eseguito senza di essa, non soltanto che l'interfaccia mostri una richiesta di approvazione.</p>
 <p>Costruire un dataset rappresentativo e versionato, collegato a requisiti e casi di rischio. Includere risultati normali, richieste ambigue, azioni non autorizzate, injection, conoscenza avvelenata o obsoleta, errori di retrieval, accesso tra tenant, timeout dei tool, richieste duplicate, escalation e comportamento di arresto.</p>
 <p>Ripetere le prove con stato isolato. Registrare dataset, configurazione del modello, prompt, tool, versioni della conoscenza e dei valutatori, dimensione del campione, variabilità e lacune di copertura. Esaminare cambiamenti di stato effettivi e rispetto delle policy, non soltanto una risposta finale plausibile o una sequenza esatta di chiamate. Calibrare i valutatori basati su modelli rispetto ai giudizi degli esperti di dominio e riesaminare i disaccordi.</p>
 <p>Concordare soglie di accettazione basate sul rischio prima dei test. Il fallimento di un controllo obbligatorio blocca la promozione. Un insieme finito di test non può provare l'assenza di guasti futuri. Ripetere i test di regressione pertinenti ogni volta che cambia un input capace di influenzare il comportamento, anche senza modifiche al codice.</p>

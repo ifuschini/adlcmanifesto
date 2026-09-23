@@ -21,6 +21,7 @@ check:
 	node --check scripts/check-links.js
 	node scripts/check-links.js
 	node scripts/check-navigation.js
+	node scripts/check-language-navigation.js
 	python3 scripts/check-seo.py
 	zsh scripts/check-footer-release-date.sh
 

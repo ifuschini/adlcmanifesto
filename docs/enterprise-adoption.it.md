@@ -52,6 +52,19 @@ La compressione del contesto deve risparmiare token senza rimuovere permessi, vi
 
 ## 4. Valutare il comportamento prima della promozione
 
+### Verificare il software prodotto da agent
+
+La validazione del software prodotto da agent richiede supervisione umana competente. Le persone responsabili approvano i criteri di accettazione, revisionano l'adeguatezza dei test e valutano evidenze e rischio residuo per autorizzare il rilascio. Gli agent possono generare ed eseguire test, ma non approvare il proprio lavoro né indebolirne unilateralmente le condizioni di accettazione. Un secondo agent non sostituisce la responsabilità umana; la profondità della revisione è proporzionata al rischio, senza richiedere l'esecuzione manuale di ogni test.
+
+- Derivare gli esiti attesi dai requisiti approvati, non dall'implementazione generata; farli revisionare da persone competenti indipendentemente dall'implementazione.
+- Proteggere i test di accettazione e le regole CI. Eliminare test, indebolire asserzioni o modificare soglie di accettazione richiede una revisione umana esplicita.
+- Per una correzione, dimostrare che il test fallisce prima e passa dopo. Usare difetti controllati o mutation testing, ove opportuno, per verificare che le asserzioni rilevino i difetti pertinenti.
+- Verificare effetti osservabili, dati persistiti e confini delle autorizzazioni, non soltanto messaggi di successo o mock. Includere verifiche di integrazione con servizi rappresentativi.
+- Coprire comportamenti esistenti, casi limite, azioni vietate e dipendenze indisponibili. Mantenere i test tradizionali unitari, di integrazione, end-to-end, di sicurezza e non funzionali.
+- Eseguire i controlli in un ambiente CI definito e conservare i risultati effettivi collegati ai requisiti e alla modifica revisionata. Il resoconto dell'agent non è una prova di esecuzione.
+
+Esempio: se un rimborso richiede approvazione, verificare che nessun pagamento sia eseguito senza di essa, non soltanto che l'interfaccia mostri una richiesta di approvazione.
+
 Costruire un dataset rappresentativo e versionato, collegato a requisiti e casi di rischio. Includere risultati normali, richieste ambigue, azioni non autorizzate, injection, conoscenza avvelenata o obsoleta, errori di retrieval, accesso tra tenant, timeout dei tool, richieste duplicate, escalation e comportamento di arresto.
 
 Ripetere le prove con stato isolato. Registrare dataset, configurazione del modello, prompt, tool, versioni della conoscenza e dei valutatori, dimensione del campione, variabilità e lacune di copertura. Esaminare cambiamenti di stato effettivi e rispetto delle policy, non soltanto una risposta finale plausibile o una sequenza esatta di chiamate. Calibrare i valutatori basati su modelli rispetto ai giudizi degli esperti di dominio e riesaminare i disaccordi.

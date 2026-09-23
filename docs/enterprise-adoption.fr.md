@@ -52,6 +52,19 @@ La compression du contexte doit économiser des tokens sans supprimer permission
 
 ## 4. Évaluer le comportement avant promotion
 
+### Vérifier le logiciel produit par des agents
+
+La validation du logiciel produit par des agents exige une supervision humaine compétente. Les personnes responsables approuvent les critères d'acceptation, examinent la pertinence des tests et évaluent les preuves et le risque résiduel pour autoriser la release. Les agents peuvent générer et exécuter des tests, mais ne peuvent approuver leur propre travail ni affaiblir unilatéralement ses conditions d'acceptation. Un second agent ne remplace pas la responsabilité humaine ; la profondeur de la revue est proportionnée au risque, sans imposer l'exécution manuelle de chaque test.
+
+- Déduire les résultats attendus des exigences approuvées, non de l'implémentation générée ; les faire examiner par des personnes compétentes indépendamment de l'implémentation.
+- Protéger les tests d'acceptation et les règles CI. Supprimer des tests, affaiblir des assertions ou modifier les seuils d'acceptation exige une revue humaine explicite.
+- Pour une correction, démontrer que le test échoue avant et réussit après. Utiliser des défauts contrôlés ou des tests de mutation lorsque pertinent pour vérifier que les assertions détectent les défauts concernés.
+- Vérifier les effets observables, les données persistées et les limites d'autorisation, pas seulement les messages de succès ou les mocks. Inclure des tests d'intégration avec des services représentatifs.
+- Couvrir les comportements existants, cas limites, actions interdites et dépendances indisponibles. Conserver les tests unitaires, d'intégration, end-to-end, de sécurité et non fonctionnels.
+- Exécuter les contrôles dans un environnement CI défini et conserver les résultats réels liés aux exigences et au changement revu. Le rapport de l'agent ne prouve pas l'exécution.
+
+Exemple : si un remboursement exige une approbation, vérifier qu'aucun paiement n'est exécuté sans elle, pas seulement que l'interface affiche une demande d'approbation.
+
 Construire un dataset représentatif et versionné, lié aux exigences et cas de risque. Inclure résultats normaux, demandes ambiguës, actions non autorisées, injection, connaissances empoisonnées ou obsolètes, échecs de retrieval, accès entre tenants, timeouts d'outils, demandes dupliquées, escalade et comportement d'arrêt.
 
 Répéter les essais avec un état isolé. Consigner dataset, configuration du modèle, prompts, outils, versions des connaissances et évaluateurs, taille d'échantillon, variabilité et lacunes de couverture. Examiner les changements réels d'état et le respect des politiques, pas seulement une réponse finale plausible ou une séquence exacte d'appels. Calibrer les évaluateurs fondés sur des modèles avec les jugements d'experts métier et examiner les désaccords.

@@ -15,6 +15,12 @@ function checkLanguageOrder(html) {
 for (const file of pages) {
   const html = fs.readFileSync(file, 'utf8');
   checkLanguageOrder(html);
+  const evidence = html.match(/<table class="operating-table">([\s\S]*?)<\/table>/)[1];
+  const columns = [...evidence.matchAll(/<th scope="col">([^<]+)<\/th>/g)].map(match => match[1]);
+  assert.equal(columns.length, 4, `${file}: evidence checklist requires four columns`);
+  const cells = [...evidence.matchAll(/<td data-label="([^"]+)">/g)].map(match => match[1]);
+  assert.equal(cells.length, 32, `${file}: evidence checklist requires eight complete rows`);
+  cells.forEach((label, index) => assert.equal(label, columns[index % 4], `${file}: mobile label differs from column`));
   const main = html.match(/<main>([\s\S]*?)<\/main>/)[1];
   const sections = [...main.matchAll(/<section\b[^>]*\bid="([^"]+)"/g)].map(match => match[1]);
   const nav = html.match(/<ul class="inline nav-links">([\s\S]*?)<\/ul>/)[1];
