@@ -1,5 +1,6 @@
 """Validate static SEO metadata without third-party dependencies."""
 import json
+import struct
 from datetime import date
 from html.parser import HTMLParser
 from pathlib import Path
@@ -38,6 +39,9 @@ class Page(HTMLParser):
 
 
 base = "https://adlcmanifesto.org/"
+preview = Path("site/og-process.png").read_bytes()
+assert preview[:8] == b"\x89PNG\r\n\x1a\n", "Social preview must be a PNG"
+assert struct.unpack(">II", preview[16:24]) == (1200, 630), "Social preview dimensions"
 locales = {"en": "", "it": "it/", "es": "es/", "fr": "fr/"}
 alternates = {lang: base + path for lang, path in locales.items()}
 alternates["x-default"] = base
@@ -58,6 +62,9 @@ for item in urls:
     assert "noindex" not in page.meta.get("robots", "").lower(), url
     assert page.meta.get("description"), url
     assert page.meta.get("og:url") == url, url
+    for image_tag in ("og:image", "og:image:secure_url", "twitter:image"):
+        assert page.meta.get(image_tag) == base + "og-process.png", (url, image_tag)
+    assert page.meta.get("twitter:card") == "summary_large_image", url
     assert len(page.blocks) == 1, url
     data = page.blocks[0]
     assert data["inLanguage"] == page.lang, url

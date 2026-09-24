@@ -1,64 +1,70 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
-  <title id="title">ADLC Manifesto</title>
-  <desc id="desc">Open Graph image for the ADLC Manifesto website.</desc>
+  <title id="title">ADLC Manifesto: governed delivery and continuous learning</title>
+  <desc id="desc">Requirements Quality Gate, Implement, Review, Test, Deploy, Operate, Improve, and a return to the requirements gate. Orchestration spans every stage.</desc>
   <defs>
-    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
-      <stop offset="0%" stop-color="#f8f1e2" />
-      <stop offset="100%" stop-color="#f5ecd7" />
-    </linearGradient>
-    <radialGradient id="glowA" cx="0.12" cy="0.15" r="0.52">
-      <stop offset="0%" stop-color="#efcf72" stop-opacity="0.32" />
-      <stop offset="100%" stop-color="#efcf72" stop-opacity="0" />
-    </radialGradient>
-    <radialGradient id="glowB" cx="0.9" cy="0.92" r="0.52">
-      <stop offset="0%" stop-color="#9caf88" stop-opacity="0.22" />
-      <stop offset="100%" stop-color="#9caf88" stop-opacity="0" />
-    </radialGradient>
-    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
-      <feDropShadow dx="0" dy="10" stdDeviation="18" flood-color="#1f1a17" flood-opacity="0.12"/>
-    </filter>
-    <style>
-      .elite { font-family: Georgia, serif; }
-      .sans { font-family: Arial, Helvetica, sans-serif; }
-    </style>
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8" fill="#1859a9"/></marker>
+    <marker id="learning" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8" fill="#28705d"/></marker>
   </defs>
-
-  <rect width="1200" height="630" fill="url(#bg)" />
-  <rect width="1200" height="630" fill="url(#glowA)" />
-  <rect width="1200" height="630" fill="url(#glowB)" />
-
-  <rect x="54" y="42" width="1092" height="24" fill="#201a17"/>
-  <rect x="54" y="42" width="1092" height="12" fill="#d46a3f" opacity="0.9"/>
-
-  <g filter="url(#shadow)">
-    <rect x="96" y="112" width="1008" height="406" rx="28" fill="#fffdf6" stroke="#201a17" stroke-opacity="0.16"/>
+  <rect width="1200" height="630" fill="#fff"/>
+  <rect width="1200" height="8" fill="#1859a9"/>
+  <g font-family="Arial, Helvetica, sans-serif">
+    <text x="52" y="68" font-size="40" font-weight="700" fill="#182124">ADLC Manifesto</text>
+    <text x="52" y="106" font-size="23" fill="#465157">SDLC evolves. Human accountability remains.</text>
+    <text x="52" y="148" font-size="20" font-weight="700" fill="#28705d">No implementation starts without a passed requirements quality gate.</text>
+    <g fill="none" stroke="#1859a9" stroke-width="3" marker-end="url(#arrow)">
+      <path d="M286 248H328"/><path d="M572 248H614"/><path d="M858 248H900"/>
+      <path d="M1027 306V347"/><path d="M910 415H868"/>
+    </g>
+    <g fill="none" stroke="#28705d" stroke-width="3" stroke-dasharray="7 5" marker-end="url(#learning)">
+      <path d="M624 415H582"/><path d="M338 415H169V316"/>
+    </g>
+    <text x="52" y="465" font-size="16" fill="#28705d">Next increment</text>
+    <g transform="translate(52 190)">
+      <rect width="234" height="116" rx="5" fill="#eff7f3" stroke="#28705d" stroke-width="1.5"/>
+      <text x="15" y="25" font-size="15" font-weight="700" fill="#28705d">00</text>
+      <text x="15" y="51" font-size="24" font-weight="700" fill="#182124">Requirements</text>
+      <text x="15" y="76" font-size="24" font-weight="700" fill="#182124">Quality Gate</text>
+      <text x="15" y="100" font-size="16" fill="#465157">Human approval</text>
+    </g>
+    <g transform="translate(338 190)">
+      <rect width="234" height="116" rx="5" fill="#f4f7fb" stroke="#bac9d8" stroke-width="1.5"/>
+      <text x="15" y="25" font-size="15" font-weight="700" fill="#1859a9">01</text>
+      <text x="15" y="65" font-size="24" font-weight="700" fill="#182124">Implement</text>
+      <text x="15" y="100" font-size="16" fill="#465157">Approved requirements</text>
+    </g>
+    <g transform="translate(624 190)">
+      <rect width="234" height="116" rx="5" fill="#f4f7fb" stroke="#bac9d8" stroke-width="1.5"/>
+      <text x="15" y="25" font-size="15" font-weight="700" fill="#1859a9">02</text>
+      <text x="15" y="65" font-size="24" font-weight="700" fill="#182124">Review</text>
+      <text x="15" y="100" font-size="16" fill="#465157">Expert review</text>
+    </g>
+    <g transform="translate(910 190)">
+      <rect width="234" height="116" rx="5" fill="#f4f7fb" stroke="#bac9d8" stroke-width="1.5"/>
+      <text x="15" y="25" font-size="15" font-weight="700" fill="#1859a9">03</text>
+      <text x="15" y="65" font-size="24" font-weight="700" fill="#182124">Test</text>
+      <text x="15" y="100" font-size="16" fill="#465157">Evidence and validation</text>
+    </g>
+    <g transform="translate(910 357)">
+      <rect width="234" height="116" rx="5" fill="#f4f7fb" stroke="#bac9d8" stroke-width="1.5"/>
+      <text x="15" y="25" font-size="15" font-weight="700" fill="#1859a9">04</text>
+      <text x="15" y="65" font-size="24" font-weight="700" fill="#182124">Deploy</text>
+      <text x="15" y="100" font-size="16" fill="#465157">Release approval</text>
+    </g>
+    <g transform="translate(624 357)">
+      <rect width="234" height="116" rx="5" fill="#f4f7fb" stroke="#bac9d8" stroke-width="1.5"/>
+      <text x="15" y="25" font-size="15" font-weight="700" fill="#1859a9">05</text>
+      <text x="15" y="65" font-size="24" font-weight="700" fill="#182124">Operate</text>
+      <text x="15" y="100" font-size="16" fill="#465157">Human oversight</text>
+    </g>
+    <g transform="translate(338 357)">
+      <rect width="234" height="116" rx="5" fill="#eff7f3" stroke="#28705d" stroke-width="1.5"/>
+      <text x="15" y="25" font-size="15" font-weight="700" fill="#28705d">06</text>
+      <text x="15" y="65" font-size="24" font-weight="700" fill="#182124">Improve</text>
+      <text x="15" y="100" font-size="16" fill="#465157">Learning and revalidation</text>
+    </g>
+    <path d="M52 501H1144" stroke="#b8c4ca"/>
+    <text x="52" y="540" font-size="25" font-weight="700" fill="#182124">Orchestrate across every stage</text>
+    <text x="52" y="572" font-size="20" fill="#465157">Agents, shared skills, policies, permissions, and traceable evidence.</text>
+    <text x="1144" y="607" text-anchor="end" font-size="18" fill="#465157">adlcmanifesto.org</text>
   </g>
-
-  <text x="144" y="186" font-size="22" fill="#d46a3f" class="elite" letter-spacing="1.5">Agentic Development</text>
-  <text x="144" y="272" font-size="74" fill="#1f1a17" class="elite">ADLC Manifesto</text>
-  <text x="144" y="340" font-size="32" fill="#64584d" class="sans">
-    Governed, tool-agnostic lifecycle for agentic systems
-  </text>
-
-  <g transform="translate(144 392)">
-    <rect x="0" y="0" width="204" height="58" rx="18" fill="#fff8ec" stroke="#201a17" stroke-width="2"/>
-    <text x="102" y="36" text-anchor="middle" font-size="24" fill="#1f1a17" class="elite">Quality Gate</text>
-
-    <rect x="250" y="0" width="170" height="58" rx="18" fill="#fff8ec" stroke="#201a17" stroke-width="2"/>
-    <text x="335" y="36" text-anchor="middle" font-size="24" fill="#1f1a17" class="elite">Review</text>
-
-    <rect x="462" y="0" width="158" height="58" rx="18" fill="#fff8ec" stroke="#201a17" stroke-width="2"/>
-    <text x="541" y="36" text-anchor="middle" font-size="24" fill="#1f1a17" class="elite">Deploy</text>
-
-    <rect x="662" y="0" width="198" height="58" rx="18" fill="#fff8ec" stroke="#201a17" stroke-width="2"/>
-    <text x="761" y="36" text-anchor="middle" font-size="24" fill="#1f1a17" class="elite">Orchestrate</text>
-
-    <path d="M205 29H245" fill="none" stroke="#d46a3f" stroke-width="3" stroke-dasharray="8 8"/>
-    <path d="M421 29H457" fill="none" stroke="#d46a3f" stroke-width="3" stroke-dasharray="8 8"/>
-    <path d="M621 29H657" fill="none" stroke="#d46a3f" stroke-width="3" stroke-dasharray="8 8"/>
-  </g>
-
-  <text x="144" y="564" font-size="21" fill="#64584d" class="sans">
-    Requirements quality, human checkpoints, traceability, orchestration, and continuous improvement.
-  </text>
 </svg>
